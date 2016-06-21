@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#define kDatabaseName       @"Questions.sqlite"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,44 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self copyDatabaseIfNeccessary];
+    
     return YES;
+}
+
+
+//copy database to documents directory
+- (NSString *)databasePath;
+{
+    //get document dir
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+    
+    NSString *dbPath = [documentsDirectoryPath stringByAppendingPathComponent:kDatabaseName];
+    
+    return dbPath;
+    
+}
+
+- (void)copyDatabaseIfNeccessary;
+{
+    NSString *dbPath = [[[NSBundle mainBundle]resourcePath] stringByAppendingPathComponent:kDatabaseName];
+    
+    NSString *dbDocumentPath = [self databasePath];
+    
+    //ONLY COPY IF DB NOT IN DOCUMENT
+    
+    //check if db in documents dir already existed
+    BOOL dbExisted = [[NSFileManager defaultManager]fileExistsAtPath:dbDocumentPath];
+    
+    if (!dbExisted) {
+        //now copy from old path to new path
+        BOOL copyResult = [[NSFileManager defaultManager]copyItemAtPath:dbPath toPath:dbDocumentPath error:NULL];
+        
+    }
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
