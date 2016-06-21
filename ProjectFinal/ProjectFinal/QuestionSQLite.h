@@ -13,7 +13,7 @@
 @interface QuestionSQLite : NSObject
 
 @property(nonatomic, assign)    NSInteger     questionId;
-@property(nonatomic, copy)      NSString   *  question;
+@property(nonatomic, copy)      NSString   *  contentQuestion;
 @property(nonatomic, copy)      NSString   *  answerA;
 @property(nonatomic, copy)      NSString   *  answerB;
 @property(nonatomic, copy)      NSString   *  answerC;

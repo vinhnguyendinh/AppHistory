@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#define kDatabaseName       @"Questions.sqlite"
+#define kDatabaseName       @"database.sqlite"
 
 @interface AppDelegate ()
 
@@ -35,7 +35,6 @@
     NSString *dbPath = [documentsDirectoryPath stringByAppendingPathComponent:kDatabaseName];
     
     return dbPath;
-    
 }
 
 - (void)copyDatabaseIfNeccessary;
@@ -52,10 +51,7 @@
     if (!dbExisted) {
         //now copy from old path to new path
         BOOL copyResult = [[NSFileManager defaultManager]copyItemAtPath:dbPath toPath:dbDocumentPath error:NULL];
-        
     }
-    
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

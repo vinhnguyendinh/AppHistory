@@ -16,7 +16,7 @@
     
     if ( self ) {
         _questionId = anId;
-        _question = ques;
+        _contentQuestion = ques;
         _answerA = a;
         _answerB = b;
         _answerC = c;
@@ -30,9 +30,9 @@
 
 /*
 
- CREATE TABLE `Question` (
+ CREATE TABLE "Question" (
 	`Id`	INTEGER PRIMARY KEY AUTOINCREMENT,
-	`Question`	TEXT,
+	`contentQuestion`	TEXT,
 	`A`	TEXT,
 	`B`	TEXT,
 	`C`	TEXT,
@@ -52,7 +52,7 @@
         //iterate the loop
         while ([rs next]) {
             NSInteger quesId = [rs intForColumn:@"Id"];
-            NSString *question = [rs stringForColumn:@"Question"];
+            NSString *question = [rs stringForColumn:@"contentQuestion"];
             NSString *ansA = [rs stringForColumn:@"A"];
             NSString *ansB = [rs stringForColumn:@"B"];
             NSString *ansC = [rs stringForColumn:@"C"];
@@ -85,8 +85,7 @@
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[APPDELEGATE databasePath]];
     
     [queue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:@"INSERT INTO Question(Question, A, B, C, D) VALUES(?, ?, ?, ?, ?) ;", question.question, question.answerA, question.answerB, question.answerC, question.answerD];
-        
+        BOOL result = [db executeUpdate:@"INSERT INTO Question(contentQuestion, A, B, C, D) VALUES(?, ?, ?, ?, ?) ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD];
         
         if (!result) {
             //FAIL
@@ -94,8 +93,8 @@
             *error = [db lastError];
             
         }
+        
     }];
-    
 }
 
 
@@ -112,7 +111,7 @@
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[APPDELEGATE databasePath]];
     
     [queue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:@"UPDATE Question SET Question = ?, A = ?, B = ?, C = ?, D = ? WHERE Id = ? ;", question.question, question.answerA, question.answerB, question.answerC, question.answerD, [NSNumber numberWithInteger:question.questionId]];
+        BOOL result = [db executeUpdate:@"UPDATE Question SET contentQuestion = ?, A = ?, B = ?, C = ?, D = ? WHERE Id = ? ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD, [NSNumber numberWithInteger:question.questionId]];
         
         if (!result) {
             //FAIL

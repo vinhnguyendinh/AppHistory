@@ -81,7 +81,7 @@
 		84D74AD31D19949700688F98 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74ACC1D19949700688F98 /* FMDatabaseQueue.m */; };
 		84D74AD41D19949700688F98 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74ACF1D19949700688F98 /* FMResultSet.m */; };
 		84D74AD81D1994CB00688F98 /* QuestionSQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74AD71D1994CB00688F98 /* QuestionSQLite.m */; };
-		84D74ADA1D1994E000688F98 /* Questions.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 84D74AD91D1994E000688F98 /* Questions.sqlite */; };
+		84D74ADA1D1994E000688F98 /* database.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 84D74AD91D1994E000688F98 /* database.sqlite */; };
 		84D74AE01D19A35600688F98 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74ADF1D19A35600688F98 /* QuestionViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -199,7 +199,7 @@
 		84D74ACF1D19949700688F98 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		84D74AD61D1994CB00688F98 /* QuestionSQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionSQLite.h; sourceTree = "<group>"; };
 		84D74AD71D1994CB00688F98 /* QuestionSQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionSQLite.m; sourceTree = "<group>"; };
-		84D74AD91D1994E000688F98 /* Questions.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Questions.sqlite; sourceTree = "<group>"; };
+		84D74AD91D1994E000688F98 /* database.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sqlite; sourceTree = "<group>"; };
 		84D74ADE1D19A35600688F98 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionViewController.h; path = ViewController/QuestionViewController.h; sourceTree = "<group>"; };
 		84D74ADF1D19A35600688F98 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionViewController.m; path = ViewController/QuestionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -468,7 +468,7 @@
 		84D74AD51D1994A600688F98 /* ModelSQLite */ = {
 			isa = PBXGroup;
 			children = (
-				84D74AD91D1994E000688F98 /* Questions.sqlite */,
+				84D74AD91D1994E000688F98 /* database.sqlite */,
 				84D74AD61D1994CB00688F98 /* QuestionSQLite.h */,
 				84D74AD71D1994CB00688F98 /* QuestionSQLite.m */,
 			);
@@ -548,7 +548,7 @@
 				84C173331D05358F005100B0 /* ic_favorites.png in Resources */,
 				844B325D1D04A92700C0D194 /* listS.png in Resources */,
 				844B325E1D04A92700C0D194 /* Logo.Png in Resources */,
-				84D74ADA1D1994E000688F98 /* Questions.sqlite in Resources */,
+				84D74ADA1D1994E000688F98 /* database.sqlite in Resources */,
 				84C173341D05358F005100B0 /* ic_favorites_outline.png in Resources */,
 				84BD37E61CFF37DA004E2EA9 /* Assets.xcassets in Resources */,
 				84C173281D05358F005100B0 /* cast_ic_notification_0.png in Resources */,
