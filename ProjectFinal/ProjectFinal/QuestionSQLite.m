@@ -42,7 +42,7 @@
 */
 
 
-+ (void)loadQuestionsFromDBCompletionBlock:(void (^)(NSArray *))completionHandler:(void(^)(NSArray *contacts))completionHandler;
++ (void)loadQuestionsFromDBCompletionBlock:(void (^)(NSArray *))completionHandler;
 {
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[APPDELEGATE databasePath]];
     [queue inDatabase:^(FMDatabase *db) {
@@ -69,12 +69,11 @@
         //pass result out
         completionHandler(listQuestions);
         
-        
     }];
     
 }
 
-+ (void)addQuestionToDB:(QuestionSQLite *)question error:(NSError *__autoreleasing *)error
++ (void)addQuestionToDB:(QuestionSQLite *)question error:(NSError **)error
 {
     if (question == nil) {
         //ERROR contact is nil, cannot add to database
@@ -100,7 +99,7 @@
 }
 
 
-+ (void)updateQuestionDB:(QuestionSQLite *)question error:(NSError *__autoreleasing *)error
++ (void)updateQuestionDB:(QuestionSQLite *)question error:(NSError **)error
 {
     
     if (question == nil) {
@@ -126,7 +125,7 @@
     
 }
 
-+ (void)deleteQuestionFromDB:(QuestionSQLite *)question error:(NSError *__autoreleasing *)error
++ (void)deleteQuestionFromDB:(QuestionSQLite *)question error:(NSError **)error
 {
     if (question == nil) {
         //ERROR contact is nil, cannot add to database

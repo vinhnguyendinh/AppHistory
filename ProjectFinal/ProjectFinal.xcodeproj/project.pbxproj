@@ -82,6 +82,7 @@
 		84D74AD41D19949700688F98 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74ACF1D19949700688F98 /* FMResultSet.m */; };
 		84D74AD81D1994CB00688F98 /* QuestionSQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74AD71D1994CB00688F98 /* QuestionSQLite.m */; };
 		84D74ADA1D1994E000688F98 /* Questions.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 84D74AD91D1994E000688F98 /* Questions.sqlite */; };
+		84D74AE01D19A35600688F98 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74ADF1D19A35600688F98 /* QuestionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,6 +200,8 @@
 		84D74AD61D1994CB00688F98 /* QuestionSQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionSQLite.h; sourceTree = "<group>"; };
 		84D74AD71D1994CB00688F98 /* QuestionSQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionSQLite.m; sourceTree = "<group>"; };
 		84D74AD91D1994E000688F98 /* Questions.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Questions.sqlite; sourceTree = "<group>"; };
+		84D74ADE1D19A35600688F98 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionViewController.h; path = ViewController/QuestionViewController.h; sourceTree = "<group>"; };
+		84D74ADF1D19A35600688F98 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionViewController.m; path = ViewController/QuestionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +383,8 @@
 				849A86F71D185C260002BE9D /* SettingViewController.m */,
 				844B32B01D04B28200C0D194 /* StartViewController.h */,
 				844B32B11D04B28200C0D194 /* StartViewController.m */,
+				84D74ADE1D19A35600688F98 /* QuestionViewController.h */,
+				84D74ADF1D19A35600688F98 /* QuestionViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -594,6 +599,7 @@
 				844B32A01D04AC2500C0D194 /* UIButton+WebCache.m in Sources */,
 				844B326D1D04AB8B00C0D194 /* BasedTableViewController.m in Sources */,
 				844B32991D04AC2500C0D194 /* SDImageCache.m in Sources */,
+				84D74AE01D19A35600688F98 /* QuestionViewController.m in Sources */,
 				84D74AD01D19949700688F98 /* FMDatabase.m in Sources */,
 				84BD37E41CFF37DA004E2EA9 /* ProjectFinal.xcdatamodeld in Sources */,
 				844B326E1D04AB8B00C0D194 /* BasedViewController.m in Sources */,
