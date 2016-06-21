@@ -43,6 +43,8 @@
 		844B32B21D04B28200C0D194 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B32AF1D04B28200C0D194 /* LeftMenuViewController.m */; };
 		844B32B31D04B28200C0D194 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B32B11D04B28200C0D194 /* StartViewController.m */; };
 		844B32B61D04B2AB00C0D194 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B32B51D04B2AB00C0D194 /* MainViewController.m */; };
+		849A86F81D185C260002BE9D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A86F51D185C260002BE9D /* AboutViewController.m */; };
+		849A86F91D185C260002BE9D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A86F71D185C260002BE9D /* SettingViewController.m */; };
 		84BD37D81CFF37D9004E2EA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD37D71CFF37D9004E2EA9 /* main.m */; };
 		84BD37DB1CFF37D9004E2EA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD37DA1CFF37D9004E2EA9 /* AppDelegate.m */; };
 		84BD37E11CFF37DA004E2EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD37DF1CFF37DA004E2EA9 /* Main.storyboard */; };
@@ -138,6 +140,10 @@
 		844B32B11D04B28200C0D194 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartViewController.m; path = ViewController/StartViewController.m; sourceTree = "<group>"; };
 		844B32B41D04B2AB00C0D194 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewController/MainViewController.h; sourceTree = "<group>"; };
 		844B32B51D04B2AB00C0D194 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewController/MainViewController.m; sourceTree = "<group>"; };
+		849A86F41D185C260002BE9D /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = ViewController/AboutViewController.h; sourceTree = "<group>"; };
+		849A86F51D185C260002BE9D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = ViewController/AboutViewController.m; sourceTree = "<group>"; };
+		849A86F61D185C260002BE9D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ViewController/SettingViewController.h; sourceTree = "<group>"; };
+		849A86F71D185C260002BE9D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ViewController/SettingViewController.m; sourceTree = "<group>"; };
 		84BD37D31CFF37D9004E2EA9 /* ProjectFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD37D71CFF37D9004E2EA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84BD37D91CFF37D9004E2EA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -338,12 +344,16 @@
 		84BD37F31CFF3D57004E2EA9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				849A86F41D185C260002BE9D /* AboutViewController.h */,
+				849A86F51D185C260002BE9D /* AboutViewController.m */,
 				844B32AE1D04B28200C0D194 /* LeftMenuViewController.h */,
 				844B32AF1D04B28200C0D194 /* LeftMenuViewController.m */,
-				844B32B01D04B28200C0D194 /* StartViewController.h */,
-				844B32B11D04B28200C0D194 /* StartViewController.m */,
 				844B32B41D04B2AB00C0D194 /* MainViewController.h */,
 				844B32B51D04B2AB00C0D194 /* MainViewController.m */,
+				849A86F61D185C260002BE9D /* SettingViewController.h */,
+				849A86F71D185C260002BE9D /* SettingViewController.m */,
+				844B32B01D04B28200C0D194 /* StartViewController.h */,
+				844B32B11D04B28200C0D194 /* StartViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -516,6 +526,7 @@
 				844B32B21D04B28200C0D194 /* LeftMenuViewController.m in Sources */,
 				844B329C1D04AC2500C0D194 /* SDWebImageDownloader.m in Sources */,
 				844B32971D04AC2500C0D194 /* MKAnnotationView+WebCache.m in Sources */,
+				849A86F81D185C260002BE9D /* AboutViewController.m in Sources */,
 				844B329A1D04AC2500C0D194 /* SDWebImageCompat.m in Sources */,
 				844B32B61D04B2AB00C0D194 /* MainViewController.m in Sources */,
 				844B329F1D04AC2500C0D194 /* SDWebImagePrefetcher.m in Sources */,
@@ -534,6 +545,7 @@
 				844B32A41D04AC2500C0D194 /* UIImageView+WebCache.m in Sources */,
 				844B32A31D04AC2500C0D194 /* UIImage+WebP.m in Sources */,
 				844B32A91D04AE8100C0D194 /* StaticData.m in Sources */,
+				849A86F91D185C260002BE9D /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

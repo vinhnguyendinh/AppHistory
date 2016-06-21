@@ -10,4 +10,7 @@
 
 @interface LeftMenuViewController : BasedTableViewController
 
+@property NSInteger previousRow;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+
 @end
