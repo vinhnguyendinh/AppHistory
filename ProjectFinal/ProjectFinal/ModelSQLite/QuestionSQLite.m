@@ -45,6 +45,7 @@
 + (void)loadQuestionsFromDBCompletionBlock:(void (^)(NSArray *))completionHandler;
 {
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[APPDELEGATE databasePath]];
+    
     [queue inDatabase:^(FMDatabase *db) {
         FMResultSet *rs = [db executeQuery:@"SELECT * FROM Question;"];
         
@@ -85,13 +86,12 @@
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[APPDELEGATE databasePath]];
     
     [queue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:@"INSERT INTO Question(contentQuestion, A, B, C, D) VALUES(?, ?, ?, ?, ?) ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD];
+        BOOL result = [db executeUpdate:@"INSERT INTO Question (contentQuestion, A, B, C, D) VALUES (?, ?, ?, ?, ?) ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD];
         
         if (!result) {
             //FAIL
             //get error out
             *error = [db lastError];
-            
         }
         
     }];

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
 #import "AppDelegate.h"
+#import "sqlite3.h"
 
 @interface QuestionSQLite : NSObject
 

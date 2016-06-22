@@ -223,10 +223,10 @@
 		844B32181D04A2FF00C0D194 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				84D74AC21D19946A00688F98 /* libsqlite3.tbd */,
 				844B32161D04A2F600C0D194 /* AVFoundation.framework */,
 				844B32141D04A2EF00C0D194 /* CoreGraphics.framework */,
 				844B32121D04A2E100C0D194 /* Foundation.framework */,
+				84D74AC21D19946A00688F98 /* libsqlite3.tbd */,
 				844B32101D04A26A00C0D194 /* UIKit.framework */,
 			);
 			name = Framework;
@@ -335,13 +335,13 @@
 		84BD37D51CFF37D9004E2EA9 /* ProjectFinal */ = {
 			isa = PBXGroup;
 			children = (
-				84D74AD51D1994A600688F98 /* ModelSQLite */,
+				84C6FA3D1D014A90002B0DB8 /* BaseViewController */,
 				844B32181D04A2FF00C0D194 /* Framework */,
 				84BD37FC1CFF48C9004E2EA9 /* Libs */,
-				84C6FA3D1D014A90002B0DB8 /* BaseViewController */,
-				84BD37F31CFF3D57004E2EA9 /* ViewController */,
+				84D74AD51D1994A600688F98 /* ModelSQLite */,
 				84BD37F21CFF3BA4004E2EA9 /* Resources */,
 				84BD37D61CFF37D9004E2EA9 /* Supporting Files */,
+				84BD37F31CFF3D57004E2EA9 /* ViewController */,
 			);
 			path = ProjectFinal;
 			sourceTree = "<group>";
@@ -379,12 +379,12 @@
 				844B32AF1D04B28200C0D194 /* LeftMenuViewController.m */,
 				844B32B41D04B2AB00C0D194 /* MainViewController.h */,
 				844B32B51D04B2AB00C0D194 /* MainViewController.m */,
+				84D74ADE1D19A35600688F98 /* QuestionViewController.h */,
+				84D74ADF1D19A35600688F98 /* QuestionViewController.m */,
 				849A86F61D185C260002BE9D /* SettingViewController.h */,
 				849A86F71D185C260002BE9D /* SettingViewController.m */,
 				844B32B01D04B28200C0D194 /* StartViewController.h */,
 				844B32B11D04B28200C0D194 /* StartViewController.m */,
-				84D74ADE1D19A35600688F98 /* QuestionViewController.h */,
-				84D74ADF1D19A35600688F98 /* QuestionViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -734,6 +734,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.VinhNguyen.ProjectFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -749,6 +750,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.VinhNguyen.ProjectFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

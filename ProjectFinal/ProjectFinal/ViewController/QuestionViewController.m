@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    NSLog(@"%@", [APPDELEGATE databasePath]);
     [self assignBarItems];
     
     [self reloadDataWillReloadTableView:YES];
@@ -30,14 +30,12 @@
 {
     UIBarButtonItem *barItem = [[UIBarButtonItem alloc]initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(addItemDidTap:)];
     
-    //    self.navigationItem.rightBarButtonItem = barItem;
+    self.navigationItem.rightBarButtonItem = barItem;
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem, barItem];
 }
 
 - (void)addItemDidTap:(id)sender;
 {
-    NSLog(@"addItemDidTap");
-    
     QuestionSQLite *newQuestion = [[QuestionSQLite alloc]initWithId:-1 andQues:@"Tên của bố bạn là gì ?" andAnsA:@"Nguyễn Văn A" andAnsB:@"Nguyễn Văn B"  andAnsC:@"Nguyễn Văn C"  andAnsD:@"Nguyễn Văn D"];
     
     NSError *error = nil;
@@ -48,7 +46,7 @@
     }
     else {
         // ADD SUCCESS
-        
+       
         // insert row with animation
         [_tblQuestions beginUpdates];
         
