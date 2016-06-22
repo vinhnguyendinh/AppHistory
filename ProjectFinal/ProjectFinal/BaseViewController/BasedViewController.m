@@ -54,7 +54,8 @@
     
     // hide navigationBar
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
-    
+    [self.navigationController.toolbar setHidden: YES];
+
     NSLog(@"--> GO TO VIEW: %@ ID: %@", [self.class description], self.restorationIdentifier);
     //NSString *keyScreen = [self.class description];
     [self customNavigationBar];
