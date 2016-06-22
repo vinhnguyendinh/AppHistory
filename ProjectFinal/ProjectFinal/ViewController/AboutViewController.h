@@ -12,4 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
+@property (strong, nonatomic) IBOutlet UIButton *btbBackAbout;
+- (IBAction)btnBack:(id)sender;
+
+
+
 @end

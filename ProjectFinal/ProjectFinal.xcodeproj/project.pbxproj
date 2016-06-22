@@ -73,6 +73,7 @@
 		84C1733E1D05358F005100B0 /* powered_by_google_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C173241D05358F005100B0 /* powered_by_google_dark.png */; };
 		84C1733F1D05358F005100B0 /* powered_by_google_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C173251D05358F005100B0 /* powered_by_google_light.png */; };
 		84C173401D05358F005100B0 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C173261D05358F005100B0 /* splash.png */; };
+		84C6A8871D1A958D00188FA8 /* ExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6A8861D1A958D00188FA8 /* ExamViewController.m */; };
 		84C6FA3C1D01485D002B0DB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C6FA3A1D01485D002B0DB8 /* LaunchScreen.storyboard */; };
 		84D74AC31D19946A00688F98 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D74AC21D19946A00688F98 /* libsqlite3.tbd */; };
 		84D74AD01D19949700688F98 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74AC61D19949700688F98 /* FMDatabase.m */; };
@@ -184,6 +185,8 @@
 		84C173241D05358F005100B0 /* powered_by_google_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_google_dark.png; sourceTree = "<group>"; };
 		84C173251D05358F005100B0 /* powered_by_google_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_google_light.png; sourceTree = "<group>"; };
 		84C173261D05358F005100B0 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		84C6A8851D1A958D00188FA8 /* ExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExamViewController.h; path = ViewController/ExamViewController.h; sourceTree = "<group>"; };
+		84C6A8861D1A958D00188FA8 /* ExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExamViewController.m; path = ViewController/ExamViewController.m; sourceTree = "<group>"; };
 		84C6FA3B1D01485D002B0DB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ProjectFinal/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84D74AC21D19946A00688F98 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		84D74AC51D19949700688F98 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -375,6 +378,8 @@
 			children = (
 				849A86F41D185C260002BE9D /* AboutViewController.h */,
 				849A86F51D185C260002BE9D /* AboutViewController.m */,
+				84C6A8851D1A958D00188FA8 /* ExamViewController.h */,
+				84C6A8861D1A958D00188FA8 /* ExamViewController.m */,
 				844B32AE1D04B28200C0D194 /* LeftMenuViewController.h */,
 				844B32AF1D04B28200C0D194 /* LeftMenuViewController.m */,
 				844B32B41D04B2AB00C0D194 /* MainViewController.h */,
@@ -590,6 +595,7 @@
 				844B32971D04AC2500C0D194 /* MKAnnotationView+WebCache.m in Sources */,
 				849A86F81D185C260002BE9D /* AboutViewController.m in Sources */,
 				844B329A1D04AC2500C0D194 /* SDWebImageCompat.m in Sources */,
+				84C6A8871D1A958D00188FA8 /* ExamViewController.m in Sources */,
 				844B32B61D04B2AB00C0D194 /* MainViewController.m in Sources */,
 				844B329F1D04AC2500C0D194 /* SDWebImagePrefetcher.m in Sources */,
 				844B32A21D04AC2500C0D194 /* UIImage+MultiFormat.m in Sources */,

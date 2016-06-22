@@ -10,19 +10,23 @@
 
 @interface SettingViewController : BasedTableViewController <UIAlertViewDelegate>
 
-- (IBAction)btnThemeColorClicked:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnThemeColor;
+//- (IBAction)btnThemeColorClicked:(id)sender;
+//@property (weak, nonatomic) IBOutlet UIButton *btnThemeColor;
+//
+//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *btnResetData;
+//- (IBAction)btnResetDataClicked:(id)sender;
+//
+//@property (weak, nonatomic) IBOutlet UIButton *btnAbout;
+//- (IBAction)btnAboutClicked:(id)sender;
+//
+//@property (weak, nonatomic) IBOutlet UIButton *btnRemoveAds;
+//- (IBAction)btnRemoveAdsClicked:(id)sender;
+//
+//@property (weak, nonatomic) IBOutlet UIButton *btnReload;
+//- (IBAction)btnReloadClicekd:(id)sender;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *btnResetData;
-- (IBAction)btnResetDataClicked:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *btnAbout;
-- (IBAction)btnAboutClicked:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UIButton *btnRemoveAds;
-- (IBAction)btnRemoveAdsClicked:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UIButton *btnReload;
-- (IBAction)btnReloadClicekd:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btbBack;
+- (IBAction)clickBack:(id)sender;
 
 @end

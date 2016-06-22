@@ -41,16 +41,22 @@
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return NO;
 }
+
 - (void)setTitle:(NSString *)title
 {
     [super setTitle:@""];
     self.strTitle = title;
 }
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // hide navigationBar
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    
     NSLog(@"--> GO TO VIEW: %@ ID: %@", [self.class description], self.restorationIdentifier);
-    NSString *keyScreen = [self.class description];
+    //NSString *keyScreen = [self.class description];
     [self customNavigationBar];
     [self localizableViewControl];
     if(!self.isDisablePanGeuture){

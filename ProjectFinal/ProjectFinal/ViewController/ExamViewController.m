@@ -1,27 +1,25 @@
 //
-//  MainViewController.m
+//  ExamViewController.m
 //  ProjectFinal
 //
-//  Created by Vinh Nguyen Dinh on 6/6/16.
+//  Created by Nguyen Duc Tai on 6/22/16.
 //  Copyright © 2016 VinhNguyen. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "ExamViewController.h"
 
-@class SWRevealViewController;
-
-@interface MainViewController ()
+@interface ExamViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation ExamViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
-    self.lblTitle.text = @"Ôn tập";
+    self.lblTitle.text = @"Đề Thi";
+     [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,9 +31,5 @@
 {
     [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
 }
-//
-//- (void)btnEditClicked:(id)sender
-//{ 
-//}
 
 @end

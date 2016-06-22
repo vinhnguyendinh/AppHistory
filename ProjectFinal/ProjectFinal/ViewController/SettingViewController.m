@@ -16,6 +16,14 @@
 @end
 
 @implementation SettingViewController
+
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    
+    self.lblTitle.text = @"Cài đặt";
+    [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
+
+}
 /*
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -104,4 +112,9 @@
     }
 }
 */
+
+- (void)backAction:(id)sender
+{
+    [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
+}
 @end

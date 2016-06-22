@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lblTitle.text = @"Menu";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -37,10 +38,10 @@
         lblTitle.text = @"Luyện Đề Thi";
     } else if (indexPath.row == 2) {
         img.image = [UIImage imageNamed:@"ic_setting.png"];
-        lblTitle.text = LocalizedString(@"Setting");
+        lblTitle.text = @"Setting";
     } else if (indexPath.row == 3) {
         img.image = [UIImage imageNamed:@"ic_about.png"];
-        lblTitle.text = LocalizedString(@"About");
+        lblTitle.text = @"About";
     }
     return cell;
 }
