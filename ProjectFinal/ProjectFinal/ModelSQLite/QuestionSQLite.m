@@ -10,7 +10,7 @@
 
 @implementation QuestionSQLite
 
-- (instancetype)initWithId:(NSInteger)anId andQues:(NSString *)ques andAnsA:(NSString *)a andAnsB:(NSString *)b andAnsC:(NSString *)c andAnsD:(NSString *)d
+- (instancetype)initWithId:(NSInteger)anId andQues:(NSString *)ques andAnsA:(NSString *)a andAnsB:(NSString *)b andAnsC:(NSString *)c andAnsD:(NSString *)d andResult:(NSString *)result
 {
     self = [super init];
     
@@ -21,6 +21,7 @@
         _answerB = b;
         _answerC = c;
         _answerD = d;
+        _result = result;
     }
     
     return self;
@@ -31,12 +32,13 @@
 /*
 
  CREATE TABLE "Question" (
-	`Id`	INTEGER PRIMARY KEY AUTOINCREMENT,
-	`contentQuestion`	TEXT,
-	`A`	TEXT,
-	`B`	TEXT,
-	`C`	TEXT,
-	`D`	TEXT
+	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`contentQuestion`	TEXT NOT NULL,
+	`A`	TEXT NOT NULL,
+	`B`	TEXT NOT NULL,
+	`C`	TEXT NOT NULL,
+	`D`	TEXT NOT NULL,
+	`Result`	TEXT NOT NULL
  )
  
 */
@@ -58,8 +60,9 @@
             NSString *ansB = [rs stringForColumn:@"B"];
             NSString *ansC = [rs stringForColumn:@"C"];
             NSString *ansD = [rs stringForColumn:@"D"];
+            NSString *res = [rs stringForColumn:@"Result"];
             
-            QuestionSQLite *ques = [[QuestionSQLite alloc]initWithId:quesId andQues:question andAnsA:ansA andAnsB:ansB andAnsC:ansC andAnsD:ansD];
+            QuestionSQLite *ques = [[QuestionSQLite alloc]initWithId:quesId andQues:question andAnsA:ansA andAnsB:ansB andAnsC:ansC andAnsD:ansD andResult:res];
             
             [listQuestions addObject:ques];
             
@@ -86,7 +89,7 @@
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[APPDELEGATE databasePath]];
     
     [queue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:@"INSERT INTO Question (contentQuestion, A, B, C, D) VALUES (?, ?, ?, ?, ?) ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD];
+        BOOL result = [db executeUpdate:@"INSERT INTO Question (contentQuestion, A, B, C, D, Result) VALUES (?, ?, ?, ?, ?, ?) ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD, question.result];
         
         if (!result) {
             //FAIL
@@ -111,7 +114,7 @@
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[APPDELEGATE databasePath]];
     
     [queue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:@"UPDATE Question SET contentQuestion = ?, A = ?, B = ?, C = ?, D = ? WHERE Id = ? ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD, [NSNumber numberWithInteger:question.questionId]];
+        BOOL result = [db executeUpdate:@"UPDATE Question SET contentQuestion = ?, A = ?, B = ?, C = ?, D = ?, Result = ? WHERE Id = ? ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD, [NSNumber numberWithInteger:question.questionId]];
         
         if (!result) {
             //FAIL

@@ -36,7 +36,7 @@
 
 - (void)addItemDidTap:(id)sender;
 {
-    QuestionSQLite *newQuestion = [[QuestionSQLite alloc]initWithId:-1 andQues:@"Tên của bố bạn là gì ?" andAnsA:@"Nguyễn Văn A" andAnsB:@"Nguyễn Văn B"  andAnsC:@"Nguyễn Văn C"  andAnsD:@"Nguyễn Văn D"];
+    QuestionSQLite *newQuestion = [[QuestionSQLite alloc]initWithId:-1 andQues:@"Tên của bố bạn là gì ?" andAnsA:@"Nguyễn Văn A" andAnsB:@"Nguyễn Văn B"  andAnsC:@"Nguyễn Văn C"  andAnsD:@"Nguyễn Văn D" andResult:@"D"];
     
     NSError *error = nil;
     [QuestionSQLite addQuestionToDB:newQuestion error:&error];

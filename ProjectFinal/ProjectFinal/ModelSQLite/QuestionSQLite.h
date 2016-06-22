@@ -19,8 +19,9 @@
 @property(nonatomic, copy)      NSString   *  answerB;
 @property(nonatomic, copy)      NSString   *  answerC;
 @property(nonatomic, copy)      NSString   *  answerD;
+@property(nonatomic, copy)      NSString   *  result;
 
-- (instancetype)initWithId:(NSInteger)anId andQues:(NSString*)ques andAnsA:(NSString*)a andAnsB:(NSString*)b andAnsC:(NSString*)c andAnsD:(NSString*)d;
+- (instancetype)initWithId:(NSInteger)anId andQues:(NSString*)ques andAnsA:(NSString*)a andAnsB:(NSString*)b andAnsC:(NSString*)c andAnsD:(NSString*)d andResult:(NSString *)result;
 
 + (void)loadQuestionsFromDBCompletionBlock:(void(^)(NSArray *questions))completionHandler;
 
