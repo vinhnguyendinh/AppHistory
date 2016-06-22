@@ -114,7 +114,7 @@
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[APPDELEGATE databasePath]];
     
     [queue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:@"UPDATE Question SET contentQuestion = ?, A = ?, B = ?, C = ?, D = ?, Result = ? WHERE Id = ? ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD, [NSNumber numberWithInteger:question.questionId]];
+        BOOL result = [db executeUpdate:@"UPDATE Question SET contentQuestion = ?, A = ?, B = ?, C = ?, D = ? WHERE Id = ? ;", question.contentQuestion, question.answerA, question.answerB, question.answerC, question.answerD, question.result, [NSNumber numberWithInteger:question.questionId]];
         
         if (!result) {
             //FAIL

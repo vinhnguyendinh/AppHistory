@@ -13,6 +13,13 @@
 
 @property(nonatomic, strong)    NSMutableArray *listQuestions;
 
+@property UITextField *lblQuestion;
+@property UITextField *lblAnsA;
+@property UITextField *lblAnsB;
+@property UITextField *lblAnsC;
+@property UITextField *lblAnsD;
+@property UITextField *lblRes;
+
 @end
 
 @implementation QuestionViewController
@@ -34,9 +41,9 @@
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem, barItem];
 }
 
-- (void)addItemDidTap:(id)sender;
+- (void)addItemDidTap:(id)sender ;
 {
-    QuestionSQLite *newQuestion = [[QuestionSQLite alloc]initWithId:-1 andQues:@"Tên của bố bạn là gì ?" andAnsA:@"Nguyễn Văn A" andAnsB:@"Nguyễn Văn B"  andAnsC:@"Nguyễn Văn C"  andAnsD:@"Nguyễn Văn D" andResult:@"D"];
+    QuestionSQLite *newQuestion = [[QuestionSQLite alloc]initWithId:-1 andQues:_lblQuestion.text andAnsA:_lblAnsA.text andAnsB:_lblAnsB.text  andAnsC:_lblAnsC.text  andAnsD:_lblAnsD.text andResult:_lblRes.text];
     
     NSError *error = nil;
     [QuestionSQLite addQuestionToDB:newQuestion error:&error];
@@ -91,7 +98,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _listQuestions.count;
+    //return _listQuestions.count;
+    return 1;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -110,19 +118,15 @@
     }
     
     //get out subview
-    UILabel *lblQuestion =  [cell.contentView viewWithTag:100];
-    UILabel *lblAnsA =   [cell.contentView viewWithTag:101];
-    UILabel *lblAnsB  = [cell.contentView viewWithTag:102];
-    UILabel *lblAnsC  = [cell.contentView viewWithTag:103];
-    UILabel *lblAnsD  = [cell.contentView viewWithTag:104];
+    _lblQuestion =  [cell.contentView viewWithTag:101];
+    _lblAnsA =   [cell.contentView viewWithTag:102];
+    _lblAnsB  = [cell.contentView viewWithTag:103];
+    _lblAnsC  = [cell.contentView viewWithTag:104];
+    _lblAnsD  = [cell.contentView viewWithTag:105];
+    _lblRes = [cell.contentView viewWithTag:106];
     
-    QuestionSQLite *ques = [self.listQuestions objectAtIndex:indexPath.row];
+    //QuestionSQLite *ques = [self.listQuestions objectAtIndex:indexPath.row];
     
-    lblQuestion.text = ques.contentQuestion;
-    lblAnsA.text = ques.answerA;
-    lblAnsB.text = ques.answerB;
-    lblAnsC.text = ques.answerC;
-    lblAnsD.text = ques.answerD;
     
     return cell;
 }

@@ -45,6 +45,9 @@
 		844B32B61D04B2AB00C0D194 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B32B51D04B2AB00C0D194 /* MainViewController.m */; };
 		849A86F81D185C260002BE9D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A86F51D185C260002BE9D /* AboutViewController.m */; };
 		849A86F91D185C260002BE9D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A86F71D185C260002BE9D /* SettingViewController.m */; };
+		84A535821D1AC528009BF148 /* Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5357D1D1AC528009BF148 /* Answers.m */; };
+		84A535831D1AC528009BF148 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5357F1D1AC528009BF148 /* Level.m */; };
+		84A535841D1AC528009BF148 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A535811D1AC528009BF148 /* Question.m */; };
 		84BD37D81CFF37D9004E2EA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD37D71CFF37D9004E2EA9 /* main.m */; };
 		84BD37DB1CFF37D9004E2EA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD37DA1CFF37D9004E2EA9 /* AppDelegate.m */; };
 		84BD37E11CFF37DA004E2EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD37DF1CFF37DA004E2EA9 /* Main.storyboard */; };
@@ -154,6 +157,12 @@
 		849A86F51D185C260002BE9D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = ViewController/AboutViewController.m; sourceTree = "<group>"; };
 		849A86F61D185C260002BE9D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ViewController/SettingViewController.h; sourceTree = "<group>"; };
 		849A86F71D185C260002BE9D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ViewController/SettingViewController.m; sourceTree = "<group>"; };
+		84A5357C1D1AC528009BF148 /* Answers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = Question/Answers.h; sourceTree = "<group>"; };
+		84A5357D1D1AC528009BF148 /* Answers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Answers.m; path = Question/Answers.m; sourceTree = "<group>"; };
+		84A5357E1D1AC528009BF148 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Question/Level.h; sourceTree = "<group>"; };
+		84A5357F1D1AC528009BF148 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Question/Level.m; sourceTree = "<group>"; };
+		84A535801D1AC528009BF148 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Question/Question.h; sourceTree = "<group>"; };
+		84A535811D1AC528009BF148 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = Question/Question.m; sourceTree = "<group>"; };
 		84BD37D31CFF37D9004E2EA9 /* ProjectFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD37D71CFF37D9004E2EA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84BD37D91CFF37D9004E2EA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -319,6 +328,19 @@
 			path = Libs/SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		84A5357B1D1AC511009BF148 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				84A5357C1D1AC528009BF148 /* Answers.h */,
+				84A5357D1D1AC528009BF148 /* Answers.m */,
+				84A5357E1D1AC528009BF148 /* Level.h */,
+				84A5357F1D1AC528009BF148 /* Level.m */,
+				84A535801D1AC528009BF148 /* Question.h */,
+				84A535811D1AC528009BF148 /* Question.m */,
+			);
+			name = Question;
+			sourceTree = "<group>";
+		};
 		84BD37CA1CFF37D9004E2EA9 = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +360,7 @@
 		84BD37D51CFF37D9004E2EA9 /* ProjectFinal */ = {
 			isa = PBXGroup;
 			children = (
+				84A5357B1D1AC511009BF148 /* Question */,
 				84C6FA3D1D014A90002B0DB8 /* BaseViewController */,
 				844B32181D04A2FF00C0D194 /* Framework */,
 				84BD37FC1CFF48C9004E2EA9 /* Libs */,
@@ -592,8 +615,11 @@
 				844B32B21D04B28200C0D194 /* LeftMenuViewController.m in Sources */,
 				844B329C1D04AC2500C0D194 /* SDWebImageDownloader.m in Sources */,
 				84D74AD41D19949700688F98 /* FMResultSet.m in Sources */,
+				84A535841D1AC528009BF148 /* Question.m in Sources */,
+				84A535831D1AC528009BF148 /* Level.m in Sources */,
 				844B32971D04AC2500C0D194 /* MKAnnotationView+WebCache.m in Sources */,
 				849A86F81D185C260002BE9D /* AboutViewController.m in Sources */,
+				84A535821D1AC528009BF148 /* Answers.m in Sources */,
 				844B329A1D04AC2500C0D194 /* SDWebImageCompat.m in Sources */,
 				84C6A8871D1A958D00188FA8 /* ExamViewController.m in Sources */,
 				844B32B61D04B2AB00C0D194 /* MainViewController.m in Sources */,

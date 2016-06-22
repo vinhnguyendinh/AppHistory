@@ -26,7 +26,5 @@
 //- (IBAction)btnReloadClicekd:(id)sender;
 
 
-@property (strong, nonatomic) IBOutlet UIButton *btbBack;
-- (IBAction)clickBack:(id)sender;
 
 @end
