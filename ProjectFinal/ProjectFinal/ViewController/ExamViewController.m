@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.lblTitle.text = @"Đề Thi";
+    self.strTitle = @"Đề Thi";
      [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
 }
 

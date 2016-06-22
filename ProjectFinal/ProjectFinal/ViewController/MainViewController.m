@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     
     [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
-    self.lblTitle.text = @"Ôn tập";
+    self.strTitle = @"Ôn tập";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,9 +33,6 @@
 {
     [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
 }
-//
-//- (void)btnEditClicked:(id)sender
-//{ 
-//}
+
 
 @end

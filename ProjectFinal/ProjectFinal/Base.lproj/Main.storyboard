@@ -105,9 +105,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R9B-kV-ps4">
-                                <rect key="frame" x="0.0" y="127" width="600" height="473"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9B-kV-ps4">
+                                <rect key="frame" x="0.0" y="127" width="600" height="500"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="Hp2-CC-VUu"/>
+                                </constraints>
                             </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coN-5a-A3e">
                                 <rect key="frame" x="0.0" y="64" width="600" height="64"/>
@@ -135,7 +138,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="coN-5a-A3e" firstAttribute="top" secondItem="eyf-bp-mY3" secondAttribute="bottom" id="4hN-vE-5NG"/>
+                            <constraint firstItem="R9B-kV-ps4" firstAttribute="leading" secondItem="aUP-Iq-dOt" secondAttribute="leading" id="5N9-at-vXQ"/>
+                            <constraint firstAttribute="trailing" secondItem="R9B-kV-ps4" secondAttribute="trailing" id="YWI-SD-y5w"/>
                             <constraint firstItem="coN-5a-A3e" firstAttribute="leading" secondItem="aUP-Iq-dOt" secondAttribute="leading" id="au9-BO-tct"/>
+                            <constraint firstItem="R9B-kV-ps4" firstAttribute="top" secondItem="eyf-bp-mY3" secondAttribute="bottom" constant="63" id="eIe-4F-K03"/>
                             <constraint firstAttribute="trailing" secondItem="coN-5a-A3e" secondAttribute="trailing" id="qGT-5w-18s"/>
                         </constraints>
                     </view>

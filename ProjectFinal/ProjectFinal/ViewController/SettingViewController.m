@@ -20,7 +20,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    self.lblTitle.text = @"Cài đặt";
+    self.strTitle = @"Cài đặt";
     [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
 
 }
