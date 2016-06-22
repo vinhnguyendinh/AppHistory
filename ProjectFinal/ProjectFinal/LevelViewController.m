@@ -18,8 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //[[self navigationController] setNavigationBarHidden:NO animated:YES];
-    [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
+    //UIBarButtonItem* barbutton= [[UIBarButtonItem alloc] initWithCustomView:moveLeft];
+    
+    //self.navigationItem.rightBarButtonItem = barbutton;
 }
 
 - (void)didReceiveMemoryWarning {

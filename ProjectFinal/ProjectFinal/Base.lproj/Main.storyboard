@@ -561,17 +561,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8w-6X-Att">
-                                                    <rect key="frame" x="208" y="8" width="142" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8w-6X-Att">
+                                                    <rect key="frame" x="56" y="13" width="142" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="K8w-6X-Att" firstAttribute="leading" secondItem="91Y-ua-TPQ" secondAttribute="leadingMargin" constant="48" id="URc-2b-dWe"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="K8w-6X-Att" secondAttribute="bottom" constant="5" id="jLj-aq-gna"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="K8w-6X-Att" secondAttribute="trailing" constant="394" id="sk2-mP-wlV"/>
+                                                <constraint firstItem="K8w-6X-Att" firstAttribute="top" secondItem="91Y-ua-TPQ" secondAttribute="topMargin" constant="5" id="uPd-iy-5xA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.30206585570469796" green="0.45448825503355705" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="l0B-eg-pyq" id="s51-0F-UDk"/>
+                                    <outlet property="delegate" destination="l0B-eg-pyq" id="aCk-mv-QZ3"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
