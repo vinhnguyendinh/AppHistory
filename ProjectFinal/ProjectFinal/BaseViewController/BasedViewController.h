@@ -12,7 +12,7 @@
 #define kTagCustomNavi 10001
 
 
-@interface BasedViewController : UIViewController <UIActionSheetDelegate>
+@interface BasedViewController : UIViewController <UIActionSheetDelegate, SWRevealViewControllerDelegate>
 @property UIToolbar *toolbarView;
 @property UIView *backgroundView;
 @property (nonatomic, assign) BOOL isDisablePanGeuture;

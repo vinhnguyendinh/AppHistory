@@ -14,4 +14,6 @@
 @property NSString *contentAnswer;
 @property BOOL isChoos;
 
+- (instancetype)initWithNameAns:(NSString*)name andcontAns:(NSString*)contAns;
+
 @end

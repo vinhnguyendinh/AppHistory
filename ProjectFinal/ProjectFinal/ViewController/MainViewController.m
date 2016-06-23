@@ -7,13 +7,20 @@
 //
 
 #import "MainViewController.h"
+#import "QuestionLib.h"
 #import "CusCell.h"
 #import "LevelViewController.h"
+
 
 @class SWRevealViewController;
 //@class UITableViewCell;
 
 @interface MainViewController ()
+
+@property(nonatomic, strong)    NSMutableArray *listQuestions;
+@property(nonatomic, strong)    NSMutableArray *listLevels;
+@property(nonatomic, strong)    NSMutableArray *listChapters;
+@property       NSInteger numberChapter;
 
 @end
 
@@ -24,6 +31,21 @@
     // Do any additional setup after loading the view.
     
     self.strTitle = @"Ôn tập";
+    
+    [self loadDataToListQuestion];
+    _numberChapter = 8;
+    
+    // Init MutableArray
+    _listLevels = [[NSMutableArray alloc]init];
+    _listChapters = [[NSMutableArray alloc]init];
+    
+    // Insert to Lists
+    [self insertLevelToListLevel];
+   // [self insertChapterToListChapter];
+    
+    NSLog(@"%lu", (unsigned long)self.listLevels.count);
+   // NSLog(@"%lu", (unsigned long)self.listChapters.count);
+
     [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
     
 }
@@ -33,15 +55,70 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (void)backAction:(id)sender
 {
     [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
+}
+
+
+- (void)loadDataToListQuestion
+{
+    [Question loadQuestionsFromDBCompletionBlock:^(NSArray *questions) {
+        
+        self.listQuestions = [[NSMutableArray alloc]initWithArray:questions];
+        
+    }];
+    
+}
+
+- (Level *)insertListQuestionsToLevelFrom:(NSInteger)start to:(NSInteger)end
+{
+    Level *level = [[Level alloc]initWithNumbQues:10 andMinScoreToPass:6 andStartId:start andEndId:end];
+    
+    for(long i = start; i < end; i++) {
+        Question *ques = [_listQuestions objectAtIndex:i];
+        [level.listQuestions addObject:ques];
+    }
+    
+    return level;
+}
+
+- (void)insertLevelToListLevel
+{
+    for(int i = 0; i < _listQuestions.count; i+=10) {
+        Level *level = [self insertListQuestionsToLevelFrom:i to:i+10];
+        [_listLevels addObject:level];
+    }
+    
+}
+
+- (Chapter *)insertListLevelsToChaterFrom:(NSInteger)start to:(NSInteger)end
+{
+    Chapter *chapter = [[Chapter alloc]initWithNumbLevel:3];
+    
+    for(long i = start; i < end; i++) {
+        Level *level = [_listLevels objectAtIndex:i];
+        [chapter.listLevels addObject:level];
+    }
+    
+    return chapter;
+}
+
+- (void)insertChapterToListChapter
+{
+    for(int i = 0; i < _listLevels.count; i+=3) {
+        Chapter *chapter = [self insertListLevelsToChaterFrom:i to:i+3];
+        [_listChapters addObject:chapter];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
+    
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
     return 8;
@@ -67,7 +144,8 @@
 //    return height;
 //    
 //}
-
+    
+    
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     CusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
@@ -113,7 +191,7 @@
     return cell;
 }
 
-- (float) updateCell : (UITableViewCell *)cell
+- (float)updateCell : (UITableViewCell *)cell
 {
     UILabel *lbl = [cell.contentView viewWithTag:101];
     
@@ -128,6 +206,7 @@
     
     return lbl.frame.size.height + 20;
 }
+    
 //push vao cua so level..
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
@@ -135,6 +214,10 @@
     
     [self.navigationController pushViewController:level animated:YES];
     
-    
 }
+
+    
+    
 @end
+
+

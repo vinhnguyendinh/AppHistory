@@ -10,11 +10,15 @@
 
 @interface Question : NSObject
 
-@property NSInteger numberAnswer;
-@property NSInteger idQuestion;
-@property NSString *contentQuestion;
-@property NSArray *answer;
-@property NSString *answerTrue;
+@property                       NSInteger           numberAnswer;
+@property                       NSInteger           idQuestion;
+@property                       NSString       *    contentQuestion;
+@property(nonatomic, strong)    NSMutableArray *    listAnswers;
+@property                       NSString       *    answerTrue;
+@property                       NSInteger           scoreOfQues;
 
-//- (instancetype)initWithNumAns:(NSInteger*)numAns andIdQues:(NSInteger*)idQues andContQues:(NSString*)contQues and
+- (instancetype)initWithNumAns:(NSInteger)numAns andIdQues:(NSInteger)idQues andContQues:(NSString*)contQues;
+
++ (void)loadQuestionsFromDBCompletionBlock:(void(^)(NSArray *questions))completionHandler;
+
 @end

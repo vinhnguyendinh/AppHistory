@@ -76,6 +76,7 @@
 		84C1733E1D05358F005100B0 /* powered_by_google_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C173241D05358F005100B0 /* powered_by_google_dark.png */; };
 		84C1733F1D05358F005100B0 /* powered_by_google_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C173251D05358F005100B0 /* powered_by_google_light.png */; };
 		84C173401D05358F005100B0 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C173261D05358F005100B0 /* splash.png */; };
+		84C6A2E21D1B1AC900564403 /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6A2E11D1B1AC900564403 /* Chapter.m */; };
 		84C6A8871D1A958D00188FA8 /* ExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6A8861D1A958D00188FA8 /* ExamViewController.m */; };
 		84C6FA3C1D01485D002B0DB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C6FA3A1D01485D002B0DB8 /* LaunchScreen.storyboard */; };
 		84D74AC31D19946A00688F98 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D74AC21D19946A00688F98 /* libsqlite3.tbd */; };
@@ -166,6 +167,7 @@
 		84A5357F1D1AC528009BF148 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Question/Level.m; sourceTree = "<group>"; };
 		84A535801D1AC528009BF148 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Question/Question.h; sourceTree = "<group>"; };
 		84A535811D1AC528009BF148 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = Question/Question.m; sourceTree = "<group>"; };
+		84A535851D1ACEE6009BF148 /* QuestionLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QuestionLib.h; path = Question/QuestionLib.h; sourceTree = "<group>"; };
 		84BD37D31CFF37D9004E2EA9 /* ProjectFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD37D71CFF37D9004E2EA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84BD37D91CFF37D9004E2EA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -197,6 +199,8 @@
 		84C173241D05358F005100B0 /* powered_by_google_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_google_dark.png; sourceTree = "<group>"; };
 		84C173251D05358F005100B0 /* powered_by_google_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_google_light.png; sourceTree = "<group>"; };
 		84C173261D05358F005100B0 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		84C6A2E01D1B1AC900564403 /* Chapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chapter.h; path = Question/Chapter.h; sourceTree = "<group>"; };
+		84C6A2E11D1B1AC900564403 /* Chapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chapter.m; path = Question/Chapter.m; sourceTree = "<group>"; };
 		84C6A8851D1A958D00188FA8 /* ExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExamViewController.h; path = ViewController/ExamViewController.h; sourceTree = "<group>"; };
 		84C6A8861D1A958D00188FA8 /* ExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExamViewController.m; path = ViewController/ExamViewController.m; sourceTree = "<group>"; };
 		84C6FA3B1D01485D002B0DB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ProjectFinal/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -337,17 +341,20 @@
 			path = Libs/SWRevealViewController;
 			sourceTree = "<group>";
 		};
-		84A5357B1D1AC511009BF148 /* Question */ = {
+		84A5357B1D1AC511009BF148 /* ModelQuestion */ = {
 			isa = PBXGroup;
 			children = (
 				84A5357C1D1AC528009BF148 /* Answers.h */,
 				84A5357D1D1AC528009BF148 /* Answers.m */,
+				84C6A2E01D1B1AC900564403 /* Chapter.h */,
+				84C6A2E11D1B1AC900564403 /* Chapter.m */,
 				84A5357E1D1AC528009BF148 /* Level.h */,
 				84A5357F1D1AC528009BF148 /* Level.m */,
 				84A535801D1AC528009BF148 /* Question.h */,
 				84A535811D1AC528009BF148 /* Question.m */,
+				84A535851D1ACEE6009BF148 /* QuestionLib.h */,
 			);
-			name = Question;
+			name = ModelQuestion;
 			sourceTree = "<group>";
 		};
 		84BD37CA1CFF37D9004E2EA9 = {
@@ -369,14 +376,14 @@
 		84BD37D51CFF37D9004E2EA9 /* ProjectFinal */ = {
 			isa = PBXGroup;
 			children = (
-				84A5357B1D1AC511009BF148 /* Question */,
-				84C6FA3D1D014A90002B0DB8 /* BaseViewController */,
-				844B32181D04A2FF00C0D194 /* Framework */,
 				84BD37FC1CFF48C9004E2EA9 /* Libs */,
+				844B32181D04A2FF00C0D194 /* Framework */,
+				84C6FA3D1D014A90002B0DB8 /* BaseViewController */,
+				84BD37F31CFF3D57004E2EA9 /* ViewController */,
+				84A5357B1D1AC511009BF148 /* ModelQuestion */,
 				84D74AD51D1994A600688F98 /* ModelSQLite */,
 				84BD37F21CFF3BA4004E2EA9 /* Resources */,
 				84BD37D61CFF37D9004E2EA9 /* Supporting Files */,
-				84BD37F31CFF3D57004E2EA9 /* ViewController */,
 			);
 			path = ProjectFinal;
 			sourceTree = "<group>";
@@ -649,6 +656,7 @@
 				84C6A8871D1A958D00188FA8 /* ExamViewController.m in Sources */,
 				844B32B61D04B2AB00C0D194 /* MainViewController.m in Sources */,
 				844B329F1D04AC2500C0D194 /* SDWebImagePrefetcher.m in Sources */,
+				84C6A2E21D1B1AC900564403 /* Chapter.m in Sources */,
 				844B32A21D04AC2500C0D194 /* UIImage+MultiFormat.m in Sources */,
 				CF5D9DE11D1B14EA00F9A586 /* CellLevel.m in Sources */,
 				844B32A61D04AC2500C0D194 /* SWRevealViewController.m in Sources */,

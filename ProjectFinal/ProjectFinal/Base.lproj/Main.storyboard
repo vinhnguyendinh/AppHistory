@@ -644,7 +644,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="customNavigation" destination="VIz-jW-iT3" id="TaS-98-DkI"/>
+                        <outlet property="customNavigation" destination="VIz-jW-iT3" id="WYe-Sj-r3E"/>
                         <outlet property="lblTitle" destination="WrZ-g7-lr1" id="AuX-Rj-18K"/>
                         <outlet property="tableView" destination="ec9-yb-iYh" id="Opg-0s-rse"/>
                     </connections>

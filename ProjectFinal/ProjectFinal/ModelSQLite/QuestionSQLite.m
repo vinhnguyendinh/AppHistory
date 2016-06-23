@@ -7,6 +7,7 @@
 //
 
 #import "QuestionSQLite.h"
+#import "QuestionLib.h"
 
 @implementation QuestionSQLite
 
@@ -61,6 +62,9 @@
             NSString *ansC = [rs stringForColumn:@"C"];
             NSString *ansD = [rs stringForColumn:@"D"];
             NSString *res = [rs stringForColumn:@"Result"];
+            
+            
+            
             
             QuestionSQLite *ques = [[QuestionSQLite alloc]initWithId:quesId andQues:question andAnsA:ansA andAnsB:ansB andAnsC:ansC andAnsD:ansD andResult:res];
             
