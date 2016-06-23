@@ -88,6 +88,9 @@
 		84D74AE01D19A35600688F98 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D74ADF1D19A35600688F98 /* QuestionViewController.m */; };
 		84E9B7411D1A4A9700776E2A /* database.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 84E9B73E1D1A4A9700776E2A /* database.sqlite */; };
 		84E9B7421D1A4A9700776E2A /* QuestionSQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9B7401D1A4A9700776E2A /* QuestionSQLite.m */; };
+		CF5D9DDE1D1B137100F9A586 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */; };
+		CF5D9DE11D1B14EA00F9A586 /* CellLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */; };
+		CF903CCE1D1ACAF1007E99F9 /* CusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF903CCD1D1ACAF1007E99F9 /* CusCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,6 +221,12 @@
 		84E9B73E1D1A4A9700776E2A /* database.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = database.sqlite; path = ModelSQLite/database.sqlite; sourceTree = "<group>"; };
 		84E9B73F1D1A4A9700776E2A /* QuestionSQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionSQLite.h; path = ModelSQLite/QuestionSQLite.h; sourceTree = "<group>"; };
 		84E9B7401D1A4A9700776E2A /* QuestionSQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionSQLite.m; path = ModelSQLite/QuestionSQLite.m; sourceTree = "<group>"; };
+		CF5D9DDC1D1B137100F9A586 /* LevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelViewController.h; sourceTree = "<group>"; };
+		CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelViewController.m; sourceTree = "<group>"; };
+		CF5D9DDF1D1B14EA00F9A586 /* CellLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellLevel.h; sourceTree = "<group>"; };
+		CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLevel.m; sourceTree = "<group>"; };
+		CF903CCC1D1ACAF1007E99F9 /* CusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusCell.h; sourceTree = "<group>"; };
+		CF903CCD1D1ACAF1007E99F9 /* CusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +391,7 @@
 		84BD37D61CFF37D9004E2EA9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF903CCB1D1ACAAC007E99F9 /* CellCustom */,
 				84BD37D91CFF37D9004E2EA9 /* AppDelegate.h */,
 				84BD37DA1CFF37D9004E2EA9 /* AppDelegate.m */,
 				84BD37E51CFF37DA004E2EA9 /* Assets.xcassets */,
@@ -420,6 +430,8 @@
 				849A86F71D185C260002BE9D /* SettingViewController.m */,
 				844B32B01D04B28200C0D194 /* StartViewController.h */,
 				844B32B11D04B28200C0D194 /* StartViewController.m */,
+				CF5D9DDC1D1B137100F9A586 /* LevelViewController.h */,
+				CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -508,6 +520,17 @@
 				84E9B7401D1A4A9700776E2A /* QuestionSQLite.m */,
 			);
 			name = ModelSQLite;
+			sourceTree = "<group>";
+		};
+		CF903CCB1D1ACAAC007E99F9 /* CellCustom */ = {
+			isa = PBXGroup;
+			children = (
+				CF903CCC1D1ACAF1007E99F9 /* CusCell.h */,
+				CF903CCD1D1ACAF1007E99F9 /* CusCell.m */,
+				CF5D9DDF1D1B14EA00F9A586 /* CellLevel.h */,
+				CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */,
+			);
+			name = CellCustom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -613,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844B329B1D04AC2500C0D194 /* SDWebImageDecoder.m in Sources */,
+				CF903CCE1D1ACAF1007E99F9 /* CusCell.m in Sources */,
 				844B326B1D04AB8B00C0D194 /* BasedCollectionViewController.m in Sources */,
 				844B329D1D04AC2500C0D194 /* SDWebImageDownloaderOperation.m in Sources */,
 				844B32B31D04B28200C0D194 /* StartViewController.m in Sources */,
@@ -620,6 +644,7 @@
 				84BD37DB1CFF37D9004E2EA9 /* AppDelegate.m in Sources */,
 				844B32721D04AC0E00C0D194 /* Utils.m in Sources */,
 				844B32B21D04B28200C0D194 /* LeftMenuViewController.m in Sources */,
+				CF5D9DDE1D1B137100F9A586 /* LevelViewController.m in Sources */,
 				844B329C1D04AC2500C0D194 /* SDWebImageDownloader.m in Sources */,
 				84D74AD41D19949700688F98 /* FMResultSet.m in Sources */,
 				84A535841D1AC528009BF148 /* Question.m in Sources */,
@@ -633,6 +658,7 @@
 				844B329F1D04AC2500C0D194 /* SDWebImagePrefetcher.m in Sources */,
 				84C6A2E21D1B1AC900564403 /* Chapter.m in Sources */,
 				844B32A21D04AC2500C0D194 /* UIImage+MultiFormat.m in Sources */,
+				CF5D9DE11D1B14EA00F9A586 /* CellLevel.m in Sources */,
 				844B32A61D04AC2500C0D194 /* SWRevealViewController.m in Sources */,
 				84D74AD21D19949700688F98 /* FMDatabasePool.m in Sources */,
 				844B326C1D04AB8B00C0D194 /* BasedNavigationViewController.m in Sources */,

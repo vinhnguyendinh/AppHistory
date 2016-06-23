@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *customNavigation;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UIButton *btnBack;
+@property (weak, nonatomic) IBOutlet UILabel *lblTheme;
 @property NSString *strTitle;
 
 
