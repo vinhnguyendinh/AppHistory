@@ -78,6 +78,7 @@
     if(indexPath.row % 8 == 0){
         UILabel *lblTheme = [cell.contentView viewWithTag:101];
         lblTheme.text = @"Sự hình thành trật tự thế giới mới sau chiến tranh thế giới thứ hai";
+        
     }
     if(indexPath.row % 8 == 1){
         UILabel *lblTheme = [cell.contentView viewWithTag:101];
@@ -108,6 +109,7 @@
         lblTheme.text = @"Việt Nam từ năm 1930 đến năm 1945";
     }
 
+    [self updateCell:cell];
     return cell;
 }
 
@@ -115,25 +117,22 @@
 {
     UILabel *lbl = [cell.contentView viewWithTag:101];
     
-    //lbl.frame = CGRectMake(lbl.frame.origin.x, lbl.frame.origin.y, cell.frame.size.width*2/3, 20);
+    lbl.frame = CGRectMake(lbl.frame.origin.x, lbl.frame.origin.y, cell.frame.size.width*2/3, 20);
 
-    //[lbl sizeToFit];
+    [lbl sizeToFit];
     
-    lbl.frame = CGRectMake(self.tableView.frame.size.width - lbl.frame.size.width -50,
-                           lbl.frame.origin.y,
-                           lbl.frame.size.width,
-                           lbl.frame.size.height);
+//    lbl.frame = CGRectMake(self.tableView.frame.size.width - lbl.frame.size.width -50,
+//                           lbl.frame.origin.y,
+//                           lbl.frame.size.width,
+//                           lbl.frame.size.height);
     
     return lbl.frame.size.height + 20;
 }
 //push vao cua so level..
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
-    //NSDictionary *dictData = self.jsonArr[indexPath.row];
     LevelViewController *level = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"LevelViewController"];
     
-    //vcChat.dictData = dictData;
     [self.navigationController pushViewController:level animated:YES];
     
     
