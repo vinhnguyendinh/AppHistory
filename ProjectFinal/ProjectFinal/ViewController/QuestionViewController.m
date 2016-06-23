@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@", [APPDELEGATE databasePath]);
+   // NSLog(@"%@", [APPDELEGATE databasePath]);
     [self assignBarItems];
     
     [self reloadDataWillReloadTableView:YES];

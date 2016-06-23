@@ -8,6 +8,6 @@
 
 #import "BasedTableViewController.h"
 
-@interface MainViewController : BasedTableViewController <SWRevealViewControllerDelegate>
+@interface MainViewController : BasedTableViewController
 
 @end

@@ -10,4 +10,17 @@
 
 @implementation Answers
 
+- (instancetype)initWithNameAns:(NSString *)name andcontAns:(NSString *)contAns
+{
+    self = [super init];
+    
+    if ( self ) {
+        _nameAnswer = name;
+        _contentAnswer = contAns;
+        _isChoos = NO;
+    }
+    
+    return self;
+}
+
 @end

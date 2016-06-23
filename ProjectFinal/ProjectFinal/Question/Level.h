@@ -10,9 +10,13 @@
 
 @interface Level : NSObject
 
-@property NSArray *question;
-@property NSInteger Score;
-@property NSInteger numberQuestion;
-@property NSInteger minScoreToPass;
+@property(nonatomic, strong)    NSMutableArray    *listQuestions;
+@property                       NSInteger         Score;
+@property                       NSInteger         numberQuestion;
+@property                       NSInteger         minScoreToPass;
+@property                       NSInteger         startId;
+@property                       NSInteger         endId;
+
+- (instancetype)initWithNumbQues:(NSInteger)numbQues andMinScoreToPass:(NSInteger)minScore andStartId:(NSInteger)start andEndId:(NSInteger)end;
 
 @end
