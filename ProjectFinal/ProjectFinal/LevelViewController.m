@@ -19,11 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //UIBarButtonItem* barbutton= [[UIBarButtonItem alloc] initWithCustomView:moveLeft];
-    
-    //self.navigationItem.rightBarButtonItem = barbutton;
-    //[[self navigationController] setNavigationBarHidden:NO animated:YES];
-    //self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +38,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    //[[self navigationController] setNavigationBarHidden:NO animated:YES];
     CellLevel *cellLevel = [tableView dequeueReusableCellWithIdentifier:@"CellLevel" forIndexPath:indexPath];
     
     if(cellLevel == nil){

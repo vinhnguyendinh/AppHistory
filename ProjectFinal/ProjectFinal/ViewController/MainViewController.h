@@ -10,5 +10,11 @@
 
 @interface MainViewController : BasedTableViewController
 
+@property(nonatomic, strong)    NSMutableArray *listQuestions;
+@property(nonatomic, strong)    NSMutableArray *listLevels;
+@property(nonatomic, strong)    NSMutableArray *listChapters;
+@property       NSInteger numberChapter;
+
++ (MainViewController *) sharedInstance;
 
 @end

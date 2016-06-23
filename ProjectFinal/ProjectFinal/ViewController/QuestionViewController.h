@@ -6,13 +6,11 @@
 //  Copyright © 2016 VinhNguyen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BasedTableViewController.h"
 
-@interface QuestionViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-{
-    
-}
+@interface QuestionViewController : BasedTableViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *tblQuestions;
+- (IBAction)btnContinueClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnContinue;
 
 @end

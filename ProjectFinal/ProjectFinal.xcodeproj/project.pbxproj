@@ -422,6 +422,8 @@
 				84C6A8861D1A958D00188FA8 /* ExamViewController.m */,
 				844B32AE1D04B28200C0D194 /* LeftMenuViewController.h */,
 				844B32AF1D04B28200C0D194 /* LeftMenuViewController.m */,
+				CF5D9DDC1D1B137100F9A586 /* LevelViewController.h */,
+				CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */,
 				844B32B41D04B2AB00C0D194 /* MainViewController.h */,
 				844B32B51D04B2AB00C0D194 /* MainViewController.m */,
 				84D74ADE1D19A35600688F98 /* QuestionViewController.h */,
@@ -430,8 +432,6 @@
 				849A86F71D185C260002BE9D /* SettingViewController.m */,
 				844B32B01D04B28200C0D194 /* StartViewController.h */,
 				844B32B11D04B28200C0D194 /* StartViewController.m */,
-				CF5D9DDC1D1B137100F9A586 /* LevelViewController.h */,
-				CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
