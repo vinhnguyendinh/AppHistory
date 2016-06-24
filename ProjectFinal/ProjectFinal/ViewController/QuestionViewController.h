@@ -12,6 +12,7 @@
 
 @property NSInteger numberQuesPresent;
 @property (weak, nonatomic) IBOutlet UIButton *btnContinue;
+@property (weak, nonatomic) IBOutlet UILabel *lblTimer;
 
 - (IBAction)btnContinueClicked:(id)sender;
 + (QuestionViewController *)sharedInstance;

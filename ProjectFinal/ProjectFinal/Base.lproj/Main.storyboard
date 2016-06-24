@@ -187,23 +187,41 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1n-vi-Cfb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3c-aS-UbO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3c-aS-UbO">
                                         <rect key="frame" x="0.0" y="14" width="58" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="6hI-6h-Vq9"/>
+                                            <constraint firstAttribute="width" constant="58" id="HE8-XH-4kP"/>
+                                        </constraints>
                                         <state key="normal" title="Button" image="ic_back.png"/>
                                         <connections>
                                             <action selector="backAction:" destination="vhh-nB-26G" eventType="touchUpInside" id="Yq2-6t-X5r"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xep-Og-2En">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xep-Og-2En">
                                         <rect key="frame" x="79" y="14" width="101" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhJ-hV-lEg">
+                                        <rect key="frame" x="243" y="8" width="153" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="kFq-9o-3kv"/>
+                                            <constraint firstAttribute="width" constant="153" id="t2l-b2-mPT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="U3c-aS-UbO" firstAttribute="top" secondItem="B1n-vi-Cfb" secondAttribute="top" constant="14" id="NeO-7g-G7A"/>
+                                    <constraint firstItem="U3c-aS-UbO" firstAttribute="leading" secondItem="B1n-vi-Cfb" secondAttribute="leading" id="NjX-Ln-MPe"/>
+                                    <constraint firstItem="qhJ-hV-lEg" firstAttribute="leading" secondItem="B1n-vi-Cfb" secondAttribute="leading" constant="243" id="apA-o6-PPu"/>
                                     <constraint firstAttribute="height" constant="65" id="eIY-WN-xT7"/>
+                                    <constraint firstItem="qhJ-hV-lEg" firstAttribute="top" secondItem="B1n-vi-Cfb" secondAttribute="top" constant="8" id="fe0-bT-1C1"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrX-c4-cHY">
@@ -315,6 +333,7 @@
                         <outlet property="btnBack" destination="U3c-aS-UbO" id="RKY-uo-I5p"/>
                         <outlet property="btnContinue" destination="FrX-c4-cHY" id="X7Z-h2-Sf8"/>
                         <outlet property="customNavigation" destination="B1n-vi-Cfb" id="K1m-Ev-KMF"/>
+                        <outlet property="lblTimer" destination="qhJ-hV-lEg" id="euu-aI-Zt1"/>
                         <outlet property="tableView" destination="b0E-Vn-Ezt" id="3E0-li-gJ6"/>
                     </connections>
                 </viewController>
@@ -630,7 +649,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Jgh-X7-IoO"/>
                                 </constraints>
-                                <state key="normal" title="Set Time For Level">
+                                <state key="normal" title="Set Time For Level: Off">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

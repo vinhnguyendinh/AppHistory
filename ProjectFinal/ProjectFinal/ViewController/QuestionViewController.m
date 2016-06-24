@@ -23,6 +23,8 @@
 @property NSMutableArray *listAnswers;
 @property NSMutableArray *listAnswersSelected;
 
+@property NSInteger minute;
+@property NSInteger second;
 
 @end
 
@@ -38,6 +40,8 @@
     [self CustomButton];
     _numberAns = 4;
     _listAnswersSelected = [[NSMutableArray alloc]init];
+    _minute = 1;
+    _second = 0;
     
     // Singleton
     _level = [LevelViewController sharedInstance].levelSelected;
@@ -47,6 +51,54 @@
     _numberQuesPresent = 0;
     _question = [_level.listQuestions objectAtIndex:_numberQuesPresent];
     _listAnswers = [[NSMutableArray alloc]initWithArray:_question.listAnswers];
+    
+    // Display Timer
+    [self displayTimer];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _lblTimer.text = @"Time:  15:00";
+}
+
+- (void)displayTimer
+{
+    dispatch_queue_t q_background = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_async(q_background, ^{
+        while (_minute >= 0) {
+            [NSThread sleepForTimeInterval:1.0f];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if ( _second == 0 ) {
+                    _minute--;
+                    _second = 60;
+                }
+                _second--;
+                NSMutableString *strMinute;
+                NSMutableString *strSecond;
+                if ( _minute >= 10 ) {
+                    strMinute = [NSMutableString stringWithFormat:@"Time:  %ld : ", (long)_minute];
+                } else if ( _minute >= 0 ){
+                    strMinute = [NSMutableString stringWithFormat:@"Time:  0%ld : ", (long)_minute];
+                }
+                
+                if ( _second >= 10 ) {
+                    strSecond = [NSMutableString stringWithFormat:@"%ld", (long)_second];
+                } else if ( _second >= 0 ) {
+                    strSecond = [NSMutableString stringWithFormat:@"0%ld", (long)_second];
+                }
+                
+                [strMinute insertString:strSecond atIndex:strMinute.length];
+                
+                _lblTimer.text = strMinute;
+            });
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ( _minute < 0 ) {
+                _lblTimer.text = @"Time:  00:00";
+            }
+        });
+    });
     
 }
 
