@@ -34,13 +34,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.strTitle = @"Bài làm";
+    
     [self.navigationController.toolbar setHidden: NO];
     
     // Init
     [self CustomButton];
     _numberAns = 4;
     _listAnswersSelected = [[NSMutableArray alloc]init];
-    _minute = 1;
+    _minute = 15;
     _second = 0;
     
     // Singleton
