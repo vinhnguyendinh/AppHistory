@@ -27,6 +27,9 @@ static id instance = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.strTitle = @"Level";
+    
     instance = self;
     _chapter = [MainViewController sharedInstance].chapterSelected;
     // Do any additional setup after loading the view.
