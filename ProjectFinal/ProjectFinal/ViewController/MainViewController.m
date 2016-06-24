@@ -14,7 +14,6 @@
 @interface MainViewController ()
 
 
-
 @end
 
 @implementation MainViewController
@@ -32,6 +31,7 @@ static id instance = nil;
 
     // Do any additional setup after loading the view.
     NSLog(@"%@", [APPDELEGATE databasePath]);
+    
     
     instance = self;
     
@@ -147,28 +147,28 @@ static id instance = nil;
     UILabel *lblTheme = [cell.contentView viewWithTag:101];
     
     if(indexPath.row % _numberChapter == 0){
-        lblTheme.text = @"Sự hình thành trật tự thế giới mới sau chiến tranh thế giới thứ hai";
+        lblTheme.text = @"Chương 1. Sự hình thành trật tự thế giới mới sau chiến tranh thế giới thứ hai";
     }
     else if(indexPath.row % _numberChapter == 1){
-        lblTheme.text = @"Liên Xô và các nước Đông Âu (1945 - 1991). Liên bang Nga";
+        lblTheme.text = @"Chương 2. Liên Xô và các nước Đông Âu (1945 - 1991). Liên bang Nga";
     }
     else if(indexPath.row % _numberChapter == 2){
-        lblTheme.text = @"Các nước Á, Phi, Mĩ Latinh (1945 - 2000)";
+        lblTheme.text = @"Chương 3. Các nước Á, Phi, Mĩ Latinh (1945 - 2000)";
     }
     else if(indexPath.row % _numberChapter == 3){
-        lblTheme.text = @"Mĩ, Tây Âu, Nhật Bản (1945 - 2000)";
+        lblTheme.text = @"Chương 4. Mĩ, Tây Âu, Nhật Bản (1945 - 2000)";
     }
     else if(indexPath.row % _numberChapter == 4){
-        lblTheme.text = @"Quan hệ quốc tế (1945 - 2000)";
+        lblTheme.text = @"Chương 5. Quan hệ quốc tế (1945 - 2000)";
     }
     else if(indexPath.row % _numberChapter == 5){
-        lblTheme.text = @"Cách mạng khao học - công nghệ và xu thế toàn cầu hóa";
+        lblTheme.text = @"Chương 6. Cách mạng khao học - công nghệ và xu thế toàn cầu hóa";
     }
     else if(indexPath.row % _numberChapter == 6){
-        lblTheme.text = @"Việt Nam từ năm 1919 đến năm 1930";
+        lblTheme.text = @"Chương 7. Việt Nam từ năm 1919 đến năm 1930";
     }
     else if(indexPath.row % _numberChapter == 7){
-        lblTheme.text = @"Việt Nam từ năm 1930 đến năm 1945";
+        lblTheme.text = @"Chương 8. Việt Nam từ năm 1930 đến năm 1945";
     }
 
     [self updateCell:cell];
