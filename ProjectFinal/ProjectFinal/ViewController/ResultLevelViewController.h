@@ -1,19 +1,16 @@
 //
-//  QuestionViewController.h
+//  ResultLevelViewController.h
 //  ProjectFinal
 //
-//  Created by Vinh Nguyen Dinh on 6/21/16.
+//  Created by Vinh Nguyen Dinh on 6/24/16.
 //  Copyright © 2016 VinhNguyen. All rights reserved.
 //
 
 #import "BasedTableViewController.h"
 
-@interface QuestionViewController : BasedTableViewController
-
-@property NSInteger numberQuesPresent;
+@interface ResultLevelViewController : BasedTableViewController
+@property (weak, nonatomic) IBOutlet UILabel *lblScore;
 @property (weak, nonatomic) IBOutlet UIButton *btnContinue;
-
 - (IBAction)btnContinueClicked:(id)sender;
-+ (QuestionViewController *)sharedInstance;
 
 @end

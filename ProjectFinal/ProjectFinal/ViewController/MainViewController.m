@@ -40,10 +40,6 @@ static id instance = nil;
     [self loadDataToListQuestion];
     _numberChapter = 8;
     
-    // Singleton
-    
-    
-    
     // Init MutableArray
     _listLevels = [[NSMutableArray alloc]init];
     _listChapters = [[NSMutableArray alloc]init];
@@ -197,9 +193,9 @@ static id instance = nil;
     _chapterSelected = [_listChapters objectAtIndex:indexPath.row];
     
     // Push Level VC
-    LevelViewController *level = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"LevelViewController"];
+    LevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"LevelViewController"];
     
-    [self.navigationController pushViewController:level animated:YES];
+    [self.navigationController pushViewController:vc animated:YES];
 }
     
 @end

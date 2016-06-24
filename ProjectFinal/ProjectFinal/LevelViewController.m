@@ -78,10 +78,11 @@ static id instance = nil;
 {
     // Get Level Selected
     _levelSelected = [_chapter.listLevels objectAtIndex:indexPath.row];
+    
     // Push QuestionVC
-    QuestionViewController *question = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"QuestionViewController"];
+    QuestionViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"QuestionViewController"];
    
-    [self.navigationController pushViewController:question animated:YES];
+    [self.navigationController pushViewController:vc animated:YES];
     
     
 }@end
