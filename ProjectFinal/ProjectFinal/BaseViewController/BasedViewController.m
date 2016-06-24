@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    _leadingLblTitle.constant = (self.view.frame.size.width - 117) / 2;
+    _leadingLblTitle.constant = (self.view.frame.size.width - _lblTitle.frame.size.width) / 2;
     
     [self fillDataInitForView];
     [self localizableViewControl];
