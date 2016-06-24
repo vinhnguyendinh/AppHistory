@@ -8,7 +8,7 @@
 
 #import "ColorChooserViewController.h"
 #import "LeftMenuViewController.h"
-#import "StartViewController.h"
+//#import "StartViewController.h"
 
 @interface ColorChooserViewController ()
 
@@ -16,15 +16,9 @@
 
 @implementation ColorChooserViewController
 
-//static id instance = nil;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = LocalizedString(@"Color Theme Chooser");
-    //instance = self;
-    
-    //self.lblTitle = @"Color Theme Chooser";
-    
     self.arrColorName = @[@"Red",
                           @"Pink",
                           @"Purple",
