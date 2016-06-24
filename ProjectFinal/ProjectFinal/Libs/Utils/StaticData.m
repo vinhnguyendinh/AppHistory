@@ -27,6 +27,7 @@
     self = [super init];
     if (self) {
         NSString *strMainColor = [[NSUserDefaults standardUserDefaults] stringForKey:kUD_MainColor];
+        _isTimeLevelOn = NO;
         if (strMainColor == nil) {
             self.mainColor = [Utils colorFromHex:@"#03A9F4"];
         } else {

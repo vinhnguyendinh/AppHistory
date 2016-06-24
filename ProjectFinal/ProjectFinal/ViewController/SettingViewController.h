@@ -16,9 +16,11 @@
 
 //@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *btnResetData;
 //- (IBAction)btnResetDataClicked:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UIButton *btnSetTime;
 @property (weak, nonatomic) IBOutlet UIButton *btnAbout;
+
 - (IBAction)btnAboutClicked:(id)sender;
+- (IBAction)btnSetTimeClicked:(id)sender;
 
 
 

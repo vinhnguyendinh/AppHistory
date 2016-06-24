@@ -596,7 +596,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xSF-of-f8S"/>
                                 </constraints>
-                                <state key="normal" title="Them Color">
+                                <state key="normal" title="Theme Color">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -613,7 +613,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnAboutClicked:" destination="o8g-lq-ZQR" eventType="touchUpInside" id="oAj-xt-FlX"/>
+                                    <action selector="btnSetTimeClicked:" destination="o8g-lq-ZQR" eventType="touchUpInside" id="4Sd-hN-Wmd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -640,6 +640,7 @@
                     <connections>
                         <outlet property="btnAbout" destination="W1c-LL-01H" id="tmh-4d-rca"/>
                         <outlet property="btnBack" destination="vN0-44-JQx" id="NRn-rg-HS0"/>
+                        <outlet property="btnSetTime" destination="24q-Dh-HLB" id="Pzz-Ew-caB"/>
                         <outlet property="btnThemeColor" destination="eWE-bh-Jao" id="r56-iu-rEO"/>
                         <outlet property="customNavigation" destination="b1y-Ur-ASO" id="ERa-0b-5v6"/>
                         <outlet property="lblTitle" destination="pCF-t0-Ryv" id="eN4-Mj-OHc"/>

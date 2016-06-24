@@ -36,6 +36,15 @@
     
 }
 
+- (IBAction)btnSetTimeClicked:(id)sender {
+    BOOL setTimeLevelOn = [StaticData sharedInstance].isTimeLevelOn;
+    if (setTimeLevelOn) {
+        [[StaticData sharedInstance] setIsTimeLevelOn:NO];
+    } else {
+        [[StaticData sharedInstance] setIsTimeLevelOn:YES];
+    }
+}
+
 - (void)backAction:(id)sender
 {
     [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
