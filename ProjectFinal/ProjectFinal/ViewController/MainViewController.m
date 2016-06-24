@@ -171,7 +171,7 @@ static id instance = nil;
         lblTheme.text = @"Chương 8. Việt Nam từ năm 1930 đến năm 1945";
     }
 
-    [self updateCell:cell];
+    //[self updateCell:cell];
     return cell;
 }
 
@@ -184,7 +184,7 @@ static id instance = nil;
     [lbl sizeToFit];
     return lbl.frame.size.height + 20;
 }
-    
+
 #pragma mark - tableView Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
