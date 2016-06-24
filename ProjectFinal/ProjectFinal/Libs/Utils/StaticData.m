@@ -10,6 +10,7 @@
 
 @implementation StaticData
 
+
 + (StaticData*)sharedInstance;
 {
     // comment to develop multi-server base

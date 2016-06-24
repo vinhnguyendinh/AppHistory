@@ -40,8 +40,10 @@
     BOOL setTimeLevelOn = [StaticData sharedInstance].isTimeLevelOn;
     if (setTimeLevelOn) {
         [[StaticData sharedInstance] setIsTimeLevelOn:NO];
+        [_btnSetTime setTitle:@"Set Time For Level: Off" forState:UIControlStateNormal];
     } else {
         [[StaticData sharedInstance] setIsTimeLevelOn:YES];
+        [_btnSetTime setTitle:@"Set Time For Level: On" forState:UIControlStateNormal];
     }
 }
 
