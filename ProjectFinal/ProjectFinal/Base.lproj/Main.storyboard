@@ -541,7 +541,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1c-LL-01H">
-                                <rect key="frame" x="20" y="261" width="560" height="40"/>
+                                <rect key="frame" x="20" y="342" width="560" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.8980392157" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9JW-gq-O96"/>
@@ -566,17 +566,32 @@
                                     <action selector="btnThemeColorClicked:" destination="o8g-lq-ZQR" eventType="touchUpInside" id="jKg-DH-Vf0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24q-Dh-HLB">
+                                <rect key="frame" x="20" y="268" width="560" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.8980392157" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Jgh-X7-IoO"/>
+                                </constraints>
+                                <state key="normal" title="Set Time For Level">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAboutClicked:" destination="o8g-lq-ZQR" eventType="touchUpInside" id="oAj-xt-FlX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="b1y-Ur-ASO" firstAttribute="leading" secondItem="kOL-vb-aNY" secondAttribute="leading" id="5GL-zh-9kw"/>
                             <constraint firstItem="eWE-bh-Jao" firstAttribute="leading" secondItem="b1y-Ur-ASO" secondAttribute="trailing" constant="-580" id="5yZ-RH-N9h"/>
                             <constraint firstAttribute="trailing" secondItem="eWE-bh-Jao" secondAttribute="trailing" constant="20" id="FQF-1w-LgA"/>
+                            <constraint firstItem="24q-Dh-HLB" firstAttribute="top" secondItem="eWE-bh-Jao" secondAttribute="bottom" constant="37" id="P66-r9-PRo"/>
                             <constraint firstItem="b1y-Ur-ASO" firstAttribute="top" secondItem="i2B-G5-s8v" secondAttribute="bottom" id="Q1V-3E-EsS"/>
-                            <constraint firstItem="W1c-LL-01H" firstAttribute="top" secondItem="eWE-bh-Jao" secondAttribute="bottom" constant="30" id="Zla-OH-RMk"/>
+                            <constraint firstItem="W1c-LL-01H" firstAttribute="top" secondItem="eWE-bh-Jao" secondAttribute="bottom" constant="111" id="Zla-OH-RMk"/>
                             <constraint firstItem="eWE-bh-Jao" firstAttribute="leading" secondItem="kOL-vb-aNY" secondAttribute="leading" constant="20" id="b14-lC-rgx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="W1c-LL-01H" secondAttribute="trailing" id="c9p-2w-1Lu"/>
-                            <constraint firstItem="dL8-e4-DTc" firstAttribute="top" secondItem="W1c-LL-01H" secondAttribute="bottom" constant="250" id="p5q-hc-PaO"/>
+                            <constraint firstItem="24q-Dh-HLB" firstAttribute="leading" secondItem="kOL-vb-aNY" secondAttribute="leadingMargin" id="hJM-w5-DWn"/>
+                            <constraint firstItem="dL8-e4-DTc" firstAttribute="top" secondItem="W1c-LL-01H" secondAttribute="bottom" constant="169" id="p5q-hc-PaO"/>
                             <constraint firstItem="W1c-LL-01H" firstAttribute="leading" secondItem="kOL-vb-aNY" secondAttribute="leadingMargin" id="zAA-r7-wo5"/>
                             <constraint firstAttribute="trailing" secondItem="b1y-Ur-ASO" secondAttribute="trailing" id="zBz-nU-3Qb"/>
                         </constraints>
