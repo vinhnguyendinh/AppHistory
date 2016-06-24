@@ -166,7 +166,20 @@ static bool check = true;
         Answers *ans = [_listAnswers objectAtIndex:indexPath.row - 1];
         lblContent.text = ans.contentAnswer;
     }
+    
+    [self updateCell:cell];
     return cell;
+}
+#pragma mark - fit size cell
+
+- (float)updateCell : (UITableViewCell *)cell
+{
+    UILabel *lbl = [cell.contentView viewWithTag:101];
+    
+    lbl.frame = CGRectMake(lbl.frame.origin.x, lbl.frame.origin.y, cell.frame.size.width*2/3, 20);
+    
+    [lbl sizeToFit];
+    return lbl.frame.size.height + 20;
 }
 
 #pragma mark - tableView Delegate
@@ -196,5 +209,29 @@ static bool check = true;
     }
 }
 
+- (void)backAction:(id)sender
+{
+    if(_numberQuesPresent <= 0)
+    {
+        [self backVC];
+    }
+    else if (_numberQuesPresent > 0) {
+        _numberQuesPresent = _numberQuesPresent - 2;
+        
+        if(_numberQuesPresent < 0){
+            [self backVC];
+        }
+        else [self updateDataCell];
+    }
+    
+}
 
+- (void)backVC
+{
+    if (!self.navigationController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 @end
