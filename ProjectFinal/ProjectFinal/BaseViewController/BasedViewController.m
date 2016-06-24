@@ -27,6 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _leadingLblTitle.constant = (self.view.frame.size.width - 117) / 2;
+    
     [self fillDataInitForView];
     [self localizableViewControl];
     if (self.navigationItem != nil) {
@@ -55,7 +58,7 @@
     // hide navigationBar
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
     [self.navigationController.toolbar setHidden: YES];
-
+    
     NSLog(@"--> GO TO VIEW: %@ ID: %@", [self.class description], self.restorationIdentifier);
     //NSString *keyScreen = [self.class description];
     [self customNavigationBar];

@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTheme;
 @property NSString *strTitle;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingLblTitle;
 
 -(void)localizableViewControl;
 -(void)fillDataInitForView;

@@ -32,6 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.navigationController.toolbar setHidden: NO];
+    
     // Init
     [self CustomButton];
     _numberAns = 4;
@@ -45,9 +47,7 @@
     _numberQuesPresent = 0;
     _question = [_level.listQuestions objectAtIndex:_numberQuesPresent];
     _listAnswers = [[NSMutableArray alloc]initWithArray:_question.listAnswers];
-    // Increment _numberQuesPresent
-    _numberQuesPresent++;
-   
+    
 }
 
 //Singleton
@@ -69,24 +69,24 @@ static id instance = nil;
 }
 
 // Logic next question
+
+static bool check = true;
 - (IBAction)btnContinueClicked:(id)sender {
     // Update data
-    if ( _numberQuesPresent <= 10 ) {
-        if ( _numberQuesPresent < 10 ) {
-            
-            [self updateDataCell];
-            [self insertListAnsSelected];
-            
-        } else if ( _numberQuesPresent == 10) {
+    if ( _numberQuesPresent < 10 ) {
+        if(check) {
+            check = false;
+            _numberQuesPresent++;
+        }
+        [self updateDataCell];
+        [self insertListAnsSelected];
+    } else if ( _numberQuesPresent == 10) {
             // Set Title of Button
             _strTitleBtn = @"Kiểm tra";
             [_btnContinue setTitle:_strTitleBtn forState:UIControlStateNormal];
             // Push VC 
             ResultLevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ResultLevelViewController"];
             [self.navigationController pushViewController:vc animated:YES];
-        }
-    } else {
-        
     }
 }
 
@@ -96,7 +96,21 @@ static id instance = nil;
     _listAnswers = [[NSMutableArray alloc]initWithArray:_question.listAnswers];
     
     // Reload Data tableView
-    [self.tableView reloadData];
+    
+    [self.tableView beginUpdates];
+    
+    NSMutableArray *arrIndexPath = [[NSMutableArray alloc]init];
+    for ( int i = 0; i <= 4; i++ ) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        UILabel *lblContentAns = [cell.contentView viewWithTag:101];
+        lblContentAns.textColor = [UIColor blackColor];
+        [arrIndexPath addObject:indexPath];
+    }
+    [self.tableView reloadRowsAtIndexPaths:arrIndexPath withRowAnimation:UITableViewRowAnimationLeft];
+    
+    [self.tableView endUpdates];
+
     _numberQuesPresent++;
     
     // Setting Button
@@ -144,7 +158,7 @@ static id instance = nil;
     UILabel *lblContent = [cell.contentView viewWithTag:101];
     
     if(indexPath.row == 0) {
-        NSMutableString *titleQues = [NSMutableString stringWithFormat:@"Câu %ld. ", (long)_numberQuesPresent];
+        NSMutableString *titleQues = [NSMutableString stringWithFormat:@"Câu %ld. ", (long)_numberQuesPresent + 1];
         [titleQues insertString:_question.contentQuestion atIndex:titleQues.length];
         
         lblContent.text = titleQues;
@@ -159,9 +173,23 @@ static id instance = nil;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row != 0) {
-        
-        
+    if(indexPath.row == 0) {
+        _btnContinue.enabled = NO;
+        _btnContinue.alpha = 0.5f;
+    } else {
+        NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:selectedIndexPath];
+        UILabel *lblContentAns = [cell.contentView viewWithTag:101];
+        lblContentAns.textColor = [UIColor blueColor];
+        for(int i = 1; i <= 4; i++) {
+            NSIndexPath *indexPathForRow = [NSIndexPath indexPathForRow:i inSection:0];
+            if( indexPathForRow != selectedIndexPath ) {
+                cell = [tableView cellForRowAtIndexPath:indexPathForRow];
+                lblContentAns = [cell.contentView viewWithTag:101];
+                lblContentAns.textColor = [UIColor blackColor];
+            }
+            
+        }
         _btnContinue.enabled = YES;
         _btnContinue.alpha = 1.0f;
         _indexAnsSelected = indexPath.row;
