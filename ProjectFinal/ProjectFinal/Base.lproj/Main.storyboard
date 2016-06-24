@@ -595,10 +595,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Rx-RA-sF6">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="536" id="olD-wH-uVB"/>
-                                    <constraint firstAttribute="width" constant="600" id="tXd-do-Y8P"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="54" id="iSB-gK-Wsw">
                                         <rect key="frame" x="0.0" y="28" width="600" height="54"/>
@@ -611,7 +607,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="305" height="45"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3r-SU-8G4">
-                                                            <rect key="frame" x="0.0" y="0.0" width="285" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="45"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -630,6 +626,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nXa-jI-Gm5" firstAttribute="top" secondItem="1Rx-RA-sF6" secondAttribute="bottom" id="3wM-Jv-h8S"/>
+                            <constraint firstAttribute="trailing" secondItem="1Rx-RA-sF6" secondAttribute="trailing" id="7Th-M2-0EC"/>
                             <constraint firstItem="Ivy-Lo-Z4t" firstAttribute="top" secondItem="AgN-SA-F0q" secondAttribute="top" id="DWC-GI-KHZ"/>
                             <constraint firstAttribute="trailing" secondItem="Ivy-Lo-Z4t" secondAttribute="trailing" id="f6I-UN-1K4"/>
                             <constraint firstItem="Ivy-Lo-Z4t" firstAttribute="leading" secondItem="AgN-SA-F0q" secondAttribute="leading" id="ffI-kR-WwK"/>
@@ -639,9 +637,8 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="9N0-9h-Kkm" id="RyG-au-eBD"/>
-                        <outlet property="customNavigation" destination="Ivy-Lo-Z4t" id="c3b-54-WrO"/>
                         <outlet property="lblTitle" destination="ogA-UL-nHi" id="3kf-ku-kaT"/>
-                        <outlet property="tableView" destination="1Rx-RA-sF6" id="CAj-5N-VBi"/>
+                        <outlet property="tableView" destination="1Rx-RA-sF6" id="DXa-JM-7oI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x43-W3-KXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
