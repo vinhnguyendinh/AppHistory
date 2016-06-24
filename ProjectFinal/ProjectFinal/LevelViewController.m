@@ -88,5 +88,4 @@ static id instance = nil;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
 @end

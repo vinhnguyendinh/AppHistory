@@ -13,6 +13,11 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingOfBtnContinue;
 
+@property NSString *strTitleMessageAlertView;
+@property NSString *strMessageAlertView;
+
+//@property NSInteger minute;
+//@property NSInteger second;
 
 
 @end
@@ -33,7 +38,7 @@
     [self CustomButton];
     _numberAns = 4;
     _listAnswersSelected = [[NSMutableArray alloc]init];
-    _minute = 15;
+    _minute = 1;
     _second = 0;
     
     // Singleton
@@ -94,9 +99,37 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if ( _minute < 0 ) {
                 _lblTimer.text = @"Time:  00:00";
+                _strMessageAlertView = @"Bạn đã hết thời gian làm bài.";
+                [self alertViewShow];
             }
         });
     });
+    
+}
+
+#pragma mark - AlertView
+- (void)alertViewShow
+{
+    _strTitleMessageAlertView = @"Message";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_strTitleMessageAlertView
+                                                    message:_strMessageAlertView
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:@"Cancel", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked OK
+    if (buttonIndex == 0) {
+        [self pushVC];
+    } else if (buttonIndex == 1) {
+        if ( _minute < 0 ) {
+            [self pushVC];
+        } else {
+            [alertView setHidden:YES];
+        }
+    }
     
 }
 
@@ -131,13 +164,21 @@ static bool check = true;
         [self updateDataCell];
         [self insertListAnsSelected];
     } else if ( _numberQuesPresent == 10) {
-            // Set Title of Button
-        [self insertListAnsSelected];
-            _strTitleBtn = @"Kiểm tra";
-            [_btnContinue setTitle:_strTitleBtn forState:UIControlStateNormal];
-            // Push VC 
-            ResultLevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ResultLevelViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
+//<<<<<<< HEAD
+//            // Set Title of Button
+//        [self insertListAnsSelected];
+//            _strTitleBtn = @"Kiểm tra";
+//            [_btnContinue setTitle:_strTitleBtn forState:UIControlStateNormal];
+//            // Push VC 
+//            ResultLevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ResultLevelViewController"];
+//            [self.navigationController pushViewController:vc animated:YES];
+//=======
+        // Set Title of Button
+        _strTitleBtn = @"Kiểm tra";
+        [_btnContinue setTitle:_strTitleBtn forState:UIControlStateNormal];
+        
+        _strMessageAlertView = @"Bạn có chắc chắn muốn nộp bài ?";
+        [self alertViewShow];
     }
 }
 
@@ -221,6 +262,7 @@ static bool check = true;
     [self updateCell:cell];
     return cell;
 }
+
 #pragma mark - fit size cell
 
 - (float)updateCell : (UITableViewCell *)cell
@@ -278,6 +320,8 @@ static bool check = true;
     
 }
 
+#pragma mark - Push And Pop ViewController
+
 - (void)backVC
 {
     if (!self.navigationController) {
@@ -285,5 +329,12 @@ static bool check = true;
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+- (void)pushVC
+{
+    // Push VC
+    ResultLevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ResultLevelViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end
