@@ -70,6 +70,10 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    if ( cell == nil ) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
     UIView *viewColor = (UIView *)[cell.contentView viewWithTag:101];
     UILabel *lblText = (UILabel *)[cell.contentView viewWithTag:102];
     
@@ -92,6 +96,11 @@
     [[LeftMenuViewController shareInstance] refreshColor];
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
 }
 
 - (void)backAction:(id)sender
