@@ -17,6 +17,7 @@
 @property                       NSInteger         startId;
 @property                       NSInteger         endId;
 
+
 - (instancetype)initWithNumbQues:(NSInteger)numbQues andMinScoreToPass:(NSInteger)minScore andStartId:(NSInteger)start andEndId:(NSInteger)end;
 
 @end

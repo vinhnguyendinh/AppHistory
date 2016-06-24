@@ -6,9 +6,12 @@
 //  Copyright © 2016 VinhNguyen. All rights reserved.
 //
 #import "BasedTableViewController.h"
-#import "Level.h"
+#import "Question/QuestionLib.h"
 
 @interface LevelViewController : BasedTableViewController
 
+@property Level *levelSelected;
+
++ (LevelViewController *)sharedInstance;
 
 @end

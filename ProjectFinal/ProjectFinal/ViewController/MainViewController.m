@@ -7,27 +7,42 @@
 //
 
 #import "MainViewController.h"
-#import "QuestionLib.h"
-#import "CusCell.h"
-#import "LevelViewController.h"
-
+#import "AppDelegate.h"
 
 @class SWRevealViewController;
 
 @interface MainViewController ()
 
+
+
 @end
 
 @implementation MainViewController
 
+#pragma mark - Singleton
+
+static id instance = nil;
++ (MainViewController *)sharedInstance
+{
+    return instance;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
+    //NSLog(@"%@", [APPDELEGATE databasePath]);
+    
+    instance = self;
     
     self.strTitle = @"Ôn tập";
     
     [self loadDataToListQuestion];
     _numberChapter = 8;
+    
+    // Singleton
+    
+    
     
     // Init MutableArray
     _listLevels = [[NSMutableArray alloc]init];
@@ -35,7 +50,7 @@
     
     // Insert to Lists
     [self insertLevelToListLevel];
-   // [self insertChapterToListChapter];
+    [self insertChapterToListChapter];
     
     NSLog(@"%lu", (unsigned long)self.listLevels.count);
    // NSLog(@"%lu", (unsigned long)self.listChapters.count);
@@ -45,6 +60,7 @@
     
     //Number Of Row - TableView
     _numberChapter = 8;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,19 +68,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Singleton
-
-static id _instance = nil;
-+ (MainViewController *) sharedInstance;
-{
-    return _instance;
-}
-
-// LOGIC
+// Btn Back
 - (void)backAction:(id)sender
 {
     [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
 }
+
 
 #pragma mark - Insert Data To List
 
@@ -99,7 +108,7 @@ static id _instance = nil;
     
 }
 
-- (Chapter *)insertListLevelsToChaterFrom:(NSInteger)start to:(NSInteger)end
+- (Chapter *)insertListLevelsToChapterFrom:(NSInteger)start to:(NSInteger)end
 {
     Chapter *chapter = [[Chapter alloc]initWithNumbLevel:3];
     
@@ -114,7 +123,7 @@ static id _instance = nil;
 - (void)insertChapterToListChapter
 {
     for(int i = 0; i < _listLevels.count; i+=3) {
-        Chapter *chapter = [self insertListLevelsToChaterFrom:i to:i+3];
+        Chapter *chapter = [self insertListLevelsToChapterFrom:i to:i+3];
         [_listChapters addObject:chapter];
     }
 }
@@ -180,9 +189,14 @@ static id _instance = nil;
     return lbl.frame.size.height + 20;
 }
     
-//push vao cua so level..
+#pragma mark - tableView Delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
+    // Get Chapter at row
+    _chapterSelected = [_listChapters objectAtIndex:indexPath.row];
+    
+    // Push Level VC
     LevelViewController *level = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"LevelViewController"];
     
     [self.navigationController pushViewController:level animated:YES];

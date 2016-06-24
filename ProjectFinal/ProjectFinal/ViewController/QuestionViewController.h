@@ -10,7 +10,9 @@
 
 @interface QuestionViewController : BasedTableViewController
 
-- (IBAction)btnContinueClicked:(id)sender;
+@property NSInteger numberQuesPresent;
 @property (weak, nonatomic) IBOutlet UIButton *btnContinue;
+
+- (IBAction)btnContinueClicked:(id)sender;
 
 @end

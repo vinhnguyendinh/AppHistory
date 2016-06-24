@@ -9,15 +9,26 @@
 #import "LevelViewController.h"
 #import "CellLevel.h"
 #import "QuestionViewController.h"
+#import "MainViewController.h"
 
 @interface LevelViewController ()
+
+@property Chapter *chapter;
 
 @end
 
 @implementation LevelViewController
 
+static id instance = nil;
++ (LevelViewController *)sharedInstance
+{
+    return instance;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    instance = self;
+    _chapter = [MainViewController sharedInstance].chapterSelected;
     // Do any additional setup after loading the view.
 }
 
@@ -25,6 +36,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - tableView Datasources
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -60,10 +72,14 @@
     return cellLevel;
 }
 
+#pragma mark - tableView Delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
-     QuestionViewController *question = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"QuestionViewController"];
+    // Get Level Selected
+    _levelSelected = [_chapter.listLevels objectAtIndex:indexPath.row];
+    // Push QuestionVC
+    QuestionViewController *question = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"QuestionViewController"];
    
     [self.navigationController pushViewController:question animated:YES];
     

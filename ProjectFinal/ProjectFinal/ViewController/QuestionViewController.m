@@ -7,11 +7,19 @@
 //
 
 #import "QuestionViewController.h"
+#import "QuestionLib.h"
+#import "MainViewController.h"
+#import "LevelViewController.h"
 
 @interface QuestionViewController ()
 
 @property NSInteger numberAns;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingOfBtnContinue;
+@property NSInteger start;
+@property NSInteger end;
+@property Level *level;
+@property Question *question;
+@property NSMutableArray *listAnswers;
 
 @end
 
@@ -22,18 +30,36 @@
     // Do any additional setup after loading the view.
     [self CustomButton];
     _numberAns = 4;
+    
+    // Singleton
+    _level = [LevelViewController sharedInstance].levelSelected;
+    
+    // Insert data
+    _numberQuesPresent = 0;
+    _question = [_level.listQuestions objectAtIndex:_numberQuesPresent];
+    _listAnswers = [[NSMutableArray alloc]initWithArray:_question.listAnswers];
+    
 }
 
 // Custom Button
 - (void)CustomButton
 {
     _btnContinue.layer.cornerRadius = 15.0f;
-    _leadingOfBtnContinue.constant = (self.view.frame.size.width - 110) / 2;
+    _leadingOfBtnContinue.constant = (self.view.frame.size.width - _btnContinue.frame.size.width) / 2;
 }
 
 // Logic next question
 - (IBAction)btnContinueClicked:(id)sender {
+    _numberQuesPresent++;
+    _question = [_level.listQuestions objectAtIndex:_numberQuesPresent];
+    _listAnswers = [[NSMutableArray alloc]initWithArray:_question.listAnswers];
+    // Update Data tableView
+    [self.tableView beginUpdates];
     
+    NSIndexPath *indexPath;
+    
+    [self.tableView endUpdates];
+   
 }
 
 #pragma mark - tableView Datasources
@@ -58,19 +84,14 @@
     }
     
     UILabel *lblContent = [cell.contentView viewWithTag:101];
-   
-    if(indexPath.row % (_numberAns+1) == 0) {
-        lblContent.text = @"Cau hoi";
-    } else if(indexPath.row % (_numberAns+1) == 1) {
-        lblContent.text = @"Dap an 1";
-    } else if(indexPath.row % (_numberAns+1) == 2) {
-        lblContent.text = @"Dap an 2";
-    } else if(indexPath.row % (_numberAns+1) == 3) {
-        lblContent.text = @"Dap an 3";
-    } else if(indexPath.row % (_numberAns+1) == 4) {
-        lblContent.text = @"Dap an 4";
-    }
     
+    
+    if(indexPath.row == 0) {
+        lblContent.text = _question.contentQuestion;
+    } else {
+        Answers *ans = [_listAnswers objectAtIndex:indexPath.row - 1];
+        lblContent.text = ans.contentAnswer;
+    }
     return cell;
 }
 

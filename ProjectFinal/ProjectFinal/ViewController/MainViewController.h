@@ -7,13 +7,17 @@
 //
 
 #import "BasedTableViewController.h"
+#import "QuestionLib.h"
+#import "CusCell.h"
+#import "LevelViewController.h"
 
 @interface MainViewController : BasedTableViewController
 
 @property(nonatomic, strong)    NSMutableArray *listQuestions;
 @property(nonatomic, strong)    NSMutableArray *listLevels;
 @property(nonatomic, strong)    NSMutableArray *listChapters;
-@property       NSInteger numberChapter;
+@property       Chapter *chapterSelected;
+@property      NSInteger numberChapter;
 
 + (MainViewController *) sharedInstance;
 
