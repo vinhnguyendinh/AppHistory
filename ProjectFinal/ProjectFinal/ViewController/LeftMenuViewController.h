@@ -13,4 +13,7 @@
 @property NSInteger previousRow;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 
+- (void) refreshColor;
++ (LeftMenuViewController *)shareInstance;
+
 @end
