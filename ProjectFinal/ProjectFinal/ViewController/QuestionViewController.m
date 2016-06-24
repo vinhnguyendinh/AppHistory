@@ -90,7 +90,12 @@
                 
                 [strMinute insertString:strSecond atIndex:strMinute.length];
                 
+                if ( _minute < 0 ) {
+                    _lblTimer.text = @"Time:  00:00";
+                }
+                
                 _lblTimer.text = strMinute;
+                
             });
         }
         dispatch_async(dispatch_get_main_queue(), ^{
