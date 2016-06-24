@@ -7,6 +7,10 @@
 //
 
 #import "BasedTableViewController.h"
+#import "QuestionLib.h"
+#import "MainViewController.h"
+#import "LevelViewController.h"
+#import "ResultLevelViewController.h"
 
 @interface QuestionViewController : BasedTableViewController
 
@@ -16,5 +20,19 @@
 
 - (IBAction)btnContinueClicked:(id)sender;
 + (QuestionViewController *)sharedInstance;
+
+@property NSArray *listAnsChoose;
+@property NSInteger countTrue;
+@property NSString *strTitleBtn;
+@property NSInteger numberAns;
+@property NSInteger indexAnsSelected;
+@property Level *level;
+@property Question *question;
+@property NSMutableArray *listAnswers;
+
+
+@property NSInteger minute;
+@property NSInteger second;
+@property NSMutableArray *listAnswersSelected;
 
 @end

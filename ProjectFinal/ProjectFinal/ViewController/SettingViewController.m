@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "ColorChooserViewController.h"
+#import "QuestionViewController.h"
 //#import "IAPHelper.h"
 //#import "RageIAPHelper.h"
 

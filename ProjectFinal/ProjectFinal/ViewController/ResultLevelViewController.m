@@ -7,6 +7,9 @@
 //
 
 #import "ResultLevelViewController.h"
+#import "QuestionViewController.h"
+#import "QuestionLib.h"
+#import "LevelViewController.h"
 
 @implementation ResultLevelViewController
 
@@ -15,6 +18,16 @@
     [super viewDidLoad];
     // insert code right here
     [self customButton];
+    
+    self.strTitle = @"Kết quả";
+    
+    _listAnswersSelected = [[NSMutableArray alloc]initWithArray:[QuestionViewController sharedInstance].listAnswersSelected];
+    _listQuestions = [[NSMutableArray alloc]initWithArray:
+    [QuestionViewController sharedInstance].level.listQuestions];
+    [self CountsAnsTrue];
+    NSLog(@" Score : %ld", (long)_Score);
+    
+    self.lblScore.text = [NSString stringWithFormat:@"%ld/10 Điểm",(long)_Score];
 }
 
 - (void)customButton
@@ -28,5 +41,33 @@
     // Pop VC Present
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+- (void) CountsAnsTrue
+{
+    for (int i = 0; i < _listQuestions.count; i++) {
+        Question *ques = [_listQuestions objectAtIndex:i];
+        if ([ques.answerTrue isEqualToString:[_listAnswersSelected objectAtIndex:i]]) {
+            _Score++;
+        }
+    }
+}
+
+//- (void)backAction:(id)sender
+//{
+//    LevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"LevelViewController"];
+//    
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
+- (IBAction)btnLamLai:(id)sender {
+    LevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"LevelViewController"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)btnNextLv:(id)sender {
+    if((long)_Score <= 6 ){
+        
+    }
 }
 @end

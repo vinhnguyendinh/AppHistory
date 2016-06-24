@@ -7,24 +7,13 @@
 //
 
 #import "QuestionViewController.h"
-#import "QuestionLib.h"
-#import "MainViewController.h"
-#import "LevelViewController.h"
-#import "ResultLevelViewController.h"
+
 
 @interface QuestionViewController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingOfBtnContinue;
-@property NSString *strTitleBtn;
-@property NSInteger numberAns;
-@property NSInteger indexAnsSelected;
-@property Level *level;
-@property Question *question;
-@property NSMutableArray *listAnswers;
-@property NSMutableArray *listAnswersSelected;
 
-@property NSInteger minute;
-@property NSInteger second;
+
 
 @end
 
@@ -33,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _listAnsChoose = [[NSArray alloc]init];
     
     self.strTitle = @"Bài làm";
     
@@ -141,6 +132,7 @@ static bool check = true;
         [self insertListAnsSelected];
     } else if ( _numberQuesPresent == 10) {
             // Set Title of Button
+        [self insertListAnsSelected];
             _strTitleBtn = @"Kiểm tra";
             [_btnContinue setTitle:_strTitleBtn forState:UIControlStateNormal];
             // Push VC 
@@ -260,6 +252,7 @@ static bool check = true;
                 lblContentAns = [cell.contentView viewWithTag:101];
                 lblContentAns.textColor = [UIColor blackColor];
             }
+
             
         }
         _btnContinue.enabled = YES;
