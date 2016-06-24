@@ -15,10 +15,24 @@
 
 @implementation LeftMenuViewController
 
+
+static id instance = nil;
++ (LeftMenuViewController *)shareInstance;
+{
+    return instance;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    instance = self;
     
+    self.customNavigation.backgroundColor = [StaticData sharedInstance].mainColor;
     self.strTitle = @"Menu";
+}
+
+- (void) refreshColor;
+{
+    self.customNavigation.backgroundColor = [StaticData sharedInstance].mainColor;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

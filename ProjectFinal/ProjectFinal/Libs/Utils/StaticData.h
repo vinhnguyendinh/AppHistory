@@ -5,7 +5,6 @@
 @interface StaticData : NSObject
 
 + (StaticData*)sharedInstance;
-
 @property UIColor *mainColor;
 
 @property BOOL isLogOut;

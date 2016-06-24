@@ -7,7 +7,7 @@
 //
 
 #import "SettingViewController.h"
-//#import "ColorChooserViewController.h"
+#import "ColorChooserViewController.h"
 //#import "IAPHelper.h"
 //#import "RageIAPHelper.h"
 
@@ -24,6 +24,23 @@
     [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
 
 }
+
+- (IBAction)btnThemeColorClicked:(id)sender {
+    ColorChooserViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ColorChooserViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)btnAboutClicked:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Message" message:@"This is the learning application of history for iOS." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+- (void)backAction:(id)sender
+{
+    [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
+}
+
 /*
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,21 +50,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshButtons) name:IAPHelperProductPurchasedNotification object:nil];
 }
 
-- (void)backAction:(id)sender
-{
-    [[SWRevealViewController shareInstance] revealToggle:self.btnBack];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)btnThemeColorClicked:(id)sender {
-    ColorChooserViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ColorChooserViewController"];
-    [self.navigationController pushViewController:vc animated:YES];
-}
 - (IBAction)btnResetDataClicked:(id)sender {
     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Message" message:@"Do you want to reset data" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
@@ -61,11 +68,7 @@
     }
 }
 //fix
-- (IBAction)btnAboutClicked:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Message" message:@"This is Pashto dictionary application for iOS." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
 
-}
 - (IBAction)btnRemoveAdsClicked:(id)sender {
     [self buyItem:kIAP_removeads];
 }
@@ -113,8 +116,4 @@
 }
 */
 
-- (void)backAction:(id)sender
-{
-    [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
-}
 @end

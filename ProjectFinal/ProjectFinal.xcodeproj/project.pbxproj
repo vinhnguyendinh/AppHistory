@@ -91,6 +91,7 @@
 		CF5D9DDE1D1B137100F9A586 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */; };
 		CF5D9DE11D1B14EA00F9A586 /* CellLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */; };
 		CF903CCE1D1ACAF1007E99F9 /* CusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF903CCD1D1ACAF1007E99F9 /* CusCell.m */; };
+		CFC412351D1D33440008C920 /* ColorChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC412341D1D33440008C920 /* ColorChooserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,6 +228,8 @@
 		CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLevel.m; sourceTree = "<group>"; };
 		CF903CCC1D1ACAF1007E99F9 /* CusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusCell.h; sourceTree = "<group>"; };
 		CF903CCD1D1ACAF1007E99F9 /* CusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusCell.m; sourceTree = "<group>"; };
+		CFC412331D1D33440008C920 /* ColorChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChooserViewController.h; sourceTree = "<group>"; };
+		CFC412341D1D33440008C920 /* ColorChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChooserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,6 +435,8 @@
 				849A86F71D185C260002BE9D /* SettingViewController.m */,
 				844B32B01D04B28200C0D194 /* StartViewController.h */,
 				844B32B11D04B28200C0D194 /* StartViewController.m */,
+				CFC412331D1D33440008C920 /* ColorChooserViewController.h */,
+				CFC412341D1D33440008C920 /* ColorChooserViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -635,6 +640,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC412351D1D33440008C920 /* ColorChooserViewController.m in Sources */,
 				844B329B1D04AC2500C0D194 /* SDWebImageDecoder.m in Sources */,
 				CF903CCE1D1ACAF1007E99F9 /* CusCell.m in Sources */,
 				844B326B1D04AB8B00C0D194 /* BasedCollectionViewController.m in Sources */,
