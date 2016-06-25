@@ -110,12 +110,12 @@
 #pragma mark - AlertView
 - (void)alertViewShow
 {
-    _strTitleMessageAlertView = @"Message";
+    _strTitleMessageAlertView = @"Mesage";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_strTitleMessageAlertView
                     message:_strMessageAlertView
                    delegate:self
-          cancelButtonTitle:@"OK"
-          otherButtonTitles:@"Cancel", nil];
+          cancelButtonTitle:@"Hoàn tất"
+          otherButtonTitles:@"Thoát", nil];
     [alert show];
 }
 
@@ -178,6 +178,7 @@ static bool check = true;
     }
 }
 
+static BOOL isBackAction = NO;
 - (void)updateDataCell
 {
     _question = [_level.listQuestions objectAtIndex:_numberQuesPresent];
@@ -195,7 +196,11 @@ static bool check = true;
         lblContentAns.textColor = [UIColor blackColor];
         [arrIndexPath addObject:indexPath];
     }
-    [self.tableView reloadRowsAtIndexPaths:arrIndexPath withRowAnimation:UITableViewRowAnimationLeft];
+    if ( !isBackAction ) {
+        [self.tableView reloadRowsAtIndexPaths:arrIndexPath withRowAnimation:UITableViewRowAnimationLeft];
+    } else {
+        [self.tableView reloadRowsAtIndexPaths:arrIndexPath withRowAnimation:UITableViewRowAnimationRight];
+    }
     
     [self.tableView endUpdates];
 
@@ -246,6 +251,7 @@ static bool check = true;
     UILabel *lblContent = [cell.contentView viewWithTag:101];
     
     if(indexPath.row == 0) {
+        cell.userInteractionEnabled = NO;
         NSMutableString *titleQues = [NSMutableString stringWithFormat:@"Câu %ld. ", (long)_numberQuesPresent + 1];
         [titleQues insertString:_question.contentQuestion atIndex:titleQues.length];
         
@@ -275,14 +281,24 @@ static bool check = true;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0) {
-        _btnContinue.enabled = NO;
-        _btnContinue.alpha = 0.5f;
-    } else {
+    if(indexPath.row != 0) {
+        // Get indexPath selected
         NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
+        // Setup Row Selected
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:selectedIndexPath];
         UILabel *lblContentAns = [cell.contentView viewWithTag:101];
         lblContentAns.textColor = [UIColor blueColor];
+        // Setup Transform
+        lblContentAns.font = [UIFont fontWithName:@"System" size:40];
+        lblContentAns.transform = CGAffineTransformScale(lblContentAns.transform, .25, .25);
+        [UIView animateWithDuration:0.5f animations:^{
+            lblContentAns.transform = CGAffineTransformScale(lblContentAns.transform, 4.0, 4.0);
+        } completion:^(BOOL finished) {
+            lblContentAns.font = [UIFont fontWithName:@"System" size:17];
+            lblContentAns.transform = CGAffineTransformScale(lblContentAns.transform, 1.0, 1.0);
+        }];
+        
+        // Reset Different Rows
         for(int i = 1; i <= 4; i++) {
             NSIndexPath *indexPathForRow = [NSIndexPath indexPathForRow:i inSection:0];
             if( indexPathForRow != selectedIndexPath ) {
@@ -290,9 +306,8 @@ static bool check = true;
                 lblContentAns = [cell.contentView viewWithTag:101];
                 lblContentAns.textColor = [UIColor blackColor];
             }
-
-            
         }
+        //Setup Button
         _btnContinue.enabled = YES;
         _btnContinue.alpha = 1.0f;
         _indexAnsSelected = indexPath.row;
@@ -311,7 +326,11 @@ static bool check = true;
         if(_numberQuesPresent < 0){
             [self backVC];
         }
-        else [self updateDataCell];
+        else {
+            isBackAction = YES;
+            [self updateDataCell];
+            isBackAction = NO;
+        }
     }
     
 }
