@@ -132,7 +132,7 @@
 #pragma mark - AlertView
 - (void)alertViewShow
 {
-    _strTitleMessageAlertView = @"Mesage";
+    _strTitleMessageAlertView = @"Message";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_strTitleMessageAlertView
                     message:_strMessageAlertView
                    delegate:self
@@ -147,6 +147,12 @@
         [self pushVC];
     } else if (buttonIndex == 1) {
         if ( _minute < 0 ) {
+            // Add AnswersSelected Is NULL If Count < 10 
+            if ( _listAnswersSelected.count < 10 ) {
+                for ( int i = 0; i < 10 - _listAnswersSelected.count; i++ ) {
+                    [_listAnswersSelected addObject:@""];
+                }
+            }
             [self pushVC];
         } else {
             [alertView setHidden:YES];
