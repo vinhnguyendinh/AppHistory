@@ -7,27 +7,18 @@
 //
 
 #import "QuestionViewController.h"
-#import "QuestionLib.h"
-#import "MainViewController.h"
-#import "LevelViewController.h"
-#import "ResultLevelViewController.h"
+
 
 @interface QuestionViewController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingOfBtnContinue;
-@property NSString *strTitleBtn;
-@property NSInteger numberAns;
-@property NSInteger indexAnsSelected;
-@property Level *level;
-@property Question *question;
-@property NSMutableArray *listAnswers;
-@property NSMutableArray *listAnswersSelected;
 
 @property NSString *strTitleMessageAlertView;
 @property NSString *strMessageAlertView;
 
-@property NSInteger minute;
-@property NSInteger second;
+//@property NSInteger minute;
+//@property NSInteger second;
+
 
 @end
 
@@ -37,6 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _listAnsChoose = [[NSArray alloc]init];
+    
     self.strTitle = @"Bài làm";
     
     [self.navigationController.toolbar setHidden: NO];
@@ -45,7 +38,7 @@
     [self CustomButton];
     _numberAns = 4;
     _listAnswersSelected = [[NSMutableArray alloc]init];
-    _minute = 1;
+    _minute = 15;
     _second = 0;
     
     // Singleton
@@ -119,10 +112,10 @@
 {
     _strTitleMessageAlertView = @"Message";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_strTitleMessageAlertView
-                                                    message:_strMessageAlertView
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:@"Cancel", nil];
+                    message:_strMessageAlertView
+                   delegate:self
+          cancelButtonTitle:@"OK"
+          otherButtonTitles:@"Cancel", nil];
     [alert show];
 }
 
@@ -171,12 +164,17 @@ static bool check = true;
         [self updateDataCell];
         [self insertListAnsSelected];
     } else if ( _numberQuesPresent == 10) {
+           // Set Title of Button
+        [self insertListAnsSelected];
+
         // Set Title of Button
         _strTitleBtn = @"Kiểm tra";
         [_btnContinue setTitle:_strTitleBtn forState:UIControlStateNormal];
         
         _strMessageAlertView = @"Bạn có chắc chắn muốn nộp bài ?";
+        
         [self alertViewShow];
+        
     }
 }
 
@@ -292,6 +290,7 @@ static bool check = true;
                 lblContentAns = [cell.contentView viewWithTag:101];
                 lblContentAns.textColor = [UIColor blackColor];
             }
+
             
         }
         _btnContinue.enabled = YES;

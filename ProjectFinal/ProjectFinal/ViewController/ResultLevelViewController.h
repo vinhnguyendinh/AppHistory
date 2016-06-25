@@ -13,4 +13,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnContinue;
 - (IBAction)btnContinueClicked:(id)sender;
 
+@property NSMutableArray *listAnswersSelected;
+@property NSMutableArray *listQuestions;
+
+@property NSInteger Score;
+
+
+@property (strong, nonatomic) IBOutlet UIButton *btnClickLamLai;
+- (IBAction)btnLamLai:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *btnClickNextLv;
+- (IBAction)btnNextLv:(id)sender;
+
 @end

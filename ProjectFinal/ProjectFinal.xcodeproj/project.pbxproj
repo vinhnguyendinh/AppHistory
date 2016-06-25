@@ -92,6 +92,7 @@
 		CF5D9DDE1D1B137100F9A586 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */; };
 		CF5D9DE11D1B14EA00F9A586 /* CellLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */; };
 		CF903CCE1D1ACAF1007E99F9 /* CusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF903CCD1D1ACAF1007E99F9 /* CusCell.m */; };
+		CFA5A9781D1E1ACB00EF22C5 /* CHColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA5A9771D1E1ACB00EF22C5 /* CHColorPickerView.m */; };
 		CFC412351D1D33440008C920 /* ColorChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC412341D1D33440008C920 /* ColorChooserViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -231,6 +232,8 @@
 		CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLevel.m; sourceTree = "<group>"; };
 		CF903CCC1D1ACAF1007E99F9 /* CusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusCell.h; sourceTree = "<group>"; };
 		CF903CCD1D1ACAF1007E99F9 /* CusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusCell.m; sourceTree = "<group>"; };
+		CFA5A9761D1E1ACB00EF22C5 /* CHColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHColorPickerView.h; sourceTree = "<group>"; };
+		CFA5A9771D1E1ACB00EF22C5 /* CHColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHColorPickerView.m; sourceTree = "<group>"; };
 		CFC412331D1D33440008C920 /* ColorChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChooserViewController.h; sourceTree = "<group>"; };
 		CFC412341D1D33440008C920 /* ColorChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChooserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -382,6 +385,7 @@
 		84BD37D51CFF37D9004E2EA9 /* ProjectFinal */ = {
 			isa = PBXGroup;
 			children = (
+				CFA5A9751D1E1ACB00EF22C5 /* CHColorPicker */,
 				84BD37FC1CFF48C9004E2EA9 /* Libs */,
 				844B32181D04A2FF00C0D194 /* Framework */,
 				84C6FA3D1D014A90002B0DB8 /* BaseViewController */,
@@ -543,6 +547,15 @@
 			name = CellCustom;
 			sourceTree = "<group>";
 		};
+		CFA5A9751D1E1ACB00EF22C5 /* CHColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CFA5A9761D1E1ACB00EF22C5 /* CHColorPickerView.h */,
+				CFA5A9771D1E1ACB00EF22C5 /* CHColorPickerView.m */,
+			);
+			path = CHColorPicker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -662,6 +675,7 @@
 				84A535841D1AC528009BF148 /* Question.m in Sources */,
 				84A535831D1AC528009BF148 /* Level.m in Sources */,
 				844B32971D04AC2500C0D194 /* MKAnnotationView+WebCache.m in Sources */,
+				CFA5A9781D1E1ACB00EF22C5 /* CHColorPickerView.m in Sources */,
 				849A86F81D185C260002BE9D /* AboutViewController.m in Sources */,
 				84A535821D1AC528009BF148 /* Answers.m in Sources */,
 				844B329A1D04AC2500C0D194 /* SDWebImageCompat.m in Sources */,
