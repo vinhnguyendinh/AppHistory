@@ -11,6 +11,8 @@
 #import "QuestionViewController.h"
 //#import "IAPHelper.h"
 //#import "RageIAPHelper.h"
+#import "ColectionViewCell.h"
+
 
 @interface SettingViewController ()
 
@@ -27,8 +29,12 @@
 }
 
 - (IBAction)btnThemeColorClicked:(id)sender {
-    ColorChooserViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ColorChooserViewController"];
-    [self.navigationController pushViewController:vc animated:YES];
+//    ColorChooserViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ColorChooserViewController"];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    ColectionViewCell *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ColectionViewCell"];
+        [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (IBAction)btnAboutClicked:(id)sender {

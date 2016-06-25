@@ -10,7 +10,9 @@
 #import "BasedViewController.h"
 
 @interface BasedCollectionViewController : BasedViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+
 @property NSMutableDictionary *numberRowInSection;
 @property NSArray *collectionData;
 @property NSMutableDictionary *dictListImage;

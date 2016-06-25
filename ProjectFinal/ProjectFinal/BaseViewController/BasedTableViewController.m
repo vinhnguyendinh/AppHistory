@@ -14,6 +14,7 @@
 
 @implementation BasedTableViewController
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger numberRow = [[self.numberRowInSection objectForKey:@(section)]integerValue];

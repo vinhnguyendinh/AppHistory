@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+
     [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
     
     self.strTitle = @"About";

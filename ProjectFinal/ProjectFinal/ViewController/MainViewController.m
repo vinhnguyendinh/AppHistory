@@ -57,6 +57,7 @@ static id instance = nil;
     //Number Of Row - TableView
     _numberChapter = 8;
     
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -197,7 +198,7 @@ static id instance = nil;
     
     [self.navigationController pushViewController:vc animated:YES];
 }
-    
+
 @end
 
 

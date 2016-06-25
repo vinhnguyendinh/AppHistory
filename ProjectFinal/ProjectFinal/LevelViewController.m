@@ -28,11 +28,15 @@ static id instance = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
     self.strTitle = @"Level";
     
     instance = self;
     _chapter = [MainViewController sharedInstance].chapterSelected;
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
