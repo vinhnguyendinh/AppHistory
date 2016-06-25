@@ -8,8 +8,6 @@
 
 #import "QuestionViewController.h"
 #import "Soundmanager.h"
-#import "MusicViewController.h"
-
 
 @interface QuestionViewController ()
 
@@ -28,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //music
+    //[SoundManager sharedManager].allowsBackgroundMusic = YES;
+    //[[SoundManager sharedManager] prepareToPlay];
     
     _listAnsChoose = [[NSArray alloc]init];
     
@@ -135,9 +136,9 @@
 #pragma mark - AlertView
 - (void)alertViewShow
 {
-    _strTitleMessageAlertView = @"Mesage";
+    _strTitleMessageAlertView = _strMessageAlertView;
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_strTitleMessageAlertView
-                    message:_strMessageAlertView
+                    message:nil
                    delegate:self
           cancelButtonTitle:@"Hoàn tất"
           otherButtonTitles:@"Thoát", nil];
@@ -335,6 +336,8 @@ static BOOL isBackAction = NO;
                 lblContentAns.textColor = [UIColor blackColor];
             }
         }
+        
+        [[SoundManager sharedManager] playSound:@"sound2" looping:NO];
         //Setup Button
         _btnContinue.enabled = YES;
         _btnContinue.alpha = 1.0f;

@@ -11,7 +11,6 @@
 #import "QuestionLib.h"
 #import "LevelViewController.h"
 #import "SoundManager.h"
-#import "MusicViewController.h"
 
 @implementation ResultLevelViewController
 
@@ -63,8 +62,6 @@
 
 - (IBAction)btnNextLv:(id)sender {
     if((long)_Score < 6 ){
-        
-        [[SoundManager sharedManager] playSound:@"sound1" looping:YES];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Làm lại"
                   message:@"Bạn phải trả lời đúng 6/10"
