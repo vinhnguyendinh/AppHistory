@@ -101,6 +101,7 @@
 		CF8B662E1D1F06B200A8E9F5 /* icon_ontap.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8B662D1D1F06B200A8E9F5 /* icon_ontap.png */; };
 		CF8B66301D1F07C100A8E9F5 /* icon_st.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8B662F1D1F07C100A8E9F5 /* icon_st.png */; };
 		CF8B66321D1F088200A8E9F5 /* icon_about.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8B66311D1F088200A8E9F5 /* icon_about.png */; };
+		CF8B66341D1F0BB000A8E9F5 /* icon_home.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8B66331D1F0BB000A8E9F5 /* icon_home.png */; };
 		CF903CCE1D1ACAF1007E99F9 /* CusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF903CCD1D1ACAF1007E99F9 /* CusCell.m */; };
 		CFA5A9851D1E2CBB00EF22C5 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA5A9841D1E2CBB00EF22C5 /* TimeViewController.m */; };
 		CFA5A99E1D1E4E2D00EF22C5 /* ColectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA5A99D1D1E4E2D00EF22C5 /* ColectionViewCell.m */; };
@@ -252,6 +253,7 @@
 		CF8B662D1D1F06B200A8E9F5 /* icon_ontap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_ontap.png; sourceTree = "<group>"; };
 		CF8B662F1D1F07C100A8E9F5 /* icon_st.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_st.png; sourceTree = "<group>"; };
 		CF8B66311D1F088200A8E9F5 /* icon_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_about.png; sourceTree = "<group>"; };
+		CF8B66331D1F0BB000A8E9F5 /* icon_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home.png; sourceTree = "<group>"; };
 		CF903CCC1D1ACAF1007E99F9 /* CusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusCell.h; sourceTree = "<group>"; };
 		CF903CCD1D1ACAF1007E99F9 /* CusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusCell.m; sourceTree = "<group>"; };
 		CFA5A9831D1E2CBB00EF22C5 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 		84C1730D1D05358F005100B0 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				CF8B66331D1F0BB000A8E9F5 /* icon_home.png */,
 				CF8B66311D1F088200A8E9F5 /* icon_about.png */,
 				CF8B662F1D1F07C100A8E9F5 /* icon_st.png */,
 				CF8B662D1D1F06B200A8E9F5 /* icon_ontap.png */,
@@ -664,6 +667,7 @@
 				844B325F1D04A92700C0D194 /* next.png in Resources */,
 				84C173291D05358F005100B0 /* cast_ic_notification_1.png in Resources */,
 				84C1732B1D05358F005100B0 /* cast_ic_notification_on.png in Resources */,
+				CF8B66341D1F0BB000A8E9F5 /* icon_home.png in Resources */,
 				84C6FA3C1D01485D002B0DB8 /* LaunchScreen.storyboard in Resources */,
 				CF8B66291D1EE41500A8E9F5 /* track1.caf in Resources */,
 				844B32621D04A92700C0D194 /* previous.png in Resources */,
