@@ -18,6 +18,7 @@
 @property(nonatomic, strong)    NSMutableArray *listChapters;
 @property       Chapter *chapterSelected;
 @property      NSInteger numberChapter;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tbvHeight;
 
 + (MainViewController *) sharedInstance;
 

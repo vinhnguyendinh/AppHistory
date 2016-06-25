@@ -53,10 +53,10 @@ static id instance = nil;
         lblTitle.text = @"Luyện Đề Thi";
     } else if (indexPath.row == 2) {
         img.image = [UIImage imageNamed:@"ic_setting.png"];
-        lblTitle.text = @"Setting";
+        lblTitle.text = @"Cài đặt";
     } else if (indexPath.row == 3) {
         img.image = [UIImage imageNamed:@"ic_about.png"];
-        lblTitle.text = @"About";
+        lblTitle.text = @"Giới thiệu";
     }
     return cell;
 }

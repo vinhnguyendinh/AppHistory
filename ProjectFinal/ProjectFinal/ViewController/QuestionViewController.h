@@ -11,15 +11,13 @@
 #import "MainViewController.h"
 #import "LevelViewController.h"
 #import "ResultLevelViewController.h"
+#import "KNCirclePercentView.h"
+
 
 @interface QuestionViewController : BasedTableViewController
 
 @property NSInteger numberQuesPresent;
 @property (weak, nonatomic) IBOutlet UIButton *btnContinue;
-@property (weak, nonatomic) IBOutlet UILabel *lblTimer;
-
-- (IBAction)btnContinueClicked:(id)sender;
-+ (QuestionViewController *)sharedInstance;
 
 @property NSArray *listAnsChoose;
 @property NSInteger countTrue;
@@ -29,10 +27,16 @@
 @property Level *level;
 @property Question *question;
 @property NSMutableArray *listAnswers;
+@property NSMutableArray *listAnswersSelected;
 
-
+// Timer
 @property NSInteger minute;
 @property NSInteger second;
-@property NSMutableArray *listAnswersSelected;
+@property (weak, nonatomic) IBOutlet KNCirclePercentView *viewTimer;
+
+// Methods
+- (IBAction)btnContinueClicked:(id)sender;
++ (QuestionViewController *)sharedInstance;
+
 
 @end

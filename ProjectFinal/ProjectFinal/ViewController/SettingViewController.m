@@ -9,8 +9,6 @@
 #import "SettingViewController.h"
 #import "ColorChooserViewController.h"
 #import "QuestionViewController.h"
-//#import "IAPHelper.h"
-//#import "RageIAPHelper.h"
 
 @interface SettingViewController ()
 
@@ -23,12 +21,31 @@
     
     self.strTitle = @"Cài đặt";
     [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
+    [self customButton];
+}
 
+- (void)customButton
+{
+    UIButton *button1 = [self.view viewWithTag:101];
+    UIView *button2 = [self.view viewWithTag:102];
+    UIButton *button3 = [self.view viewWithTag:103];
+    button1.layer.cornerRadius = 15.0f;
+    button2.layer.cornerRadius = 15.0f;
+    button3.layer.cornerRadius = 15.0f;
 }
 
 - (IBAction)btnThemeColorClicked:(id)sender {
     ColorChooserViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ColorChooserViewController"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)btnSwitchSetTimeLevelClicked:(id)sender {
+    BOOL setTimeLevelOn = [StaticData sharedInstance].isTimeLevelOn;
+    if (setTimeLevelOn) {
+        [[StaticData sharedInstance] setIsTimeLevelOn:NO];
+    } else {
+        [[StaticData sharedInstance] setIsTimeLevelOn:YES];
+    }
 }
 
 - (IBAction)btnAboutClicked:(id)sender {
@@ -37,95 +54,9 @@
     
 }
 
-- (IBAction)btnSetTimeClicked:(id)sender {
-    BOOL setTimeLevelOn = [StaticData sharedInstance].isTimeLevelOn;
-    if (setTimeLevelOn) {
-        [[StaticData sharedInstance] setIsTimeLevelOn:NO];
-        [_btnSetTime setTitle:@"Set Time For Level: Off" forState:UIControlStateNormal];
-    } else {
-        [[StaticData sharedInstance] setIsTimeLevelOn:YES];
-        [_btnSetTime setTitle:@"Set Time For Level: On" forState:UIControlStateNormal];
-    }
-}
-
 - (void)backAction:(id)sender
 {
     [[SWRevealViewController sharedInstance] revealToggle:self.btnBack];
 }
-
-/*
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.title = LocalizedString(@"Setting");
-    [self.view addGestureRecognizer:[SWRevealViewController shareInstance].panGestureRecognizer];
-    [self refreshButtons];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshButtons) name:IAPHelperProductPurchasedNotification object:nil];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)btnResetDataClicked:(id)sender {
-    
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Message" message:@"Do you want to reset data" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    [alert show];
-
-}
-//fix
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 1){
-        [[DatabaseService shareInstance] resetDB];
-    }
-}
-//fix
-
-- (IBAction)btnRemoveAdsClicked:(id)sender {
-    [self buyItem:kIAP_removeads];
-}
-- (IBAction)btnReloadClicekd:(id)sender {
-    [[RageIAPHelper sharedInstance] restoreCompletedTransactions];
-}
-
-- (void) refreshButtons
-{
-    BOOL purchased = [[NSUserDefaults standardUserDefaults] boolForKey:kIAP_removeads];
-    if (purchased) {
-        self.btnRemoveAds.enabled = NO;
-        [self.adsView removeFromSuperview];
-        [self.iAdView removeFromSuperview];
-    } else {
-        self.btnRemoveAds.enabled = YES;
-    }
-}
-- (void) buyItem:(NSString *)strItem
-{
-    if([[RageIAPHelper sharedInstance] productPurchased:strItem])
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:nil userInfo:nil];
-    }
-    else
-    {
-        [[RageIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray * products)
-         {
-             if (success)
-             {
-                 if (products.count > 0) {
-                     for (SKProduct *productBuy in products) {
-                         if ([productBuy.productIdentifier isEqualToString:strItem]) {
-                             [[RageIAPHelper sharedInstance] buyProduct:productBuy];
-                         }
-                     }
-                 } else {
-                     [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Can not find product" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-                 }
-             } else {
-                 [[[UIAlertView alloc] initWithTitle:@"Error" message:@"There's error, please try again later!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-             }
-         }];
-    }
-}
-*/
 
 @end

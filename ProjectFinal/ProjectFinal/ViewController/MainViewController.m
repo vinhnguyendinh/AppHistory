@@ -32,6 +32,7 @@ static id instance = nil;
     // Do any additional setup after loading the view.
     NSLog(@"%@", [APPDELEGATE databasePath]);
     
+    _tbvHeight.constant = (self.view.frame.size.height - 65);
     
     instance = self;
     

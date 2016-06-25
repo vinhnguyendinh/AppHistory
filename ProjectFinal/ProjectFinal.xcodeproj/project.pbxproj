@@ -45,6 +45,8 @@
 		844B32B61D04B2AB00C0D194 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B32B51D04B2AB00C0D194 /* MainViewController.m */; };
 		849A86F81D185C260002BE9D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A86F51D185C260002BE9D /* AboutViewController.m */; };
 		849A86F91D185C260002BE9D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A86F71D185C260002BE9D /* SettingViewController.m */; };
+		84A0E0B51D1E57E500AC72E7 /* KNCirclePercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0E0B21D1E57E500AC72E7 /* KNCirclePercentView.m */; };
+		84A0E0B61D1E57E500AC72E7 /* KNPercentLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0E0B41D1E57E500AC72E7 /* KNPercentLabel.m */; };
 		84A535821D1AC528009BF148 /* Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5357D1D1AC528009BF148 /* Answers.m */; };
 		84A535831D1AC528009BF148 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5357F1D1AC528009BF148 /* Level.m */; };
 		84A535841D1AC528009BF148 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A535811D1AC528009BF148 /* Question.m */; };
@@ -92,7 +94,6 @@
 		CF5D9DDE1D1B137100F9A586 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */; };
 		CF5D9DE11D1B14EA00F9A586 /* CellLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */; };
 		CF903CCE1D1ACAF1007E99F9 /* CusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF903CCD1D1ACAF1007E99F9 /* CusCell.m */; };
-		CFA5A9781D1E1ACB00EF22C5 /* CHColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA5A9771D1E1ACB00EF22C5 /* CHColorPickerView.m */; };
 		CFC412351D1D33440008C920 /* ColorChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC412341D1D33440008C920 /* ColorChooserViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,10 @@
 		849A86F51D185C260002BE9D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = ViewController/AboutViewController.m; sourceTree = "<group>"; };
 		849A86F61D185C260002BE9D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ViewController/SettingViewController.h; sourceTree = "<group>"; };
 		849A86F71D185C260002BE9D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ViewController/SettingViewController.m; sourceTree = "<group>"; };
+		84A0E0B11D1E57E500AC72E7 /* KNCirclePercentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCirclePercentView.h; sourceTree = "<group>"; };
+		84A0E0B21D1E57E500AC72E7 /* KNCirclePercentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNCirclePercentView.m; sourceTree = "<group>"; };
+		84A0E0B31D1E57E500AC72E7 /* KNPercentLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNPercentLabel.h; sourceTree = "<group>"; };
+		84A0E0B41D1E57E500AC72E7 /* KNPercentLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNPercentLabel.m; sourceTree = "<group>"; };
 		84A5357C1D1AC528009BF148 /* Answers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = Question/Answers.h; sourceTree = "<group>"; };
 		84A5357D1D1AC528009BF148 /* Answers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Answers.m; path = Question/Answers.m; sourceTree = "<group>"; };
 		84A5357E1D1AC528009BF148 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Question/Level.h; sourceTree = "<group>"; };
@@ -232,8 +237,6 @@
 		CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLevel.m; sourceTree = "<group>"; };
 		CF903CCC1D1ACAF1007E99F9 /* CusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusCell.h; sourceTree = "<group>"; };
 		CF903CCD1D1ACAF1007E99F9 /* CusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusCell.m; sourceTree = "<group>"; };
-		CFA5A9761D1E1ACB00EF22C5 /* CHColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHColorPickerView.h; sourceTree = "<group>"; };
-		CFA5A9771D1E1ACB00EF22C5 /* CHColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHColorPickerView.m; sourceTree = "<group>"; };
 		CFC412331D1D33440008C920 /* ColorChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChooserViewController.h; sourceTree = "<group>"; };
 		CFC412341D1D33440008C920 /* ColorChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChooserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -350,6 +353,18 @@
 			path = Libs/SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		84A0E0B01D1E57E500AC72E7 /* KNCirclePercentView */ = {
+			isa = PBXGroup;
+			children = (
+				84A0E0B11D1E57E500AC72E7 /* KNCirclePercentView.h */,
+				84A0E0B21D1E57E500AC72E7 /* KNCirclePercentView.m */,
+				84A0E0B31D1E57E500AC72E7 /* KNPercentLabel.h */,
+				84A0E0B41D1E57E500AC72E7 /* KNPercentLabel.m */,
+			);
+			name = KNCirclePercentView;
+			path = Libs/KNCirclePercentView;
+			sourceTree = "<group>";
+		};
 		84A5357B1D1AC511009BF148 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,7 +400,6 @@
 		84BD37D51CFF37D9004E2EA9 /* ProjectFinal */ = {
 			isa = PBXGroup;
 			children = (
-				CFA5A9751D1E1ACB00EF22C5 /* CHColorPicker */,
 				84BD37FC1CFF48C9004E2EA9 /* Libs */,
 				844B32181D04A2FF00C0D194 /* Framework */,
 				84C6FA3D1D014A90002B0DB8 /* BaseViewController */,
@@ -453,6 +467,7 @@
 		84BD37FC1CFF48C9004E2EA9 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				84A0E0B01D1E57E500AC72E7 /* KNCirclePercentView */,
 				84D74AC41D19949700688F98 /* fmdb */,
 				844B32731D04AC2500C0D194 /* SDWebCacheImage */,
 				844B32911D04AC2500C0D194 /* SoundManager */,
@@ -545,15 +560,6 @@
 				CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */,
 			);
 			name = CellCustom;
-			sourceTree = "<group>";
-		};
-		CFA5A9751D1E1ACB00EF22C5 /* CHColorPicker */ = {
-			isa = PBXGroup;
-			children = (
-				CFA5A9761D1E1ACB00EF22C5 /* CHColorPickerView.h */,
-				CFA5A9771D1E1ACB00EF22C5 /* CHColorPickerView.m */,
-			);
-			path = CHColorPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -669,13 +675,14 @@
 				84BD37DB1CFF37D9004E2EA9 /* AppDelegate.m in Sources */,
 				844B32721D04AC0E00C0D194 /* Utils.m in Sources */,
 				844B32B21D04B28200C0D194 /* LeftMenuViewController.m in Sources */,
+				84A0E0B61D1E57E500AC72E7 /* KNPercentLabel.m in Sources */,
 				CF5D9DDE1D1B137100F9A586 /* LevelViewController.m in Sources */,
 				844B329C1D04AC2500C0D194 /* SDWebImageDownloader.m in Sources */,
 				84D74AD41D19949700688F98 /* FMResultSet.m in Sources */,
+				84A0E0B51D1E57E500AC72E7 /* KNCirclePercentView.m in Sources */,
 				84A535841D1AC528009BF148 /* Question.m in Sources */,
 				84A535831D1AC528009BF148 /* Level.m in Sources */,
 				844B32971D04AC2500C0D194 /* MKAnnotationView+WebCache.m in Sources */,
-				CFA5A9781D1E1ACB00EF22C5 /* CHColorPickerView.m in Sources */,
 				849A86F81D185C260002BE9D /* AboutViewController.m in Sources */,
 				84A535821D1AC528009BF148 /* Answers.m in Sources */,
 				844B329A1D04AC2500C0D194 /* SDWebImageCompat.m in Sources */,
