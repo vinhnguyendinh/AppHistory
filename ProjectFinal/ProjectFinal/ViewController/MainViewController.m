@@ -136,55 +136,58 @@ static id instance = nil;
     
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return _numberChapter;
+    return 8;
 }
     
     
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     CusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    if(cell == nil){
-        cell = [[CusCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
-    UILabel *lblTheme = [cell.contentView viewWithTag:101];
+
+    cell.indexPathRow = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
     
-    if(indexPath.row % _numberChapter == 0){
-        lblTheme.text = @"Chương 1. Sự hình thành trật tự thế giới mới sau chiến tranh thế giới thứ hai";
+    if(indexPath.row == 0){
+        cell.lblThemeChapter.text = @"Chương 1. Sự hình thành trật tự thế giới mới sau chiến tranh thế giới thứ hai";
     }
-    else if(indexPath.row % _numberChapter == 1){
-        lblTheme.text = @"Chương 2. Liên Xô và các nước Đông Âu (1945 - 1991). Liên bang Nga";
+    else if(indexPath.row == 1){
+        cell.lblThemeChapter.text = @"Chương 2. Liên Xô và các nước Đông Âu (1945 - 1991). Liên bang Nga";
     }
-    else if(indexPath.row % _numberChapter == 2){
-        lblTheme.text = @"Chương 3. Các nước Á, Phi, Mĩ Latinh (1945 - 2000)";
+    else if(indexPath.row == 2){
+        cell.lblThemeChapter.text = @"Chương 3. Các nước Á, Phi, Mĩ Latinh (1945 - 2000)";
     }
-    else if(indexPath.row % _numberChapter == 3){
-        lblTheme.text = @"Chương 4. Mĩ, Tây Âu, Nhật Bản (1945 - 2000)";
+    else if(indexPath.row == 3){
+        cell.lblThemeChapter.text = @"Chương 4. Mĩ, Tây Âu, Nhật Bản (1945 - 2000)";
     }
-    else if(indexPath.row % _numberChapter == 4){
-        lblTheme.text = @"Chương 5. Quan hệ quốc tế (1945 - 2000)";
+    else if(indexPath.row == 4){
+        cell.lblThemeChapter.text = @"Chương 5. Quan hệ quốc tế (1945 - 2000)";
     }
-    else if(indexPath.row % _numberChapter == 5){
-        lblTheme.text = @"Chương 6. Cách mạng khao học - công nghệ và xu thế toàn cầu hóa";
+    else if(indexPath.row == 5){
+        cell.lblThemeChapter.text = @"Chương 6. Cách mạng khao học - công nghệ và xu thế toàn cầu hóa";
     }
-    else if(indexPath.row % _numberChapter == 6){
-        lblTheme.text = @"Chương 7. Việt Nam từ năm 1919 đến năm 1930";
+    else if(indexPath.row == 6){
+        cell.lblThemeChapter.text = @"Chương 7. Việt Nam từ năm 1919 đến năm 1930";
     }
-    else if(indexPath.row % _numberChapter == 7){
-        lblTheme.text = @"Chương 8. Việt Nam từ năm 1930 đến năm 1945";
+    else if(indexPath.row == 7){
+        cell.lblThemeChapter.text = @"Chương 8. Việt Nam từ năm 1930 đến năm 1945";
     }
+
+    
+//    if(indexPath.row != 0 && indexPath.row == cell.indexPathRow.row)
+//    {
+//        cell.userInteractionEnabled = NO;
+//        cell.lblThemeChapter.alpha = 0.5f;
+//    }
 
     //[self updateCell:cell];
     return cell;
 }
 
-- (float)updateCell : (UITableViewCell *)cell
+- (CGFloat)updateCell : (CusCell *)cell
 {
-    UILabel *lbl = [cell.contentView viewWithTag:101];
-    
-    lbl.frame = CGRectMake(lbl.frame.origin.x, lbl.frame.origin.y, cell.frame.size.width*2/3, 20);
+    cell.lblThemeChapter.frame = CGRectMake(cell.lblThemeChapter.frame.origin.x, cell.lblThemeChapter.frame.origin.y, cell.frame.size.width*2/3, 20);
 
-    [lbl sizeToFit];
-    return lbl.frame.size.height + 20;
+    [cell.lblThemeChapter sizeToFit];
+    return (cell.lblThemeChapter.frame.size.height + 20);
 }
 
 #pragma mark - tableView Delegate

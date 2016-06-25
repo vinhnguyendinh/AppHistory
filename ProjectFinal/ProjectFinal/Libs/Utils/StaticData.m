@@ -28,11 +28,19 @@
     self = [super init];
     if (self) {
         NSString *strMainColor = [[NSUserDefaults standardUserDefaults] stringForKey:kUD_MainColor];
-        _isTimeLevelOn = NO;
+        NSString *strIsTimeLevelOn = [[NSUserDefaults standardUserDefaults] stringForKey:kUD_MainColor];;
+        
         if (strMainColor == nil) {
             self.mainColor = [Utils colorFromHex:@"#03A9F4"];
         } else {
             self.mainColor = [Utils colorFromHex:strMainColor];
+        }
+        
+        if ( [@"NO" isEqual:strIsTimeLevelOn] ) {
+            self.isTimeLevelOn = NO;
+        }
+        else {
+            self.isTimeLevelOn = YES;
         }
     }
     return self;

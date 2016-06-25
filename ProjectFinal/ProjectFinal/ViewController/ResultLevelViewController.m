@@ -26,7 +26,7 @@
     _listQuestions = [[NSMutableArray alloc]initWithArray:
     [QuestionViewController sharedInstance].level.listQuestions];
     [self CountsAnsTrue];
-    NSLog(@" Score : %ld", (long)_Score);
+    //NSLog(@" Score : %ld", (long)_Score);
     
     self.lblScore.text = [NSString stringWithFormat:@"%ld/10 Điểm",(long)_Score];
 }
@@ -48,7 +48,7 @@
 {
     for (int i = 0; i < _listQuestions.count; i++) {
         Question *ques = [_listQuestions objectAtIndex:i];
-        if ([ques.answerTrue isEqualToString:[_listAnswersSelected objectAtIndex:i]]) {
+        if ([ques.answerTrue isEqualToString:(NSString *)[_listAnswersSelected objectAtIndex:i]]) {
             _Score++;
         }
     }
@@ -61,19 +61,21 @@
 }
 
 - (IBAction)btnNextLv:(id)sender {
-    if((long)_Score < 6 ){
-        
+    if((long)_Score < 6 ) {
+        // Sound
+        [[SoundManager sharedManager] playSound:@"sound1" looping:YES];
+        // AlertView
+
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Làm lại"
                   message:@"Bạn phải trả lời đúng 6/10"
                  delegate:self
         cancelButtonTitle:@"OK"
-        otherButtonTitles:nil, nil];
+        otherButtonTitles:nil];
         [alert show];
     }
     else {
-        LevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"LevelViewController"];
-        
-        [self.navigationController pushViewController:vc animated:YES];
+        NSUInteger ownIndex = [self.navigationController.viewControllers indexOfObject:self];
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:ownIndex - 2] animated:YES];
     }
 }
 @end

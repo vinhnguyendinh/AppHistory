@@ -18,7 +18,7 @@
 - (IBAction)btnSwitchSetTimeLevelClicked:(id)sender;
 
 - (IBAction)btnAboutClicked:(id)sender;
-- (IBAction)btnSetTimeClicked:(id)sender;
+
 
 
 

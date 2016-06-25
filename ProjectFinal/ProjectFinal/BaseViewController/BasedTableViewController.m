@@ -14,7 +14,11 @@
 
 @implementation BasedTableViewController
 
-
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger numberRow = [[self.numberRowInSection objectForKey:@(section)]integerValue];

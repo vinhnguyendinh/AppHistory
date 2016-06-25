@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "Utils.h"
 #define kUD_MainColor @"kUD_MainColor"
+#define kUD_IsLevelOn @"kUD_IsLevelOn"
 
 @interface StaticData : NSObject
 

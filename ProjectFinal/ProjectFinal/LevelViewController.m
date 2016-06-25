@@ -59,21 +59,25 @@ static id instance = nil;
 {
     CellLevel *cellLevel = [tableView dequeueReusableCellWithIdentifier:@"CellLevel" forIndexPath:indexPath];
     
-    if(cellLevel == nil){
+    if ( cellLevel == nil ) {
         cellLevel = [[CellLevel alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellLevel"];
     }
     
-    if(indexPath.row % 3 == 0){
-        UILabel *lblTheme = [cellLevel.contentView viewWithTag:102];
-        lblTheme.text = @"Level 1";
+    cellLevel.indexPathRow = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
+    
+    if(cellLevel.indexPathRow.row != 0) {
+        cellLevel.userInteractionEnabled = NO;
+        cellLevel.lblThemeLevel.alpha = 0.5f;
     }
-    if(indexPath.row % 3 == 1){
-        UILabel *lblTheme = [cellLevel.contentView viewWithTag:102];
-        lblTheme.text = @"Level 2";
+    
+    if(cellLevel.indexPathRow.row == 0){
+        cellLevel.lblThemeLevel.text = @"Level 1";
     }
-    if(indexPath.row % 3 == 2){
-        UILabel *lblTheme = [cellLevel.contentView viewWithTag:102];
-        lblTheme.text = @"Level 3";
+    if(cellLevel.indexPathRow.row == 1){
+        cellLevel.lblThemeLevel.text = @"Level 2";
+    }
+    if(cellLevel.indexPathRow.row == 2){
+        cellLevel.lblThemeLevel.text = @"Level 3";
     }
     
     return cellLevel;
@@ -94,8 +98,7 @@ static id instance = nil;
 
 - (void)backAction:(id)sender
 {
-    MainViewController *vc = [[Utils mainStoryboard]instantiateViewControllerWithIdentifier:@"MainViewController"];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

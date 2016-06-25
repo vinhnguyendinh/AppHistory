@@ -10,4 +10,7 @@
 
 @interface CellLevel : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *lblThemeLevel;
+@property NSIndexPath *indexPathRow;
+
 @end
