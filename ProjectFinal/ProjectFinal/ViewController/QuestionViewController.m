@@ -8,17 +8,13 @@
 
 #import "QuestionViewController.h"
 
-
 @interface QuestionViewController ()
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingOfBtnContinue;
 
 @property NSString *strTitleMessageAlertView;
 @property NSString *strMessageAlertView;
-
-//@property NSInteger minute;
-//@property NSInteger second;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingOfBtnContinue;
+@property (weak, nonatomic) IBOutlet UILabel *lblMinuteTimer;
+@property (weak, nonatomic) IBOutlet UILabel *lblSecondTimer;
 
 @end
 
@@ -38,7 +34,7 @@
     [self CustomButton];
     _numberAns = 4;
     _listAnswersSelected = [[NSMutableArray alloc]init];
-    _minute = 15;
+    _minute = 10;
     _second = 0;
     
     // Singleton
@@ -60,11 +56,28 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    _lblTimer.text = @"Time:  15:00";
+    _lblMinuteTimer.text = @"10 : ";    _lblSecondTimer.text = @"00";
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    // Control Timer
+    NSLog(@"View Will Appear");
+    [self.viewTimer drawCircleWithPercent:100
+                                 duration:600
+                                lineWidth:10
+                                clockwise:YES
+                                  lineCap:kCALineCapRound
+                                fillColor:[UIColor clearColor]
+                              strokeColor:[UIColor orangeColor]
+                           animatedColors:nil];
+    [self.viewTimer startAnimation];
 }
 
 - (void)displayTimer
 {
+    // Label
     dispatch_queue_t q_background = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(q_background, ^{
         while (_minute >= 0) {
@@ -75,33 +88,31 @@
                     _second = 60;
                 }
                 _second--;
-                NSMutableString *strMinute;
-                NSMutableString *strSecond;
+                NSString *strMinute;
+                NSString *strSecond;
                 if ( _minute >= 10 ) {
-                    strMinute = [NSMutableString stringWithFormat:@"Time:  %ld : ", (long)_minute];
+                    strMinute = [NSString stringWithFormat:@"%ld : ", (long)_minute];
                 } else if ( _minute >= 0 ){
-                    strMinute = [NSMutableString stringWithFormat:@"Time:  0%ld : ", (long)_minute];
+                    strMinute = [NSString stringWithFormat:@"0%ld : ", (long)_minute];
                 }
                 
                 if ( _second >= 10 ) {
-                    strSecond = [NSMutableString stringWithFormat:@"%ld", (long)_second];
+                    strSecond = [NSString stringWithFormat:@"%ld", (long)_second];
                 } else if ( _second >= 0 ) {
-                    strSecond = [NSMutableString stringWithFormat:@"0%ld", (long)_second];
+                    strSecond = [NSString stringWithFormat:@"0%ld", (long)_second];
                 }
-                
-                [strMinute insertString:strSecond atIndex:strMinute.length];
                 
                 if ( _minute < 0 ) {
-                    _lblTimer.text = @"Time:  00:00";
+                    strMinute = @"00 : "; strSecond = @"00";
                 }
                 
-                _lblTimer.text = strMinute;
+                _lblMinuteTimer.text = strMinute;   _lblSecondTimer.text = strSecond;
                 
             });
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             if ( _minute < 0 ) {
-                _lblTimer.text = @"Time:  00:00";
+                _lblMinuteTimer.text = @"00 : ";    _lblSecondTimer.text = @"00";
                 _strMessageAlertView = @"Bạn đã hết thời gian làm bài.";
                 [self alertViewShow];
             }
@@ -113,12 +124,12 @@
 #pragma mark - AlertView
 - (void)alertViewShow
 {
-    _strTitleMessageAlertView = @"Message";
+    _strTitleMessageAlertView = @"Mesage";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_strTitleMessageAlertView
                     message:_strMessageAlertView
                    delegate:self
-          cancelButtonTitle:@"OK"
-          otherButtonTitles:@"Cancel", nil];
+          cancelButtonTitle:@"Hoàn tất"
+          otherButtonTitles:@"Thoát", nil];
     [alert show];
 }
 
@@ -181,6 +192,7 @@ static bool check = true;
     }
 }
 
+static BOOL isBackAction = NO;
 - (void)updateDataCell
 {
     _question = [_level.listQuestions objectAtIndex:_numberQuesPresent];
@@ -198,7 +210,11 @@ static bool check = true;
         lblContentAns.textColor = [UIColor blackColor];
         [arrIndexPath addObject:indexPath];
     }
-    [self.tableView reloadRowsAtIndexPaths:arrIndexPath withRowAnimation:UITableViewRowAnimationLeft];
+    if ( !isBackAction ) {
+        [self.tableView reloadRowsAtIndexPaths:arrIndexPath withRowAnimation:UITableViewRowAnimationLeft];
+    } else {
+        [self.tableView reloadRowsAtIndexPaths:arrIndexPath withRowAnimation:UITableViewRowAnimationRight];
+    }
     
     [self.tableView endUpdates];
 
@@ -249,11 +265,13 @@ static bool check = true;
     UILabel *lblContent = [cell.contentView viewWithTag:101];
     
     if(indexPath.row == 0) {
+        cell.userInteractionEnabled = NO;
         NSMutableString *titleQues = [NSMutableString stringWithFormat:@"Câu %ld. ", (long)_numberQuesPresent + 1];
         [titleQues insertString:_question.contentQuestion atIndex:titleQues.length];
         
         lblContent.text = titleQues;
     } else {
+        cell.userInteractionEnabled = YES;
         Answers *ans = [_listAnswers objectAtIndex:indexPath.row - 1];
         lblContent.text = ans.contentAnswer;
     }
@@ -278,24 +296,36 @@ static bool check = true;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0) {
-        _btnContinue.enabled = NO;
-        _btnContinue.alpha = 0.5f;
-    } else {
+    if(indexPath.row != 0) {
+        // Get indexPath selected
         NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
+        // Setup Row Selected
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:selectedIndexPath];
         UILabel *lblContentAns = [cell.contentView viewWithTag:101];
         lblContentAns.textColor = [UIColor blueColor];
+        // Setup Transform
+        lblContentAns.font = [UIFont fontWithName:@"System" size:40];
+        lblContentAns.transform = CGAffineTransformScale(lblContentAns.transform, .25, .25);
+        [UIView animateWithDuration:0.5f animations:^{
+            lblContentAns.transform = CGAffineTransformScale(lblContentAns.transform, 4.0, 4.0);
+        } completion:^(BOOL finished) {
+            lblContentAns.font = [UIFont fontWithName:@"System" size:17];
+            lblContentAns.transform = CGAffineTransformScale(lblContentAns.transform, 1.0, 1.0);
+        }];
+        
+        cell.userInteractionEnabled = NO;
+        
+        // Reset Different Rows
         for(int i = 1; i <= 4; i++) {
             NSIndexPath *indexPathForRow = [NSIndexPath indexPathForRow:i inSection:0];
             if( indexPathForRow != selectedIndexPath ) {
                 cell = [tableView cellForRowAtIndexPath:indexPathForRow];
+                cell.userInteractionEnabled = YES;
                 lblContentAns = [cell.contentView viewWithTag:101];
                 lblContentAns.textColor = [UIColor blackColor];
             }
-
-            
         }
+        //Setup Button
         _btnContinue.enabled = YES;
         _btnContinue.alpha = 1.0f;
         _indexAnsSelected = indexPath.row;
@@ -314,7 +344,11 @@ static bool check = true;
         if(_numberQuesPresent < 0){
             [self backVC];
         }
-        else [self updateDataCell];
+        else {
+            isBackAction = YES;
+            [self updateDataCell];
+            isBackAction = NO;
+        }
     }
     
 }

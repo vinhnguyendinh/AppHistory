@@ -45,6 +45,8 @@
 		844B32B61D04B2AB00C0D194 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B32B51D04B2AB00C0D194 /* MainViewController.m */; };
 		849A86F81D185C260002BE9D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A86F51D185C260002BE9D /* AboutViewController.m */; };
 		849A86F91D185C260002BE9D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A86F71D185C260002BE9D /* SettingViewController.m */; };
+		84A0E0B51D1E57E500AC72E7 /* KNCirclePercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0E0B21D1E57E500AC72E7 /* KNCirclePercentView.m */; };
+		84A0E0B61D1E57E500AC72E7 /* KNPercentLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0E0B41D1E57E500AC72E7 /* KNPercentLabel.m */; };
 		84A535821D1AC528009BF148 /* Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5357D1D1AC528009BF148 /* Answers.m */; };
 		84A535831D1AC528009BF148 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5357F1D1AC528009BF148 /* Level.m */; };
 		84A535841D1AC528009BF148 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A535811D1AC528009BF148 /* Question.m */; };
@@ -165,6 +167,10 @@
 		849A86F51D185C260002BE9D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = ViewController/AboutViewController.m; sourceTree = "<group>"; };
 		849A86F61D185C260002BE9D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ViewController/SettingViewController.h; sourceTree = "<group>"; };
 		849A86F71D185C260002BE9D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ViewController/SettingViewController.m; sourceTree = "<group>"; };
+		84A0E0B11D1E57E500AC72E7 /* KNCirclePercentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCirclePercentView.h; sourceTree = "<group>"; };
+		84A0E0B21D1E57E500AC72E7 /* KNCirclePercentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNCirclePercentView.m; sourceTree = "<group>"; };
+		84A0E0B31D1E57E500AC72E7 /* KNPercentLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNPercentLabel.h; sourceTree = "<group>"; };
+		84A0E0B41D1E57E500AC72E7 /* KNPercentLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNPercentLabel.m; sourceTree = "<group>"; };
 		84A5357C1D1AC528009BF148 /* Answers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = Question/Answers.h; sourceTree = "<group>"; };
 		84A5357D1D1AC528009BF148 /* Answers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Answers.m; path = Question/Answers.m; sourceTree = "<group>"; };
 		84A5357E1D1AC528009BF148 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Question/Level.h; sourceTree = "<group>"; };
@@ -353,6 +359,18 @@
 			path = Libs/SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		84A0E0B01D1E57E500AC72E7 /* KNCirclePercentView */ = {
+			isa = PBXGroup;
+			children = (
+				84A0E0B11D1E57E500AC72E7 /* KNCirclePercentView.h */,
+				84A0E0B21D1E57E500AC72E7 /* KNCirclePercentView.m */,
+				84A0E0B31D1E57E500AC72E7 /* KNPercentLabel.h */,
+				84A0E0B41D1E57E500AC72E7 /* KNPercentLabel.m */,
+			);
+			name = KNCirclePercentView;
+			path = Libs/KNCirclePercentView;
+			sourceTree = "<group>";
+		};
 		84A5357B1D1AC511009BF148 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +477,7 @@
 		84BD37FC1CFF48C9004E2EA9 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				84A0E0B01D1E57E500AC72E7 /* KNCirclePercentView */,
 				84D74AC41D19949700688F98 /* fmdb */,
 				844B32731D04AC2500C0D194 /* SDWebCacheImage */,
 				844B32911D04AC2500C0D194 /* SoundManager */,
@@ -666,9 +685,11 @@
 				84BD37DB1CFF37D9004E2EA9 /* AppDelegate.m in Sources */,
 				844B32721D04AC0E00C0D194 /* Utils.m in Sources */,
 				844B32B21D04B28200C0D194 /* LeftMenuViewController.m in Sources */,
+				84A0E0B61D1E57E500AC72E7 /* KNPercentLabel.m in Sources */,
 				CF5D9DDE1D1B137100F9A586 /* LevelViewController.m in Sources */,
 				844B329C1D04AC2500C0D194 /* SDWebImageDownloader.m in Sources */,
 				84D74AD41D19949700688F98 /* FMResultSet.m in Sources */,
+				84A0E0B51D1E57E500AC72E7 /* KNCirclePercentView.m in Sources */,
 				84A535841D1AC528009BF148 /* Question.m in Sources */,
 				84A535831D1AC528009BF148 /* Level.m in Sources */,
 				844B32971D04AC2500C0D194 /* MKAnnotationView+WebCache.m in Sources */,

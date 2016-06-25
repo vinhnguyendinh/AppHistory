@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *webViewHeight;
 
 @end

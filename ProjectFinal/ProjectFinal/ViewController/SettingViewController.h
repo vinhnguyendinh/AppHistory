@@ -10,14 +10,12 @@
 
 @interface SettingViewController : BasedTableViewController <UIAlertViewDelegate>
 
-
-@property (weak, nonatomic) IBOutlet UIButton *btnThemeColor;
-- (IBAction)btnThemeColorClicked:(id)sender;
-
-//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *btnResetData;
-//- (IBAction)btnResetDataClicked:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnSetTime;
 @property (weak, nonatomic) IBOutlet UIButton *btnAbout;
+@property (weak, nonatomic) IBOutlet UIButton *btnThemeColor;
+
+@property (weak, nonatomic) IBOutlet UISwitch *btnSwitchSetTimeLevel;
+- (IBAction)btnThemeColorClicked:(id)sender;
+- (IBAction)btnSwitchSetTimeLevelClicked:(id)sender;
 
 - (IBAction)btnAboutClicked:(id)sender;
 - (IBAction)btnSetTimeClicked:(id)sender;
