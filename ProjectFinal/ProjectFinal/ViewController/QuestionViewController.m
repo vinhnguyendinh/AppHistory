@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingOfBtnContinue;
 @property (weak, nonatomic) IBOutlet UILabel *lblMinuteTimer;
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondTimer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tbvHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lblTimeLeading;
 
 @end
 
@@ -34,7 +36,7 @@
     [self CustomButton];
     _numberAns = 4;
     _listAnswersSelected = [[NSMutableArray alloc]init];
-    _minute = 10;
+    _minute = 5;
     _second = 0;
     
     // Singleton
@@ -56,7 +58,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    _lblMinuteTimer.text = @"10 : ";    _lblSecondTimer.text = @"00";
+    _lblMinuteTimer.text = @"05 : ";    _lblSecondTimer.text = @"00";
+    
+    //_tbvHeight.constant = (self.view.frame.size.height - 65 - 100 - 40);
+    _lblTimeLeading.constant = (self.view.frame.size.width - 89 - 85) / 2;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -65,7 +70,7 @@
     // Control Timer
     NSLog(@"View Will Appear");
     [self.viewTimer drawCircleWithPercent:100
-                                 duration:600
+                                 duration:300
                                 lineWidth:10
                                 clockwise:YES
                                   lineCap:kCALineCapRound
