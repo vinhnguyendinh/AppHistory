@@ -15,6 +15,7 @@
     self = [super init];
     
     if ( self ) {
+        _isLocked = YES;
         _numberLevel = numberLev;
         _listLevels = [[NSMutableArray alloc]init];
     }

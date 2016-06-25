@@ -55,7 +55,11 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     // Display Timer
-    [self displayTimer];
+    BOOL checkDisplayTimer = [StaticData sharedInstance].isTimeLevelOn;
+    if ( checkDisplayTimer ) {
+        [self displayTimer];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -67,11 +71,9 @@
     _lblTimeLeading.constant = (self.view.frame.size.width - 89 - 85) / 2;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)displayTimer
 {
-    [super viewDidAppear:animated];
     // Control Timer
-    NSLog(@"View Will Appear");
     [self.viewTimer drawCircleWithPercent:100
                                  duration:180
                                 lineWidth:10
@@ -84,10 +86,7 @@
                                             [UIColor orangeColor],
                                             [UIColor redColor]]];
     [self.viewTimer startAnimation];
-}
-
-- (void)displayTimer
-{
+    
     // Label
     dispatch_queue_t q_background = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(q_background, ^{
@@ -161,9 +160,12 @@
             [alertView setHidden:YES];
         }
     }
-    
 }
 
+- (void)resetData
+{
+    
+}
 //Singleton
 static id instance = nil;
 + (QuestionViewController *)sharedInstance

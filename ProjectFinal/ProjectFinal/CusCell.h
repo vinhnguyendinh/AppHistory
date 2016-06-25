@@ -10,4 +10,8 @@
 
 @interface CusCell : UITableViewCell
 
+
+@property (weak, nonatomic) IBOutlet UILabel *lblThemeChapter;
+@property NSIndexPath *indexPathRow;
+
 @end

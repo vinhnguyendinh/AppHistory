@@ -12,6 +12,7 @@
 
 @property                     NSInteger numberLevel;
 @property(nonatomic, strong)  NSMutableArray *listLevels;
+@property                     BOOL isLocked;
 
 - (instancetype)initWithNumbLevel:(NSInteger)numberLev;
 

@@ -146,11 +146,6 @@
                                     <constraint firstAttribute="height" constant="64" id="t06-MH-UJn"/>
                                     <constraint firstItem="THy-7Y-kTA" firstAttribute="top" secondItem="coN-5a-A3e" secondAttribute="top" constant="9" id="zXL-Ld-Pqx"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="qyE-VJ-czc"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -942,6 +937,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="lblThemeChapter" destination="X3r-lw-zEI" id="o8g-z0-wb7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1005,15 +1003,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c9B-Ms-PlM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c9B-Ms-PlM">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellLevel" rowHeight="89" id="Pkd-HJ-Gad" customClass="CellLevel">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="89"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellLevel" rowHeight="103" id="Pkd-HJ-Gad" customClass="CellLevel">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pkd-HJ-Gad" id="91Y-ua-TPQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8w-6X-Att">
@@ -1025,12 +1023,15 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="K8w-6X-Att" firstAttribute="leading" secondItem="91Y-ua-TPQ" secondAttribute="leadingMargin" constant="48" id="URc-2b-dWe"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="K8w-6X-Att" secondAttribute="bottom" constant="5" id="jLj-aq-gna"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="K8w-6X-Att" secondAttribute="bottom" constant="19" id="jLj-aq-gna"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="K8w-6X-Att" secondAttribute="trailing" constant="325" id="sk2-mP-wlV"/>
                                                 <constraint firstItem="K8w-6X-Att" firstAttribute="top" secondItem="91Y-ua-TPQ" secondAttribute="topMargin" constant="5" id="uPd-iy-5xA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="lblThemeLevel" destination="K8w-6X-Att" id="YFw-JM-k6b"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

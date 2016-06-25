@@ -76,7 +76,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    UIView *viewColor = (UIView *)[cell.contentView viewWithTag:101];
+    //UIView *viewColor = (UIView *)[cell.contentView viewWithTag:101];
     UILabel *lblText = (UILabel *)[cell.contentView viewWithTag:102];
     
     lblText.text = self.arrColorName[indexPath.row];

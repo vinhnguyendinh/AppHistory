@@ -16,7 +16,7 @@
 @property                       NSInteger         minScoreToPass;
 @property                       NSInteger         startId;
 @property                       NSInteger         endId;
-
+@property                       BOOL              isLocked;
 
 - (instancetype)initWithNumbQues:(NSInteger)numbQues andMinScoreToPass:(NSInteger)minScore andStartId:(NSInteger)start andEndId:(NSInteger)end;
 

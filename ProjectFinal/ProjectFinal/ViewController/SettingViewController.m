@@ -47,13 +47,17 @@
 
 - (IBAction)btnSwitchSetTimeLevelClicked:(id)sender {
     BOOL setTimeLevelOn = [StaticData sharedInstance].isTimeLevelOn;
-    if (setTimeLevelOn) {
-        [[StaticData sharedInstance] setIsTimeLevelOn:NO];
-    } else {
-        [[StaticData sharedInstance] setIsTimeLevelOn:YES];
+    NSString *strTimer;
+    if ( setTimeLevelOn ) {
+        strTimer = @"YES";
     }
+    else {
+        strTimer = @"NO";
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:strTimer forKey:kUD_IsLevelOn];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [StaticData sharedInstance].isTimeLevelOn = [strTimer boolValue];
 }
-
 - (IBAction)btnAboutClicked:(id)sender {
 //    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Message" message:@"This is the learning application of history for iOS." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 //    [alert show];
