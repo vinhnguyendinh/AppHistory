@@ -7,6 +7,9 @@
 //
 
 #import "QuestionViewController.h"
+#import "Soundmanager.h"
+#import "MusicViewController.h"
+
 
 @interface QuestionViewController ()
 
@@ -282,7 +285,6 @@ static BOOL isBackAction = NO;
         cell.userInteractionEnabled = NO;
         NSMutableString *titleQues = [NSMutableString stringWithFormat:@"Câu %ld. ", (long)_numberQuesPresent + 1];
         [titleQues insertString:_question.contentQuestion atIndex:titleQues.length];
-        
         lblContent.text = titleQues;
     } else {
         cell.userInteractionEnabled = YES;

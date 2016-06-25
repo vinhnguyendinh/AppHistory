@@ -110,6 +110,7 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="536" id="3Hy-dG-ueJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="536" id="PBU-aC-4jt"/>
                                 </constraints>
                             </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coN-5a-A3e">
@@ -145,6 +146,11 @@
                                     <constraint firstAttribute="height" constant="64" id="t06-MH-UJn"/>
                                     <constraint firstItem="THy-7Y-kTA" firstAttribute="top" secondItem="coN-5a-A3e" secondAttribute="top" constant="9" id="zXL-Ld-Pqx"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qyE-VJ-czc"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -606,7 +612,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xSF-of-f8S"/>
                                 </constraints>
-                                <state key="normal" title="Theme Color">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Tùy chọn màu">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -616,10 +623,10 @@
                             <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCp-Y6-G7O">
                                 <rect key="frame" x="20" y="219" width="560" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Time Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNc-6b-OfZ">
-                                        <rect key="frame" x="223" y="0.0" width="114" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đặt thời gian làm bài" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNc-6b-OfZ">
+                                        <rect key="frame" x="200" y="0.0" width="160" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="114" id="WsC-QU-s1n"/>
+                                            <constraint firstAttribute="width" constant="160" id="WsC-QU-s1n"/>
                                             <constraint firstAttribute="height" constant="40" id="oEX-p8-dcS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -658,7 +665,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9JW-gq-O96"/>
                                 </constraints>
-                                <state key="normal" title="About">
+                                <state key="normal" title="Thông tin">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
