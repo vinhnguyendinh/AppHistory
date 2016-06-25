@@ -105,19 +105,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9B-kV-ps4">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R9B-kV-ps4">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="536" id="3Hy-dG-ueJ"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Hp2-CC-VUu"/>
-                                    </mask>
-                                </variation>
                             </webView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coN-5a-A3e">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coN-5a-A3e">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAU-3F-Fil">
@@ -162,13 +157,6 @@
                             <constraint firstAttribute="trailing" secondItem="coN-5a-A3e" secondAttribute="trailing" id="qGT-5w-18s"/>
                             <constraint firstItem="R9B-kV-ps4" firstAttribute="top" secondItem="eyf-bp-mY3" secondAttribute="bottom" constant="-69" id="yhl-v7-Sc5"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5N9-at-vXQ"/>
-                                <exclude reference="YWI-SD-y5w"/>
-                                <exclude reference="eIe-4F-K03"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="2Ts-oH-Kw9">
                         <nil key="title"/>
