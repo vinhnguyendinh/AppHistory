@@ -110,12 +110,8 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="536" id="3Hy-dG-ueJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="536" id="PBU-aC-4jt"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Hp2-CC-VUu"/>
-                                    </mask>
-                                </variation>
                             </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coN-5a-A3e">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
@@ -150,23 +146,31 @@
                                     <constraint firstAttribute="height" constant="64" id="qyE-VJ-czc"/>
                                     <constraint firstItem="THy-7Y-kTA" firstAttribute="top" secondItem="coN-5a-A3e" secondAttribute="top" constant="9" id="zXL-Ld-Pqx"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qyE-VJ-czc"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="coN-5a-A3e" secondAttribute="bottom" constant="536" id="2kn-Se-nqW"/>
                             <constraint firstItem="coN-5a-A3e" firstAttribute="top" secondItem="eyf-bp-mY3" secondAttribute="bottom" constant="-20" id="4hN-vE-5NG"/>
+                            <constraint firstItem="R9B-kV-ps4" firstAttribute="top" secondItem="coN-5a-A3e" secondAttribute="bottom" id="BpM-H5-436"/>
                             <constraint firstItem="R9B-kV-ps4" firstAttribute="top" secondItem="coN-5a-A3e" secondAttribute="bottom" id="Xv9-eb-xDn"/>
                             <constraint firstItem="coN-5a-A3e" firstAttribute="leading" secondItem="aUP-Iq-dOt" secondAttribute="leading" id="au9-BO-tct"/>
                             <constraint firstItem="R9B-kV-ps4" firstAttribute="leading" secondItem="aUP-Iq-dOt" secondAttribute="leading" id="cf8-cR-yhA"/>
                             <constraint firstAttribute="trailing" secondItem="R9B-kV-ps4" secondAttribute="trailing" id="l6K-rn-cY4"/>
                             <constraint firstAttribute="trailing" secondItem="coN-5a-A3e" secondAttribute="trailing" id="qGT-5w-18s"/>
+                            <constraint firstItem="coN-5a-A3e" firstAttribute="top" secondItem="aUP-Iq-dOt" secondAttribute="top" id="wj3-bk-4fu"/>
                             <constraint firstItem="R9B-kV-ps4" firstAttribute="top" secondItem="eyf-bp-mY3" secondAttribute="bottom" constant="-69" id="yhl-v7-Sc5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="5N9-at-vXQ"/>
-                                <exclude reference="YWI-SD-y5w"/>
-                                <exclude reference="eIe-4F-K03"/>
+                                <exclude reference="4hN-vE-5NG"/>
+                                <exclude reference="Xv9-eb-xDn"/>
+                                <exclude reference="yhl-v7-Sc5"/>
                             </mask>
                         </variation>
                     </view>
@@ -613,7 +617,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xSF-of-f8S"/>
                                 </constraints>
-                                <state key="normal" title="Theme Color">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Tùy chọn màu">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -623,10 +628,10 @@
                             <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCp-Y6-G7O">
                                 <rect key="frame" x="20" y="219" width="560" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Time Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNc-6b-OfZ">
-                                        <rect key="frame" x="223" y="0.0" width="114" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đặt thời gian làm bài" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNc-6b-OfZ">
+                                        <rect key="frame" x="200" y="0.0" width="160" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="114" id="WsC-QU-s1n"/>
+                                            <constraint firstAttribute="width" constant="160" id="WsC-QU-s1n"/>
                                             <constraint firstAttribute="height" constant="40" id="oEX-p8-dcS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -665,7 +670,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9JW-gq-O96"/>
                                 </constraints>
-                                <state key="normal" title="About">
+                                <state key="normal" title="Thông tin">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
