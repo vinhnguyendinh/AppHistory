@@ -23,7 +23,6 @@
 - (IBAction)btnLamLai:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *btnClickNextLv;
-
 - (IBAction)btnNextLv:(id)sender;
 
 @end

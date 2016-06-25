@@ -88,4 +88,10 @@ static id instance = nil;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)backAction:(id)sender
+{
+    MainViewController *vc = [[Utils mainStoryboard]instantiateViewControllerWithIdentifier:@"MainViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 @end

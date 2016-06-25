@@ -53,12 +53,6 @@
     }
 }
 
-//- (void)backAction:(id)sender
-//{
-//    LevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"LevelViewController"];
-//    
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
 - (IBAction)btnLamLai:(id)sender {
     LevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"LevelViewController"];
     
@@ -66,8 +60,18 @@
 }
 
 - (IBAction)btnNextLv:(id)sender {
-    if((long)_Score <= 6 ){
+    if((long)_Score < 6 ){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Làm lại"
+                  message:@"Bạn phải trả lời đúng 6/10"
+                 delegate:self
+        cancelButtonTitle:@"OK"
+        otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else {
+        LevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"LevelViewController"];
         
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 @end

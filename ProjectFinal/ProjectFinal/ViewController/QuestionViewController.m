@@ -38,7 +38,7 @@
     [self CustomButton];
     _numberAns = 4;
     _listAnswersSelected = [[NSMutableArray alloc]init];
-    _minute = 1;
+    _minute = 15;
     _second = 0;
     
     // Singleton
@@ -112,10 +112,10 @@
 {
     _strTitleMessageAlertView = @"Message";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_strTitleMessageAlertView
-                                                    message:_strMessageAlertView
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:@"Cancel", nil];
+                    message:_strMessageAlertView
+                   delegate:self
+          cancelButtonTitle:@"OK"
+          otherButtonTitles:@"Cancel", nil];
     [alert show];
 }
 
@@ -164,21 +164,17 @@ static bool check = true;
         [self updateDataCell];
         [self insertListAnsSelected];
     } else if ( _numberQuesPresent == 10) {
-//<<<<<<< HEAD
-//            // Set Title of Button
-//        [self insertListAnsSelected];
-//            _strTitleBtn = @"Kiểm tra";
-//            [_btnContinue setTitle:_strTitleBtn forState:UIControlStateNormal];
-//            // Push VC 
-//            ResultLevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"ResultLevelViewController"];
-//            [self.navigationController pushViewController:vc animated:YES];
-//=======
+           // Set Title of Button
+        [self insertListAnsSelected];
+
         // Set Title of Button
         _strTitleBtn = @"Kiểm tra";
         [_btnContinue setTitle:_strTitleBtn forState:UIControlStateNormal];
         
         _strMessageAlertView = @"Bạn có chắc chắn muốn nộp bài ?";
+        
         [self alertViewShow];
+        
     }
 }
 
