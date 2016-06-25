@@ -46,6 +46,9 @@
     _question = [_level.listQuestions objectAtIndex:_numberQuesPresent];
     _listAnswers = [[NSMutableArray alloc]initWithArray:_question.listAnswers];
     
+    //delete lines between UITableViewCells in UITableView
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
     // Display Timer
     [self displayTimer];
 }

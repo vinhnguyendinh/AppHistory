@@ -14,11 +14,13 @@
 {
     return self.numberRowInSection.allKeys.count;
 }
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     NSInteger numberRow = [[self.numberRowInSection objectForKey:@(section)]integerValue];
     return numberRow;
 }
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;

@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     _webViewHeight.constant = (self.view.frame.size.height - 65);
-    
+
     [self.view addGestureRecognizer:[SWRevealViewController sharedInstance].panGestureRecognizer];
     
     self.strTitle = @"Giới thiệu";

@@ -94,6 +94,8 @@
 		CF5D9DDE1D1B137100F9A586 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DDD1D1B137100F9A586 /* LevelViewController.m */; };
 		CF5D9DE11D1B14EA00F9A586 /* CellLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */; };
 		CF903CCE1D1ACAF1007E99F9 /* CusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF903CCD1D1ACAF1007E99F9 /* CusCell.m */; };
+		CFA5A9851D1E2CBB00EF22C5 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA5A9841D1E2CBB00EF22C5 /* TimeViewController.m */; };
+		CFA5A99E1D1E4E2D00EF22C5 /* ColectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA5A99D1D1E4E2D00EF22C5 /* ColectionViewCell.m */; };
 		CFC412351D1D33440008C920 /* ColorChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC412341D1D33440008C920 /* ColorChooserViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -237,6 +239,10 @@
 		CF5D9DE01D1B14EA00F9A586 /* CellLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLevel.m; sourceTree = "<group>"; };
 		CF903CCC1D1ACAF1007E99F9 /* CusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusCell.h; sourceTree = "<group>"; };
 		CF903CCD1D1ACAF1007E99F9 /* CusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusCell.m; sourceTree = "<group>"; };
+		CFA5A9831D1E2CBB00EF22C5 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		CFA5A9841D1E2CBB00EF22C5 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
+		CFA5A99C1D1E4E2D00EF22C5 /* ColectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColectionViewCell.h; sourceTree = "<group>"; };
+		CFA5A99D1D1E4E2D00EF22C5 /* ColectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColectionViewCell.m; sourceTree = "<group>"; };
 		CFC412331D1D33440008C920 /* ColorChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChooserViewController.h; sourceTree = "<group>"; };
 		CFC412341D1D33440008C920 /* ColorChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChooserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -454,12 +460,16 @@
 				84D74ADF1D19A35600688F98 /* QuestionViewController.m */,
 				849A86F61D185C260002BE9D /* SettingViewController.h */,
 				849A86F71D185C260002BE9D /* SettingViewController.m */,
+				CFA5A9831D1E2CBB00EF22C5 /* TimeViewController.h */,
+				CFA5A9841D1E2CBB00EF22C5 /* TimeViewController.m */,
 				844B32B01D04B28200C0D194 /* StartViewController.h */,
 				844B32B11D04B28200C0D194 /* StartViewController.m */,
 				84D066371D1D4379008DE1C8 /* ResultLevelViewController.h */,
 				84D066381D1D4379008DE1C8 /* ResultLevelViewController.m */,
 				CFC412331D1D33440008C920 /* ColorChooserViewController.h */,
 				CFC412341D1D33440008C920 /* ColorChooserViewController.m */,
+				CFA5A99C1D1E4E2D00EF22C5 /* ColectionViewCell.h */,
+				CFA5A99D1D1E4E2D00EF22C5 /* ColectionViewCell.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -684,6 +694,7 @@
 				84A535831D1AC528009BF148 /* Level.m in Sources */,
 				844B32971D04AC2500C0D194 /* MKAnnotationView+WebCache.m in Sources */,
 				849A86F81D185C260002BE9D /* AboutViewController.m in Sources */,
+				CFA5A9851D1E2CBB00EF22C5 /* TimeViewController.m in Sources */,
 				84A535821D1AC528009BF148 /* Answers.m in Sources */,
 				844B329A1D04AC2500C0D194 /* SDWebImageCompat.m in Sources */,
 				84C6A8871D1A958D00188FA8 /* ExamViewController.m in Sources */,
@@ -699,6 +710,7 @@
 				844B326D1D04AB8B00C0D194 /* BasedTableViewController.m in Sources */,
 				844B32991D04AC2500C0D194 /* SDImageCache.m in Sources */,
 				84D74AE01D19A35600688F98 /* QuestionViewController.m in Sources */,
+				CFA5A99E1D1E4E2D00EF22C5 /* ColectionViewCell.m in Sources */,
 				84D74AD01D19949700688F98 /* FMDatabase.m in Sources */,
 				84BD37E41CFF37DA004E2EA9 /* ProjectFinal.xcdatamodeld in Sources */,
 				844B326E1D04AB8B00C0D194 /* BasedViewController.m in Sources */,

@@ -1,26 +1,28 @@
 //
-//  ColorChooserViewController.m
+//  ColectionViewCell.m
 //  ProjectFinal
 //
-//  Created by Nguyen Duc Tai on 6/24/16.
+//  Created by Nguyen Duc Tai on 6/25/16.
 //  Copyright © 2016 VinhNguyen. All rights reserved.
 //
 
-#import "ColorChooserViewController.h"
+#import "ColectionViewCell.h"
+#import "BasedTableViewController.h"
 #import "LeftMenuViewController.h"
-//#import "StartViewController.h"
 
-@interface ColorChooserViewController ()
+
+@interface ColectionViewCell ()
 
 @end
 
-@implementation ColorChooserViewController
+@implementation ColectionViewCell
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
-
-    self.title = LocalizedString(@"Color Theme Chooser");
+    // Do any additional setup after loading the view.
+    
+//    UICollectionViewScrollDirectionHorizontal;
+    
     self.arrColorName = @[@"Red",
                           @"Pink",
                           @"Purple",
@@ -38,7 +40,19 @@
                           @"Deep Orange",
                           @"Blue Grey",
                           @"Brown",
-                          @"Black"];
+                          @"Black",
+                          @"900",
+                          @"A400",
+                          @"A700",
+                          @"A701",
+                          @"A401",
+                          @"700",
+                          @"600",
+                          @"900",
+                          @"500",
+                          @"A402",
+                          @"A404",
+                          @"200"];
     self.arrColorValue = @[@"#F44336",
                            @"#EC407A",
                            @"#9C27B0",
@@ -56,11 +70,22 @@
                            @"#FF5722",
                            @"#795548",
                            @"#607DBB",
-                           @"#000000"];
+                           @"#000000",
+                           @"#1B5E20",
+                           @"#00E676",
+                           @"#1DE9B6",
+                           @"#00BFA5",
+                           @"#76FF03",
+                           @"#5D4037",
+                           @"#546E7A",
+                           @"#212121",
+                           @"#9E9E9E",
+                           @"#D500F9",
+                           @"#FF1744",
+                           @"#F48FB1"];
     
     self.numberRowInSection = @{@(0): @(self.arrColorName.count)};
-    [self.tableView reloadData];
-
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,25 +93,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    return 5*6;
     
-    if ( cell == nil ) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
-    
-    UIView *viewColor = (UIView *)[cell.contentView viewWithTag:101];
-    UILabel *lblText = (UILabel *)[cell.contentView viewWithTag:102];
-    
-    lblText.text = self.arrColorName[indexPath.row];
-    cell.backgroundColor = [Utils colorFromHex:self.arrColorValue[indexPath.row]];
-    
-    return cell;
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    cell.backgroundColor = [Utils colorFromHex:self.arrColorValue[indexPath.row]];
+    
+    return  cell;
+}
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return CGSizeMake(collectionView.frame.size.width /4, collectionView.frame.size.width /4);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *strColor = self.arrColorValue[indexPath.row];
     [[NSUserDefaults standardUserDefaults] setObject:strColor forKey:kUD_MainColor];
@@ -94,21 +121,14 @@
     
     [StaticData sharedInstance].mainColor = [Utils colorFromHex:self.arrColorValue[indexPath.row]];
     
-    
     [[LeftMenuViewController shareInstance] refreshColor];
     [self.navigationController popViewControllerAnimated:YES];
     
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 1;
+    return self.numberRowInSection.allKeys.count;
 }
-
-- (void)backAction:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 
 @end
