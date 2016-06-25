@@ -7,7 +7,6 @@
 //
 
 #import "SettingViewController.h"
-#import "ColorChooserViewController.h"
 #import "QuestionViewController.h"
 #import "ColectionViewCell.h"
 #import "AboutViewController.h"
@@ -61,8 +60,10 @@
 - (IBAction)btnAboutClicked:(id)sender {
 //    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Message" message:@"This is the learning application of history for iOS." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 //    [alert show];
+    
     AboutViewController *vc = [[Utils mainStoryboard]instantiateViewControllerWithIdentifier:@"AboutViewController"];
     [self.navigationController pushViewController:vc animated:YES];
+     
 }
 
 - (void)backAction:(id)sender

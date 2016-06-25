@@ -11,7 +11,6 @@
 #import "QuestionLib.h"
 #import "LevelViewController.h"
 #import "SoundManager.h"
-#import "MusicViewController.h"
 
 @implementation ResultLevelViewController
 
@@ -66,6 +65,7 @@
         // Sound
         [[SoundManager sharedManager] playSound:@"sound1" looping:YES];
         // AlertView
+
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Làm lại"
                   message:@"Bạn phải trả lời đúng 6/10"
                  delegate:self
