@@ -1093,7 +1093,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-yb-iYh">
-                                <rect key="frame" x="0.0" y="65" width="600" height="504"/>
+                                <rect key="frame" x="0.0" y="65" width="600" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="504" id="QPJ-ES-nYt"/>
@@ -1140,6 +1140,11 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QPJ-ES-nYt"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Yje-9c-lt3" id="nMX-nP-m8X"/>
                                     <outlet property="delegate" destination="Yje-9c-lt3" id="rXC-Lm-y32"/>
@@ -1171,12 +1176,15 @@
                         <constraints>
                             <constraint firstItem="VIz-jW-iT3" firstAttribute="top" secondItem="4R3-Aq-AkL" secondAttribute="top" id="BHd-h1-3gj"/>
                             <constraint firstItem="ec9-yb-iYh" firstAttribute="leading" secondItem="4R3-Aq-AkL" secondAttribute="leading" id="HRz-Ia-Oa5"/>
+                            <constraint firstItem="1ca-lg-lWE" firstAttribute="top" secondItem="ec9-yb-iYh" secondAttribute="bottom" id="JQE-3k-zsz"/>
                             <constraint firstItem="ec9-yb-iYh" firstAttribute="top" secondItem="VIz-jW-iT3" secondAttribute="bottom" id="qQc-hi-73i"/>
                             <constraint firstAttribute="trailing" secondItem="ec9-yb-iYh" secondAttribute="trailing" id="rrE-l1-fpV"/>
                             <constraint firstAttribute="trailing" secondItem="VIz-jW-iT3" secondAttribute="trailing" id="sES-HP-USN"/>
                             <constraint firstItem="VIz-jW-iT3" firstAttribute="leading" secondItem="4R3-Aq-AkL" secondAttribute="leading" id="sOS-ui-yPY"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="customNavigation" destination="VIz-jW-iT3" id="WYe-Sj-r3E"/>
                         <outlet property="lblTitle" destination="WrZ-g7-lr1" id="AuX-Rj-18K"/>
