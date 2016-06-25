@@ -198,6 +198,7 @@ static id instance = nil;
     LevelViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"LevelViewController"];
     
     [self.navigationController pushViewController:vc animated:YES];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
 @end

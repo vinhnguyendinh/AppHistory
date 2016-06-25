@@ -46,16 +46,16 @@ static id instance = nil;
     lblNum.hidden = YES;
     
     if (indexPath.row == 0) {
-        img.image = [UIImage imageNamed:@"ic_translate.png"];
+        img.image = [UIImage imageNamed:@"icon_ontap.png"];
         lblTitle.text = @"Ôn Tập";
     } else if (indexPath.row == 1) {
-        img.image = [UIImage imageNamed:@"ic_add.png"];
+        img.image = [UIImage imageNamed:@"605367_LA.gif"];
         lblTitle.text = @"Luyện Đề Thi";
     } else if (indexPath.row == 2) {
-        img.image = [UIImage imageNamed:@"ic_setting.png"];
+        img.image = [UIImage imageNamed:@"icon_st.png"];
         lblTitle.text = @"Cài đặt";
     } else if (indexPath.row == 3) {
-        img.image = [UIImage imageNamed:@"ic_about.png"];
+        img.image = [UIImage imageNamed:@"icon_about.png"];
         lblTitle.text = @"Giới thiệu";
     }
     return cell;
