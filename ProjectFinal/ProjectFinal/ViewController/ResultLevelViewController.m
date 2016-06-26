@@ -63,7 +63,7 @@
 - (IBAction)btnNextLv:(id)sender {
     if((long)_Score < 6 ) {
         // Sound
-        [[SoundManager sharedManager] playSound:@"sound1" looping:YES];
+        //[[SoundManager sharedManager] playSound:@"sound1" looping:YES];
         // AlertView
 
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Làm lại"

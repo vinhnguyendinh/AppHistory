@@ -12,6 +12,6 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *lblThemeChapter;
-@property NSIndexPath *indexPathRow;
+@property NSIndexPath *indexPathCell;
 
 @end

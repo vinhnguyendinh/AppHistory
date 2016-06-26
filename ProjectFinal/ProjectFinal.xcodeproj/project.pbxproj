@@ -405,7 +405,6 @@
 		84BD37CA1CFF37D9004E2EA9 = {
 			isa = PBXGroup;
 			children = (
-				CF8B66221D1EE41500A8E9F5 /* Sounds */,
 				84BD37D51CFF37D9004E2EA9 /* ProjectFinal */,
 				84BD37D41CFF37D9004E2EA9 /* Products */,
 			);
@@ -453,6 +452,7 @@
 		84BD37F21CFF3BA4004E2EA9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CF8B66221D1EE41500A8E9F5 /* Sounds */,
 				84C1730D1D05358F005100B0 /* icons */,
 				844B32281D04A4BD00C0D194 /* Image */,
 			);
@@ -588,7 +588,8 @@
 				CF8B66251D1EE41500A8E9F5 /* track1.caf */,
 				CF8B66261D1EE41500A8E9F5 /* track2.caf */,
 			);
-			path = Sounds;
+			name = Sounds;
+			path = ../Sounds;
 			sourceTree = "<group>";
 		};
 		CF903CCB1D1ACAAC007E99F9 /* CellCustom */ = {
@@ -878,7 +879,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ProjectFinal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VinhNguyen.ProjectFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -894,7 +895,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ProjectFinal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VinhNguyen.ProjectFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";

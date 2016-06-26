@@ -13,6 +13,8 @@
 
 @interface MainViewController ()
 
+@property NSDictionary *chapters;
+@property NSArray *chapterSectionTitles;
 
 @end
 
@@ -33,6 +35,7 @@ static id instance = nil;
     NSLog(@"%@", [APPDELEGATE databasePath]);
     
     _tbvHeight.constant = (self.view.frame.size.height - 65);
+    [self insertTitleChapter];
     
     instance = self;
     
@@ -58,13 +61,30 @@ static id instance = nil;
     //Number Of Row - TableView
     _numberChapter = 8;
     
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Insert Title Chapter Table View
+- (void)insertTitleChapter
+{
+    _chapters = @{@"Chương 1" : @"Sự hình thành trật tự thế giới mới sau chiến tranh thế giới thứ hai",
+                @"Chương 2" : @"Liên Xô và các nước Đông Âu (1945 - 1991). Liên bang Nga",
+                @"Chương 3" : @"Các nước Á, Phi, Mĩ Latinh (1945 - 2000)",
+                @"Chương 4" : @"Mĩ, Tây Âu, Nhật Bản (1945 - 2000)",
+                @"Chương 5" : @"Quan hệ quốc tế (1945 - 2000)",
+                @"Chương 6" : @"Cách mạng khao học - công nghệ và xu thế toàn cầu hóa",
+                @"Chương 7" : @"Việt Nam từ năm 1919 đến năm 1930",
+                @"Chương 8" : @"Việt Nam từ năm 1930 đến năm 1945"
+                };
+    
+    _chapterSectionTitles = [[_chapters allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+}
+
 
 // Btn Back
 - (void)backAction:(id)sender
@@ -128,59 +148,52 @@ static id instance = nil;
 
 #pragma mark - TableView Datasources
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
     return 1;
 }
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    //cell.indexPathCell = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
     
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+    if([cell.contentView viewWithTag:101] == nil) {
+        NSString *title = [_chapterSectionTitles objectAtIndex:indexPath.section];
+        NSString *chapterTitle = [_chapters objectForKey:title];
+        UILabel *lblThemeChapter = [cell.contentView viewWithTag:101];
+
+        lblThemeChapter.text = chapterTitle;
+        if(indexPath.section != 0) {
+            lblThemeChapter.alpha = 0.5f;
+            cell.userInteractionEnabled = NO;
+        }
+        [cell.contentView addSubview:lblThemeChapter];
+    }
+    
+    return cell;
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;              // Default is 1 if not implemented
+
 {
     return 8;
 }
-    
-    
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;    // fixed font style. use custom view (UILabel) if you want something different
 {
-    CusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    cell.indexPathRow = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
-    
-    if(indexPath.row == 0){
-        cell.lblThemeChapter.text = @"Chương 1. Sự hình thành trật tự thế giới mới sau chiến tranh thế giới thứ hai";
-    }
-    else if(indexPath.row == 1){
-        cell.lblThemeChapter.text = @"Chương 2. Liên Xô và các nước Đông Âu (1945 - 1991). Liên bang Nga";
-    }
-    else if(indexPath.row == 2){
-        cell.lblThemeChapter.text = @"Chương 3. Các nước Á, Phi, Mĩ Latinh (1945 - 2000)";
-    }
-    else if(indexPath.row == 3){
-        cell.lblThemeChapter.text = @"Chương 4. Mĩ, Tây Âu, Nhật Bản (1945 - 2000)";
-    }
-    else if(indexPath.row == 4){
-        cell.lblThemeChapter.text = @"Chương 5. Quan hệ quốc tế (1945 - 2000)";
-    }
-    else if(indexPath.row == 5){
-        cell.lblThemeChapter.text = @"Chương 6. Cách mạng khao học - công nghệ và xu thế toàn cầu hóa";
-    }
-    else if(indexPath.row == 6){
-        cell.lblThemeChapter.text = @"Chương 7. Việt Nam từ năm 1919 đến năm 1930";
-    }
-    else if(indexPath.row == 7){
-        cell.lblThemeChapter.text = @"Chương 8. Việt Nam từ năm 1930 đến năm 1945";
-    }
-
-    
-//    if(indexPath.row != 0 && indexPath.row == cell.indexPathRow.row)
-//    {
-//        cell.userInteractionEnabled = NO;
-//        cell.lblThemeChapter.alpha = 0.5f;
-//    }
-
-    //[self updateCell:cell];
-    return cell;
+    NSString *titleSection = [_chapterSectionTitles objectAtIndex:section];
+    return titleSection;
 }
+
+
 
 - (CGFloat)updateCell : (CusCell *)cell
 {

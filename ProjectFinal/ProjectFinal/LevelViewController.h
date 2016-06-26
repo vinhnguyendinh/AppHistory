@@ -11,6 +11,8 @@
 @interface LevelViewController : BasedTableViewController
 
 @property Level *levelSelected;
+@property Chapter *chapter;
+@property NSInteger *indexLevelSelected;
 
 + (LevelViewController *)sharedInstance;
 

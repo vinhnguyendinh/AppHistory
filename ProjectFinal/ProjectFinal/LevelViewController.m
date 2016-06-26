@@ -13,7 +13,6 @@
 
 @interface LevelViewController ()
 
-@property Chapter *chapter;
 
 @end
 
@@ -89,6 +88,7 @@ static id instance = nil;
 {
     // Get Level Selected
     _levelSelected = [_chapter.listLevels objectAtIndex:indexPath.row];
+    _indexLevelSelected = indexPath.row;
     
     // Push QuestionVC
     QuestionViewController *vc = [[Utils mainStoryboard] instantiateViewControllerWithIdentifier:@"QuestionViewController"];

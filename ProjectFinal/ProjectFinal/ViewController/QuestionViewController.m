@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondTimer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tbvHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lblTimeLeading;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lblHeightCellQuestion;
 
 @end
 
@@ -32,7 +33,7 @@
     
     _listAnsChoose = [[NSArray alloc]init];
     
-    self.strTitle = @"Bài làm";
+    self.strTitle = [NSString stringWithFormat:@"Level %ld", (long)[LevelViewController sharedInstance].indexLevelSelected + 1];
     
     [self.navigationController.toolbar setHidden: NO];
     
@@ -132,6 +133,59 @@
     
 }
 
+#pragma mark - Share Question
+
+
+- (IBAction)shareQuestion:(id)sender {
+    
+    // create a message
+    NSMutableString *theMessage = [[NSMutableString alloc]init];
+    // init message
+    [theMessage insertString:_question.contentQuestion atIndex:0];
+    
+    NSArray *items = @[theMessage];
+    
+    // build an activity view controller
+    UIActivityViewController *controller = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
+    
+    // and present it
+    [self presentActivityController:controller];
+}
+
+- (void)presentActivityController:(UIActivityViewController *)controller {
+    
+    // for iPad: make the presentation a Popover
+    controller.modalPresentationStyle = UIModalPresentationPopover;
+    [self presentViewController:controller animated:YES completion:nil];
+    
+    UIPopoverPresentationController *popController = [controller popoverPresentationController];
+    popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popController.barButtonItem = self.navigationItem.leftBarButtonItem;
+    
+    // access the completion handler
+    controller.completionWithItemsHandler = ^(NSString *activityType,
+                                              BOOL completed,
+                                              NSArray *returnedItems,
+                                              NSError *error){
+        // react to the completion
+        if (completed) {
+            
+            // user shared an item
+            NSLog(@"We used activity type%@", activityType);
+            
+        } else {
+            
+            // user cancelled
+            NSLog(@"We didn't want to share anything after all.");
+        }
+        
+        if (error) {
+            NSLog(@"An Error occured: %@, %@", error.localizedDescription, error.localizedFailureReason);
+        }
+    };
+}
+
+
 #pragma mark - AlertView
 - (void)alertViewShow
 {
@@ -183,7 +237,7 @@ static id instance = nil;
     _btnContinue.alpha = 0.5f;
     _btnContinue.enabled = NO;
     _btnContinue.layer.cornerRadius = 15.0f;
-    _leadingOfBtnContinue.constant = (self.view.frame.size.width - _btnContinue.frame.size.width) / 2;
+    _leadingOfBtnContinue.constant = (self.view.frame.size.width - 110) / 2;
 }
 
 // Logic next question
@@ -191,7 +245,7 @@ static id instance = nil;
 static bool check = true;
 - (IBAction)btnContinueClicked:(id)sender {
     // Update data
-    if ( _numberQuesPresent < 10 ) {
+    if ( _numberQuesPresent < 10 && _numberQuesPresent >= 0) {
         if(check) {
             check = false;
             _numberQuesPresent++;
@@ -297,12 +351,13 @@ static BOOL isBackAction = NO;
     }
     
     [self updateCell:cell];
+
     return cell;
 }
 
 #pragma mark - fit size cell
 
-- (float)updateCell : (UITableViewCell *)cell
+- (CGFloat)updateCell : (UITableViewCell *)cell
 {
     UILabel *lbl = [cell.contentView viewWithTag:101];
     
